@@ -205,7 +205,7 @@ node tools/build-data.mjs; node tools/validate-data.mjs; node tools/build-docs.m
 
 ### 无限模式
 
-随机战区 + 无穷波次；每 5 波一个「战役阶段」，敌军构成从 1941 年的德军步兵推进，演变为 1945 年的虎王、豹式与国民突击队混合攻势；每 5 波获得复活卡与一次免费支援；天气与昼夜每 3 波变化。
+浏览器原型提供随机战区、阶段性敌军构成和整备流程。UE 版本可用 `-endless` 启动：复用当前战役 blockout 地图，按 `support.json` 的稀疏年代编组生成敌军，按空格发起首波/后续波；清波后需等待 45 秒整备。UE 版本目前没有独立随机战区，也不提供复活卡或天气昼夜轮换。
 
 ---
 
@@ -247,6 +247,7 @@ node tools/build-data.mjs; node tools/validate-data.mjs; node tools/build-docs.m
 | Paper2D 角色动画 | ✅ 560 张方向帧 + 100 个动画 Flipbook + 苏/美军角色 BP | `Content/RedFront/Art2D/Characters/Flipbooks` |
 | UE 运行时 JSON 数据 | ✅ 56 关与全部玩法契约已同步 | `node tools/build-data.mjs` |
 | UE 战役玩法接线 | ✅ 基础版：步兵交战、合同车辆/飞机、救援/补给、守点/击毁/抵达/摧毁目标 | `RFGameMode` / `RFVehicleActor` / `RFPlayerController` |
+| UE 无限模式 | ✅ 合同驱动波次基础版 | `-endless` 启动；空格发波；45 秒整备；稀疏波次表、递增兵力与每波最多 64 单位；仍复用战役地图 |
 | UE 5.8 / Visual Studio 编译 | ✅ Editor Development 与 Game Shipping 均构建通过 | `Unreal/Scripts/Package-Windows.ps1` |
 | Win64 Shipping 封装 | ✅ 56 张地图 Cook；归档启动冒烟通过 | `dist/WindowsShippingFinal/RedFront1941.exe`（本地生成，不提交到 Git） |
 | 车辆 AI/移动/炮击 | ✅ 基础合同驱动版本 | `RFVehicleActor` 按速度/固定阵地/交战距离机动，搜索目标并经弹道/装甲规则开火；仍需游戏内平衡验证 |

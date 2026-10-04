@@ -70,8 +70,36 @@ void ARFGameHUD::DrawHUD()
 			FMath::FloorToInt(FMath::Fmod(GameState->GetMissionTimeS(), 60.0f)),
 			GameState->GetCommandPoints()), FLinearColor(0.92f, 0.82f, 0.58f));
 
+		const ARFGameMode* GameMode = GetWorld() != nullptr
+			? GetWorld()->GetAuthGameMode<ARFGameMode>() : nullptr;
+		if (GameMode != nullptr && GameMode->IsEndlessMode())
+		{
+			const float PrepRemainingS = GameMode->GetWavePrepRemainingS();
+			const int32 CurrentWave = GameState->GetEndlessWave();
+			FString WaveStatus;
+			if (PrepRemainingS > 0.0f)
+			{
+				WaveStatus = FString::Printf(TEXT("无限战线  波次 %d  整备 %.0f秒（空格开始下一波）"),
+					CurrentWave, PrepRemainingS);
+			}
+			else if (GameMode->IsEndlessWaveActive())
+			{
+				WaveStatus = FString::Printf(TEXT("无限战线  波次 %d  交战中"), CurrentWave);
+			}
+			else
+			{
+				WaveStatus = FString::Printf(TEXT("无限战线  整备完成（空格开始第 %d 波）"),
+					CurrentWave + 1);
+			}
+			DrawLine(WaveStatus, FLinearColor(0.95f, 0.68f, 0.32f));
+		}
+
 		for (const FRFObjectiveDef& Objective : Level.Objectives)
 		{
+			if (GameMode != nullptr && GameMode->IsEndlessMode())
+			{
+				break;
+			}
 			if (Y + LineHeight > PanelOrigin.Y + PanelHeight)
 			{
 				break;

@@ -100,9 +100,13 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "RedFront|Endless")
 	void StartNextEndlessWave();
 
-	/** Seconds left in the endless wave-prep window (0 when a wave is running). */
+	/** Seconds left in the endless wave-prep window (0 after preparation ends). */
 	UFUNCTION(BlueprintPure, Category = "RedFront|Endless")
 	float GetWavePrepRemainingS() const { return WavePrepRemainingS; }
+
+	/** True while enemies from the current endless wave remain active. */
+	UFUNCTION(BlueprintPure, Category = "RedFront|Endless")
+	bool IsEndlessWaveActive() const { return bEndlessWaveActive; }
 
 	// ------------------------------- Support --------------------------------
 
@@ -177,8 +181,17 @@ private:
 	/** Spawns the infantry described by the current map's RF_EnemyClass markers. */
 	void SpawnMapEnemies(const FRFLevelDef& Level);
 
+	/** Builds and spawns a contract-backed endless wave on the current battle map. */
+	bool SpawnEndlessWave(int32 WaveNumber);
+
+	/** True while a living enemy from the active endless wave remains in the world. */
+	bool HasActiveEndlessEnemies() const;
+
 	/** True after map markers have been consumed for this world. */
 	bool bMapGameplayInitialized = false;
+
+	/** True between a wave spawn and elimination of its last surviving unit. */
+	bool bEndlessWaveActive = false;
 
 	/** Runtime infantry cap per marker and map; excess contract counts are logged. */
 	UPROPERTY(EditDefaultsOnly, Category = "RedFront|AI", meta = (ClampMin = "1"))

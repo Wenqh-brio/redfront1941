@@ -101,6 +101,8 @@ void ARFPlayerController::SetupInputComponent()
 		InputComponent->BindAction(TEXT("Fire"), IE_Pressed, this, &ARFPlayerController::LegacyFirePressed);
 		InputComponent->BindAction(TEXT("Fire"), IE_Released, this, &ARFPlayerController::LegacyFireReleased);
 		InputComponent->BindAction(TEXT("Interact"), IE_Pressed, this, &ARFPlayerController::LegacyInteractPressed);
+		InputComponent->BindAction(TEXT("Endless_NextWave"), IE_Pressed, this,
+			&ARFPlayerController::LegacyEndlessNextWavePressed);
 	}
 }
 
@@ -705,4 +707,9 @@ void ARFPlayerController::LegacyFireReleased()
 void ARFPlayerController::LegacyInteractPressed()
 {
 	OnInteract(FInputActionValue());
+}
+
+void ARFPlayerController::LegacyEndlessNextWavePressed()
+{
+	OnEndlessNextWave(FInputActionValue());
 }

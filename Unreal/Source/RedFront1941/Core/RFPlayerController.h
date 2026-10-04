@@ -172,6 +172,7 @@ protected:
 	void LegacyFirePressed();
 	void LegacyFireReleased();
 	void LegacyInteractPressed();
+	void LegacyEndlessNextWavePressed();
 
 	/** Cached controlled soldier; refreshed when possession changes. */
 	UPROPERTY(Transient)

@@ -117,6 +117,20 @@ These are playable blockouts, not finished hand-authored art levels: they use si
 their directional Paper2D flipbooks are procedural placeholders, ready to be replaced
 by hand-painted assets.
 
+### Endless mode in the UE build
+
+Launch the packaged executable with `-endless` to use the current battle map as an
+endless arena. The first wave becomes available after the 45-second preparation period;
+press **Space** to start it. Each next wave unlocks after the previous wave is eliminated
+and another 45-second resupply window expires. The runtime reads the sparse
+`support.json` wave table, selects the latest authored composition, and scales
+intervening/future waves using the contract's `4 + floor(wave * 1.6)` population curve
+(capped at 64 units per wave). Every fifth wave receives a boss composition when one is
+authored and the existing command-point bonus. Endless runs do not spawn the map's
+scripted campaign enemies or finish because campaign objectives were completed; player
+death still ends the run. Levels remain authored campaign blockouts rather than a
+separately generated random-arena map.
+
 ---
 
 ## 2. Folder conventions

@@ -13,6 +13,8 @@
 #include "EngineUtils.h"
 #include "Engine/World.h"
 #include "Data/RFDataTableLoader.h"
+#include "Misc/CommandLine.h"
+#include "Misc/Parse.h"
 #include "Survival/RFInventoryComponent.h"
 #include "UObject/ConstructorHelpers.h"
 #include "Kismet/GameplayStatics.h"
@@ -64,6 +66,95 @@ bool IsWithinObjectiveRadius(const FVector& PlayerLocation, const FVector& Objec
 {
 	const float RadiusCm = FMath::Max(100.0f, RadiusM * 100.0f);
 	return FVector::Dist2D(PlayerLocation, ObjectiveLocation) <= RadiusCm;
+}
+
+const FRFEndlessWave* FindEndlessWaveForNumber(const TArray<FRFEndlessWave>& Waves, int32 WaveNumber)
+{
+	const FRFEndlessWave* BestMatch = nullptr;
+	for (const FRFEndlessWave& Wave : Waves)
+	{
+		if (Wave.Wave <= WaveNumber && (BestMatch == nullptr || Wave.Wave > BestMatch->Wave))
+		{
+			BestMatch = &Wave;
+		}
+	}
+	return BestMatch;
+}
+
+TMap<FName, int32> BuildEndlessWaveComposition(const FRFEndlessWave& Wave, int32 WaveNumber)
+{
+	TMap<FName, int32> Result = Wave.Composition;
+	int32 BaseUnitCount = 0;
+	for (const TPair<FName, int32>& Entry : Wave.Composition)
+	{
+		BaseUnitCount += FMath::Max(0, Entry.Value);
+	}
+	if (BaseUnitCount <= 0)
+	{
+		return Result;
+	}
+
+	const bool bAuthoredWave = WaveNumber <= Wave.Wave;
+	const int32 ScaledUnitCount = 4 + FMath::FloorToInt(static_cast<float>(WaveNumber) * 1.6f);
+	const int32 TargetUnitCount = FMath::Clamp(
+		bAuthoredWave ? BaseUnitCount : FMath::Max(BaseUnitCount, ScaledUnitCount), 1, 64);
+	if (bAuthoredWave && BaseUnitCount <= 64)
+	{
+		return Result;
+	}
+
+	const float Scale = static_cast<float>(TargetUnitCount) / static_cast<float>(BaseUnitCount);
+	int32 ScaledTotal = 0;
+	for (TPair<FName, int32>& Entry : Result)
+	{
+		Entry.Value = Entry.Value > 0
+			? FMath::Max(1, FMath::RoundToInt(static_cast<float>(Entry.Value) * Scale))
+			: 0;
+		ScaledTotal += Entry.Value;
+	}
+	while (ScaledTotal > TargetUnitCount)
+	{
+		TPair<FName, int32>* LargestEntry = nullptr;
+		TPair<FName, int32>* SmallestEntry = nullptr;
+		const FNameLexicalLess NameLess;
+		for (TPair<FName, int32>& Entry : Result)
+		{
+			if (Entry.Value > 1 && (LargestEntry == nullptr || Entry.Value > LargestEntry->Value
+				|| (Entry.Value == LargestEntry->Value && NameLess(Entry.Key, LargestEntry->Key))))
+			{
+				LargestEntry = &Entry;
+			}
+			else if (Entry.Value == 1
+				&& (SmallestEntry == nullptr || NameLess(Entry.Key, SmallestEntry->Key)))
+			{
+				SmallestEntry = &Entry;
+			}
+		}
+		if (LargestEntry != nullptr)
+		{
+			--LargestEntry->Value;
+		}
+		else if (SmallestEntry != nullptr)
+		{
+			SmallestEntry->Value = 0;
+		}
+		else
+		{
+			break;
+		}
+		--ScaledTotal;
+	}
+	return Result;
+}
+
+int32 CountEndlessWaveUnits(const TMap<FName, int32>& Composition)
+{
+	int32 Total = 0;
+	for (const TPair<FName, int32>& Entry : Composition)
+	{
+		Total += Entry.Value;
+	}
+	return Total;
 }
 }
 
@@ -143,6 +234,59 @@ bool FRFObjectiveArrivalRadiusTest::RunTest(const FString& Parameters)
 		IsWithinObjectiveRadius(FVector(1000.0f, 2000.0f, 1200.0f), ObjectiveLocation, 1.0f));
 	return true;
 }
+
+IMPLEMENT_SIMPLE_AUTOMATION_TEST(FRFEndlessWaveSelectionTest,
+	"RedFront.Endless.WaveSelection",
+	EAutomationTestFlags::EditorContext | EAutomationTestFlags::EngineFilter)
+
+bool FRFEndlessWaveSelectionTest::RunTest(const FString& Parameters)
+{
+	TArray<FRFEndlessWave> Waves;
+	FRFEndlessWave EarlyWave;
+	EarlyWave.Wave = 1;
+	EarlyWave.Composition.Add(FName(TEXT("rifleman")), 6);
+	Waves.Add(EarlyWave);
+	FRFEndlessWave LateWave;
+	LateWave.Wave = 6;
+	LateWave.Composition.Add(FName(TEXT("grenadier")), 10);
+	Waves.Add(LateWave);
+
+	TestNull(TEXT("Wave zero has no scheduled composition"),
+		FindEndlessWaveForNumber(Waves, 0));
+	TestEqual(TEXT("Sparse wave tables use the latest eligible entry"),
+		FindEndlessWaveForNumber(Waves, 9)->Wave, 6);
+	TestEqual(TEXT("Authored wave counts remain unchanged on their scheduled wave"),
+		BuildEndlessWaveComposition(EarlyWave, 1).FindRef(FName(TEXT("rifleman"))), 6);
+	TestEqual(TEXT("Unscheduled waves scale toward the authored difficulty curve"),
+		BuildEndlessWaveComposition(LateWave, 9).FindRef(FName(TEXT("grenadier"))), 18);
+
+	FRFEndlessWave HighPopulationWave;
+	HighPopulationWave.Wave = 15;
+	HighPopulationWave.Composition.Add(FName(TEXT("rifleman")), 20);
+	HighPopulationWave.Composition.Add(FName(TEXT("grenadier")), 10);
+	HighPopulationWave.Composition.Add(FName(TEXT("tank")), 5);
+	TestEqual(TEXT("Population does not fall below a prior authored wave"),
+		CountEndlessWaveUnits(BuildEndlessWaveComposition(HighPopulationWave, 16)), 35);
+
+	FRFEndlessWave OverBudgetWave;
+	OverBudgetWave.Wave = 15;
+	OverBudgetWave.Composition.Add(FName(TEXT("rifleman")), 75);
+	OverBudgetWave.Composition.Add(FName(TEXT("grenadier")), 25);
+	OverBudgetWave.Composition.Add(FName(TEXT("tank")), 10);
+	TestEqual(TEXT("An authored composition above the runtime cap is reduced to 64"),
+		CountEndlessWaveUnits(BuildEndlessWaveComposition(OverBudgetWave, 15)), 64);
+
+	FRFEndlessWave WideComposition;
+	WideComposition.Wave = 15;
+	for (int32 EnemyIndex = 0; EnemyIndex < 70; ++EnemyIndex)
+	{
+		WideComposition.Composition.Add(
+			FName(*FString::Printf(TEXT("enemy_%02d"), EnemyIndex)), 1);
+	}
+	TestEqual(TEXT("The population cap holds even when the composition has over 64 enemy types"),
+		CountEndlessWaveUnits(BuildEndlessWaveComposition(WideComposition, 15)), 64);
+	return true;
+}
 #endif
 
 ARFGameMode::ARFGameMode()
@@ -187,6 +331,12 @@ UClass* ARFGameMode::GetDefaultPawnClassForController_Implementation(AController
 void ARFGameMode::BeginPlay()
 {
 	Super::BeginPlay();
+	bEndlessMode = bEndlessMode || FParse::Param(FCommandLine::Get(), TEXT("endless"));
+	if (bEndlessMode)
+	{
+		UE_LOG(LogTemp, Log, TEXT("RFGameMode: endless mode enabled; first wave unlocks after %.0f seconds."),
+			WavePrepDurationS);
+	}
 
 	if (GermanEnemyCharacterClass == nullptr)
 	{
@@ -245,12 +395,22 @@ void ARFGameMode::Tick(float DeltaSeconds)
 	}
 
 	RFGameState->AdvanceMissionTime(DeltaSeconds);
-	EvaluateObjectiveConditions(DeltaSeconds);
-	EvaluateObjectiveDeadlines();
-
-	// Endless mode: a 45 s prep window runs between waves, and the wave gate is opened
-	// either by the timer or by the Endless_NextWave input.
-	if (bEndlessMode && WavePrepRemainingS > 0.0f)
+	if (!bEndlessMode)
+	{
+		EvaluateObjectiveConditions(DeltaSeconds);
+		EvaluateObjectiveDeadlines();
+	}
+	else if (bEndlessWaveActive)
+	{
+		if (!HasActiveEndlessEnemies())
+		{
+			bEndlessWaveActive = false;
+			WavePrepRemainingS = WavePrepDurationS;
+			UE_LOG(LogTemp, Log, TEXT("RFGameMode: endless wave %d cleared; %.0f s preparation window started."),
+				RFGameState->GetEndlessWave(), WavePrepRemainingS);
+		}
+	}
+	else if (WavePrepRemainingS > 0.0f)
 	{
 		WavePrepRemainingS = FMath::Max(0.0f, WavePrepRemainingS - DeltaSeconds);
 	}
@@ -276,7 +436,10 @@ void ARFGameMode::Tick(float DeltaSeconds)
 		}
 	}
 
-	EvaluateMissionProgress();
+	if (!bEndlessMode)
+	{
+		EvaluateMissionProgress();
+	}
 }
 
 void ARFGameMode::TryInitializeMapGameplay()
@@ -348,7 +511,14 @@ void ARFGameMode::TryInitializeMapGameplay()
 		}
 	}
 
-	SpawnMapEnemies(Level);
+	if (!bEndlessMode)
+	{
+		SpawnMapEnemies(Level);
+	}
+	else
+	{
+		UE_LOG(LogTemp, Log, TEXT("RFGameMode: campaign enemy markers suppressed for endless mode."));
+	}
 	bMapGameplayInitialized = true;
 }
 
@@ -682,12 +852,225 @@ void ARFGameMode::StartNextEndlessWave()
 	}
 	if (WavePrepRemainingS > 0.0f)
 	{
-		// The prep window is a real constraint: it lets the squad resupply food/water/ammo.
+		UE_LOG(LogTemp, Verbose, TEXT("RFGameMode: next endless wave is locked for %.1f more seconds."),
+			WavePrepRemainingS);
+		return;
+	}
+
+	if (bEndlessWaveActive || HasActiveEndlessEnemies())
+	{
+		UE_LOG(LogTemp, Warning, TEXT("RFGameMode: clear the current enemy wave before starting another."));
+		return;
+	}
+
+	const int32 NextWave = RFGameState->GetEndlessWave() + 1;
+	if (!SpawnEndlessWave(NextWave))
+	{
 		return;
 	}
 
 	RFGameState->AdvanceEndlessWave();
-	WavePrepRemainingS = WavePrepDurationS;
+	bEndlessWaveActive = true;
+	WavePrepRemainingS = 0.0f;
+}
+
+bool ARFGameMode::HasActiveEndlessEnemies() const
+{
+	const UWorld* World = GetWorld();
+	if (World == nullptr)
+	{
+		return false;
+	}
+
+	for (TActorIterator<AActor> It(World); It; ++It)
+	{
+		const AActor* Enemy = *It;
+		if (Enemy == nullptr || !Enemy->ActorHasTag(FName(TEXT("RF_Enemy"))))
+		{
+			continue;
+		}
+		if (const ARFCharacter* Soldier = Cast<ARFCharacter>(Enemy))
+		{
+			const URFSurvivalComponent* Survival = Soldier->GetSurvivalComponent();
+			if (Survival == nullptr || !Survival->IsDead())
+			{
+				return true;
+			}
+		}
+		else if (const ARFVehicleActor* Vehicle = Cast<ARFVehicleActor>(Enemy))
+		{
+			if (!Vehicle->IsDestroyed())
+			{
+				return true;
+			}
+		}
+		else if (const ARFAircraftActor* Aircraft = Cast<ARFAircraftActor>(Enemy))
+		{
+			if (Aircraft->GetHealth() > 0.0f)
+			{
+				return true;
+			}
+		}
+		else if (!Enemy->IsActorBeingDestroyed())
+		{
+			return true;
+		}
+	}
+	return false;
+}
+
+bool ARFGameMode::SpawnEndlessWave(int32 WaveNumber)
+{
+	if (DataTableLoader == nullptr || GetWorld() == nullptr || WaveNumber <= 0)
+	{
+		UE_LOG(LogTemp, Error, TEXT("RFGameMode: cannot spawn endless wave without a world and loaded contracts."));
+		return false;
+	}
+
+	const FRFEndlessWave* AuthoredWave = FindEndlessWaveForNumber(
+		DataTableLoader->GetEndlessWaves(), WaveNumber);
+	if (AuthoredWave == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("RFGameMode: no endless composition is defined for wave %d."),
+			WaveNumber);
+		return false;
+	}
+
+	TMap<FName, int32> Composition = BuildEndlessWaveComposition(*AuthoredWave, WaveNumber);
+	TArray<FName> EnemyIds;
+	Composition.GetKeys(EnemyIds);
+	EnemyIds.Sort(FNameLexicalLess());
+
+	int32 RemainingBudget = 64;
+	int32 PlannedUnits = 0;
+	TArray<TPair<FName, int32>> SpawnPlan;
+	for (const FName& EnemyId : EnemyIds)
+	{
+		const int32 RequestedCount = Composition.FindRef(EnemyId);
+		const int32 Count = FMath::Clamp(RequestedCount, 0, RemainingBudget);
+		if (Count < RequestedCount)
+		{
+			UE_LOG(LogTemp, Warning,
+				TEXT("RFGameMode: endless wave %d unit cap reduced '%s' from %d to %d."),
+				WaveNumber, *EnemyId.ToString(), RequestedCount, Count);
+		}
+		if (Count > 0)
+		{
+			SpawnPlan.Emplace(EnemyId, Count);
+			PlannedUnits += Count;
+			RemainingBudget -= Count;
+		}
+	}
+	if (PlannedUnits <= 0)
+	{
+		UE_LOG(LogTemp, Error, TEXT("RFGameMode: endless wave %d has no spawnable units."), WaveNumber);
+		return false;
+	}
+
+	APlayerController* PlayerController = GetWorld()->GetFirstPlayerController();
+	const APawn* PlayerPawn = PlayerController != nullptr ? PlayerController->GetPawn() : nullptr;
+	if (PlayerPawn == nullptr)
+	{
+		UE_LOG(LogTemp, Error, TEXT("RFGameMode: cannot spawn endless wave without a player pawn."));
+		return false;
+	}
+
+	TArray<TPair<TWeakObjectPtr<ATargetPoint>, TArray<FName>>> HiddenEnemyMarkerTags;
+	for (TActorIterator<ATargetPoint> It(GetWorld()); It; ++It)
+	{
+		ATargetPoint* Marker = *It;
+		TArray<FName> TagsToHide;
+		for (const FName& Tag : Marker->Tags)
+		{
+			const FString TagString = Tag.ToString();
+			if (TagString.StartsWith(TEXT("RF_EnemyClass:"))
+				|| TagString.StartsWith(TEXT("RF_EnemyCount:")))
+			{
+				TagsToHide.Add(Tag);
+			}
+		}
+		if (!TagsToHide.IsEmpty())
+		{
+			HiddenEnemyMarkerTags.Emplace(Marker, TagsToHide);
+			for (const FName& Tag : TagsToHide)
+			{
+				Marker->Tags.Remove(Tag);
+			}
+		}
+	}
+
+	TArray<TObjectPtr<ATargetPoint>> WaveMarkers;
+	int32 MarkerIndex = 0;
+	const FVector PlayerLocation = PlayerPawn->GetActorLocation();
+	const int32 PreviousMapEnemyLimit = MaxEnemyUnitsPerMap;
+	MaxEnemyUnitsPerMap = FMath::Max(MaxEnemyUnitsPerMap, PlannedUnits);
+
+	for (const TPair<FName, int32>& Entry : SpawnPlan)
+	{
+		int32 UnitsRemaining = Entry.Value;
+		while (UnitsRemaining > 0)
+		{
+			const int32 MarkerCount = FMath::Min(MaxEnemyUnitsPerMarker, UnitsRemaining);
+			const int32 Column = MarkerIndex % 4;
+			const int32 Row = MarkerIndex / 4;
+			const FVector SpawnLocation = PlayerLocation + FVector(
+				1800.0f + static_cast<float>(Column) * 450.0f,
+				-1350.0f + static_cast<float>(Row) * 450.0f, 0.0f);
+			FActorSpawnParameters SpawnParameters;
+			SpawnParameters.SpawnCollisionHandlingOverride =
+				ESpawnActorCollisionHandlingMethod::AdjustIfPossibleButAlwaysSpawn;
+			ATargetPoint* Marker = GetWorld()->SpawnActor<ATargetPoint>(
+				ATargetPoint::StaticClass(), SpawnLocation, FRotator::ZeroRotator, SpawnParameters);
+			if (Marker != nullptr)
+			{
+				Marker->Tags.Add(FName(*FString::Printf(TEXT("RF_EnemyClass:%s"), *Entry.Key.ToString())));
+				Marker->Tags.Add(FName(*FString::Printf(TEXT("RF_EnemyCount:%d"), MarkerCount)));
+				WaveMarkers.Add(Marker);
+			}
+			else
+			{
+				UE_LOG(LogTemp, Warning, TEXT("RFGameMode: failed creating marker for endless enemy '%s'."),
+					*Entry.Key.ToString());
+			}
+			UnitsRemaining -= MarkerCount;
+			++MarkerIndex;
+		}
+	}
+
+	FRFLevelDef EndlessLevel = RFGameState->GetCurrentLevel();
+	EndlessLevel.Id = FName(TEXT("endless_waves"));
+	SpawnMapEnemies(EndlessLevel);
+	MaxEnemyUnitsPerMap = PreviousMapEnemyLimit;
+
+	for (const TPair<TWeakObjectPtr<ATargetPoint>, TArray<FName>>& MarkerTags : HiddenEnemyMarkerTags)
+	{
+		if (ATargetPoint* Marker = MarkerTags.Key.Get())
+		{
+			for (const FName& Tag : MarkerTags.Value)
+			{
+				Marker->Tags.AddUnique(Tag);
+			}
+		}
+	}
+	for (ATargetPoint* Marker : WaveMarkers)
+	{
+		if (IsValid(Marker))
+		{
+			Marker->Destroy();
+		}
+	}
+
+	if (!HasActiveEndlessEnemies())
+	{
+		UE_LOG(LogTemp, Error,
+			TEXT("RFGameMode: endless wave %d failed to spawn; check its enemy contract ids."),
+			WaveNumber);
+		return false;
+	}
+
+	UE_LOG(LogTemp, Log, TEXT("RFGameMode: spawned endless wave %d (%d planned units, %s)."),
+		WaveNumber, PlannedUnits, AuthoredWave->bBoss ? TEXT("boss") : TEXT("standard"));
+	return true;
 }
 
 void ARFGameMode::EndMission(bool bSuccess)
@@ -715,6 +1098,10 @@ ARFPlayerController* ARFGameMode::GetRFPlayerController() const
 
 void ARFGameMode::EvaluateMissionProgress()
 {
+	if (bEndlessMode)
+	{
+		return;
+	}
 	if (HasFailedRequiredObjective())
 	{
 		EndMission(false);
@@ -729,7 +1116,7 @@ void ARFGameMode::EvaluateMissionProgress()
 void ARFGameMode::NotifyEnemyEliminated(FName EnemyId)
 {
 	if (RFGameState == nullptr || EnemyId.IsNone()
-		|| MatchState != ERFMatchState::Playing)
+		|| MatchState != ERFMatchState::Playing || bEndlessMode)
 	{
 		return;
 	}
@@ -760,7 +1147,7 @@ void ARFGameMode::NotifyEnemyEliminated(FName EnemyId)
 bool ARFGameMode::NotifySurvivorRescued(FName ObjectiveId)
 {
 	if (RFGameState == nullptr || ObjectiveId.IsNone()
-		|| MatchState != ERFMatchState::Playing)
+		|| MatchState != ERFMatchState::Playing || bEndlessMode)
 	{
 		return false;
 	}
@@ -793,7 +1180,7 @@ bool ARFGameMode::NotifySurvivorRescued(FName ObjectiveId)
 bool ARFGameMode::NotifyObjectiveTargetDestroyed(FName ObjectiveId)
 {
 	if (RFGameState == nullptr || ObjectiveId.IsNone()
-		|| MatchState != ERFMatchState::Playing)
+		|| MatchState != ERFMatchState::Playing || bEndlessMode)
 	{
 		return false;
 	}
