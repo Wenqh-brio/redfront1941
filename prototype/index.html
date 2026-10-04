@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>红色前线 1941 — RedFront 1941（核心机制原型）</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="app">
+
+  <!-- ================= 主菜单 ================= -->
+  <section class="screen active" id="screen-menu">
+    <div class="menu-hero">
+      <div class="hero-stripe"></div>
+      <h1>红色前线 <span class="num">1941</span></h1>
+      <p class="subtitle">RED FRONT 1941 · 从巴巴罗萨到柏林 · 2D 高清真实向战役</p>
+      <p class="version" id="dataMeta">载入数据中…</p>
+      <div class="menu-actions">
+        <button class="btn primary" data-go="levels">战役关卡（<span id="lvlCount">0</span> 关）</button>
+        <button class="btn" data-go="endless">无限模式</button>
+        <button class="btn" data-go="about">项目说明 / 文档索引</button>
+      </div>
+      <div class="menu-foot">
+        <span>UE 5.8 工程见 <code>../Unreal/</code></span>
+        <span>数据源 <code>../data/*.json</code></span>
+        <span>设计文档 <code>../docs/</code></span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 项目说明 ================= -->
+  <section class="screen" id="screen-about">
+    <header class="bar">
+      <button class="btn ghost" data-go="menu">← 返回</button>
+      <h2>项目说明</h2>
+    </header>
+    <div class="about-grid">
+      <div class="panel">
+        <h3>这是什么</h3>
+        <p>本原型验证《红色前线 1941》的<strong>核心机制</strong>：负重档位、食物与饮水、体力与体温、弹道与掩体、手榴弹引信、指挥点驱动的炮击/坦克/空中支援，以及无限模式波次。画面为程序化占位，最终画面由 UE 5.8 + Paper2D 高清手绘资产实现。</p>
+        <h3>五个战役</h3>
+        <ul id="campaignSummary"></ul>
+      </div>
+      <div class="panel">
+        <h3>操作</h3>
+        <table class="keys">
+          <tr><td>WASD / 方向键</td><td>移动</td><td>鼠标</td><td>瞄准</td></tr>
+          <tr><td>左键</td><td>射击</td><td>R</td><td>换弹</td></tr>
+          <tr><td>Shift</td><td>冲刺（耗体力）</td><td>Ctrl</td><td>蹲伏</td></tr>
+          <tr><td>G（按住计时）</td><td>手榴弹</td><td>1 / 2</td><td>切换武器</td></tr>
+          <tr><td>F</td><td>进食</td><td>E</td><td>饮水</td></tr>
+          <tr><td>H</td><td>使用医疗</td><td>B</td><td>望远镜（提升炮击精度）</td></tr>
+          <tr><td>Q</td><td>呼叫炮击</td><td>T</td><td>呼叫坦克</td></tr>
+          <tr><td>V</td><td>呼叫空中支援</td><td>Esc</td><td>暂停</td></tr>
+        </table>
+        <p class="hint">按 Q/T/V 后，用鼠标左键点击目标位置确认呼叫；右键取消。无线电台是必需品。</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 关卡选择 ================= -->
+  <section class="screen" id="screen-levels">
+    <header class="bar">
+      <button class="btn ghost" data-go="menu">← 返回</button>
+      <h2>战役关卡</h2>
+      <div class="tabs" id="campaignTabs"></div>
+    </header>
+    <div class="levels-wrap">
+      <div class="level-list" id="levelList"></div>
+      <aside class="level-detail" id="levelDetail">
+        <p class="hint">从左侧选择关卡，这里会显示历史背景、敌军构成与推荐配置。</p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= 装备与负重 ================= -->
+  <section class="screen" id="screen-loadout">
+    <header class="bar">
+      <button class="btn ghost" id="loadoutBack">← 返回</button>
+      <h2 id="loadoutTitle">装备与负重</h2>
+      <div class="difficulty" id="difficultyPicker"></div>
+    </header>
+    <div class="loadout-wrap">
+      <div class="loadout-main">
+        <div class="class-row" id="classRow"></div>
+        <div class="tabs" id="loadoutTabs"></div>
+        <div class="item-list" id="itemList"></div>
+      </div>
+      <aside class="loadout-side">
+        <div class="weight-card">
+          <div class="weight-head">
+            <span>总负重</span>
+            <strong id="weightTotal">0.0 kg</strong>
+          </div>
+          <div class="weight-bar"><div id="weightFill"></div></div>
+          <div class="weight-band" id="weightBand">标准</div>
+          <div class="weight-meta" id="weightMeta"></div>
+          <ul class="weight-lines" id="weightLines"></ul>
+        </div>
+        <div class="sel-card" id="selCard"></div>
+        <button class="btn primary big" id="deployBtn">部署</button>
+        <button class="btn" id="autoBtn">推荐配置</button>
+        <p class="hint" id="loadoutHint"></p>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ================= 简报 ================= -->
+  <section class="screen" id="screen-briefing">
+    <header class="bar">
+      <button class="btn ghost" data-go="levels">← 返回</button>
+      <h2 id="briefTitle">作战简报</h2>
+    </header>
+    <div class="brief-wrap">
+      <div class="panel" id="briefMain"></div>
+      <div class="panel" id="briefSide"></div>
+    </div>
+  </section>
+
+  <!-- ================= 游戏 ================= -->
+  <section class="screen" id="screen-game">
+    <div class="stage">
+      <canvas id="canvas"></canvas>
+
+      <div class="hud hud-tl">
+        <div class="bar-row"><span>生命</span><div class="bar"><i id="hpBar"></i></div><b id="hpVal">100</b></div>
+        <div class="bar-row"><span>体力</span><div class="bar"><i id="stBar"></i></div><b id="stVal">100</b></div>
+        <div class="bar-row"><span>饱食</span><div class="bar"><i id="foBar"></i></div><b id="foVal">100</b></div>
+        <div class="bar-row"><span>饮水</span><div class="bar"><i id="waBar"></i></div><b id="waVal">100</b></div>
+        <div class="bar-row"><span>体温</span><div class="bar"><i id="wmBar"></i></div><b id="wmVal">100</b></div>
+        <div class="hud-tags">
+          <span id="tagWeight">负重 0.0kg</span>
+          <span id="tagBand">标准</span>
+          <span id="tagCold" hidden>严寒</span>
+          <span id="tagHunger" hidden>饥饿</span>
+          <span id="tagThirst" hidden>脱水</span>
+          <span id="tagBleed" hidden>流血</span>
+        </div>
+      </div>
+
+      <div class="hud hud-tr">
+        <div class="cp-card">
+          <div class="cp-head"><span>指挥点</span><strong id="cpVal">2</strong></div>
+          <div class="cp-bar"><i id="cpBar"></i></div>
+          <small id="radioState">无线电台正常</small>
+        </div>
+        <canvas id="minimap" width="220" height="152"></canvas>
+      </div>
+
+      <div class="hud hud-br" id="supportPanel"></div>
+
+      <div class="hud hud-bl">
+        <div class="weapon-card">
+          <div class="w-name" id="wpnName">—</div>
+          <div class="w-ammo"><b id="wpnMag">0</b> / <span id="wpnRes">0</span></div>
+          <div class="w-mag" id="wpnMagDots"></div>
+          <div class="w-meta" id="wpnMeta"></div>
+          <div class="throwables" id="throwables"></div>
+        </div>
+      </div>
+
+      <div class="hud hud-bc">
+        <div class="objectives" id="objectives"></div>
+        <div class="action-toast" id="actionToast"></div>
+      </div>
+
+      <div class="hud hud-tc" id="waveBadge"></div>
+      <div class="hud hud-log" id="logBox"></div>
+
+      <div class="overlay" id="pauseOverlay" hidden>
+        <div class="overlay-card">
+          <h3>暂停</h3>
+          <p id="pauseStats"></p>
+          <div class="overlay-actions">
+            <button class="btn primary" id="resumeBtn">继续</button>
+            <button class="btn" id="restartBtn">重新开始</button>
+            <button class="btn" id="toLevelsBtn">返回关卡列表</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= 结算 ================= -->
+  <section class="screen" id="screen-result">
+    <div class="result-wrap">
+      <h2 id="resultTitle">作战结束</h2>
+      <p class="result-sub" id="resultSub"></p>
+      <div class="result-grid" id="resultStats"></div>
+      <div class="panel" id="resultHistory"></div>
+      <div class="overlay-actions">
+        <button class="btn primary" id="nextLevelBtn">下一关</button>
+        <button class="btn" id="retryBtn">重打本关</button>
+        <button class="btn" id="resultLevelsBtn">返回关卡列表</button>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<script src="js/data.generated.js"></script>
+<script src="js/game.js"></script>
+<script src="js/render.js"></script>
+<script src="js/ui.js"></script>
+</body>
+</html>

@@ -1,0 +1,719 @@
+{
+  "$schema": "redfront.levels/1",
+  "campaign_id": "us_western_1945",
+  "author_note": "第五部（美军西线）：从奥马哈滩头到鲁登道夫大桥，负重上限 26kg、补给点更多、105mm 火力请求 30 秒响应，P-47 仅在晴朗天气可用。",
+  "levels": [
+    {
+      "id": "us_45_omaha_beach",
+      "index": 45,
+      "number_in_campaign": 1,
+      "campaign_id": "us_western_1945",
+      "name_zh": "血染奥马哈滩头",
+      "name_en": "Bloody Omaha Beach",
+      "date": "1944-06-06",
+      "location_zh": "法国诺曼底科勒维尔滨海",
+      "location_en": "Colleville-sur-Mer, Omaha Beach, Normandy",
+      "coordinates": "49.36N 0.86W",
+      "mission_type": "amphibious",
+      "faction": "us",
+      "player_role_zh": "你是第 1 步兵师第 16 步兵团的一名步枪手，跳板放下的一刻就要冲进德军的交叉火网。",
+      "player_class_recommended": ["rifleman", "engineer", "medic"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "穿越潮线障碍与雷区，抵达海堤下的死角与反坦克壕", "type": "primary", "required": true, "time_limit_s": 600, "condition": "reach_location", "radius_m": 4, "marker_x_m": -23, "marker_y_m": 12 },
+        { "id": "obj2", "text_zh": "用炸药包清除 Dog Green 出口两侧的 MG42 碉堡", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "呼叫 105mm 火力压制 E-3 出口后方的迫击炮阵地", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "与在奥克角攀崖的第 5 游骑兵营建立通讯联络", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_mg42_team": 5,
+        "ger_mp40_leader": 3,
+        "ger_sniper": 2,
+        "ger_pioneer": 2,
+        "pak40": 2,
+        "flak36_88": 2
+      },
+      "enemy_tactics_zh": "德军第 352 步兵师把机枪与迫击炮布置在滩后斜坡的‘抵抗巢’里，形成从两翼射向潮线的交叉火网；88mm 炮从内陆高地直射登陆艇，工兵在退潮区布下密集的桩柱、地雷与铁刺猬。",
+      "friendly_forces_zh": "第 1 步兵师第 16、第 18 步兵团与第 29 步兵师第 116 步兵团在 Dog Green 至 Fox Green 滩段逐波登陆，第 5 游骑兵营攀爬奥克角，第 741 坦克营的水陆坦克与舰炮火力提供仅有支援。海军舰炮按呼叫持续压制滩后目标。",
+      "terrain": "river",
+      "weather": "fog",
+      "time_of_day": "dawn",
+      "visibility_m": 300,
+      "difficulty": 8,
+      "par_time_s": 1700,
+      "weight_budget_kg": 26.0,
+      "resupply_points": 1,
+      "available_support": ["us_105_howitzer", "us_bazooka_team_attach"],
+      "vehicle_available": [],
+      "historical_note_zh": "1944 年 6 月 6 日拂晓 6 时 30 分，美军第 1 步兵师‘大红一师’与第 29 步兵师在奥马哈海滩登陆，即‘血腥奥马哈’。第 116 步兵团在 Dog Green 滩段遭德军第 352 步兵师机枪与迫击炮交叉压制，第 741 坦克营的水陆坦克多数在离岸前沉没，工兵在潮线障碍中伤亡惨重。第 5 游骑兵营攀上奥克角悬崖摧毁 155mm 炮台。至黄昏，第 1 师以约 2400 人伤亡的代价只向内陆推进约两公里，在滩头勉强站稳脚跟。滩头两侧的悬崖与海堤构成天然机枪射界。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 6 月 6 日美军第 1 步兵师与第 29 步兵师在奥马哈海滩登陆",
+          "第 741 坦克营的 DD 水陆坦克在离岸处大量沉没",
+          "第 5 游骑兵营攀爬奥克角悬崖攻击 155mm 炮台"
+        ],
+        "dramatized": [
+          "玩家班组穿越潮线障碍的具体路线与时间被压缩",
+          "‘抵抗巢’内敌军数量按可玩性调整"
+        ]
+      },
+      "design_note_zh": "本关教学『登陆阶段与潮汐机制』：跳板放下后 30 秒内必须冲出浅水，否则被机枪持续压制，上涨的潮水还会淹没倒地位置。工兵铲可在沙丘下挖出临时掩蔽，炸药包是唯一能破障的装备。失败条件是三波登陆艇用尽仍未建立滩头。",
+      "music_mood": "低沉的军号与海浪轰鸣下紧绷的弦乐",
+      "unlock_reward": { "xp": 1000, "weapon": "m1_garand", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.05 }
+    },
+    {
+      "id": "us_46_carentan_purple_heart",
+      "index": 46,
+      "number_in_campaign": 2,
+      "campaign_id": "us_western_1945",
+      "name_zh": "卡朗唐与紫心小道",
+      "name_en": "Carentan and Purple Heart Lane",
+      "date": "1944-06-12",
+      "location_zh": "法国卡朗唐与圣科姆迪蒙",
+      "location_en": "Carentan and Saint-Côme-du-Mont, Normandy",
+      "coordinates": "49.30N 1.25W",
+      "mission_type": "assault",
+      "faction": "us",
+      "player_role_zh": "你是第 101 空降师第 506 伞降步兵团的一名伞兵，沿完全暴露的堤道向卡朗唐推进。",
+      "player_class_recommended": ["rifleman", "assault", "scout"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿紫心小道堤道推进，夺取杜沃河上的铁路桥", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "肃清圣科姆迪蒙外围的德军伞兵据点", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "用 AN-M8 烟幕掩护班组跃进，压制磨坊方向的 MG42", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "守住 30 号高地，击退德军装甲掷弹兵的反冲击", "type": "primary", "required": true, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_fallschirmjager": 12,
+        "ger_mg42_team": 4,
+        "ger_ss_grenadier": 8,
+        "ger_mp40_leader": 3,
+        "ger_panzerfaust": 3,
+        "stug_iii_g": 2,
+        "ger_sniper": 2
+      },
+      "enemy_tactics_zh": "德军第 6 伞兵团把 FG42 与机枪架在堤道两侧树线和农舍二层，专打暴露在灌木之间的美军；工兵在紫心小道上埋设 S 雷与绊发雷，迫击炮按标定诸元封锁渡口，装甲掷弹兵随时准备反击。",
+      "friendly_forces_zh": "第 101 空降师第 506 伞降步兵团三个营沿堤道进攻，第 502 团在圣科姆迪蒙正面牵制，第 327 滑翔机步兵团与第 70 坦克营随后跟进，师属第 321 野战炮兵营提供火力支援。",
+      "terrain": "village",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 700,
+      "difficulty": 7,
+      "par_time_s": 1500,
+      "weight_budget_kg": 26.0,
+      "resupply_points": 2,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_p47_strike", "us_bazooka_team_attach"],
+      "vehicle_available": [],
+      "historical_note_zh": "1944 年 6 月 12 日，第 101 空降师第 506 伞降步兵团在辛克上校率领下沿‘紫心小道’（Purple Heart Lane）向卡朗唐推进，第 502 步兵团同时在圣科姆迪蒙与德军第 6 伞兵团争夺杜沃河渡口。6 月 13 日，德军第 17 装甲掷弹兵师在卡朗唐西南的 30 号高地发起反冲击，第 506 团 E 连在缺少炮火支援的情况下死守，史称‘血腥峡谷’之战。卡朗唐的夺取使犹他与奥马哈两个滩头连成一片。卡朗唐是连接两个登陆滩头的咽喉，德军第 6 伞兵团在此死守。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 6 月 12 日第 101 空降师第 506 伞降步兵团进攻卡朗唐",
+          "德军第 6 伞兵团在圣科姆迪蒙与杜沃河一线抵抗",
+          "6 月 13 日德军第 17 装甲掷弹兵师在卡朗唐西南发动反冲击"
+        ],
+        "dramatized": [
+          "紫心小道上的数次战斗被压缩为一次关卡推进",
+          "敌军规模按可玩性调整"
+        ]
+      },
+      "design_note_zh": "本关教学『烟幕与班组跃进』：堤道两侧完全暴露在机枪射界内，必须用 AN-M8 发烟手榴弹分段遮蔽，再让班组交替冲刺到下一个掩体；巴祖卡小组只有在侧翼掩护下才能击退三号突击炮。失败条件是 30 号高地被反冲击夺回。",
+      "music_mood": "手风琴与教堂钟声交织的紧张行军曲",
+      "unlock_reward": { "xp": 1100, "weapon": null, "class": "scout" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "us_47_cherbourg_fortress",
+      "index": 47,
+      "number_in_campaign": 3,
+      "campaign_id": "us_western_1945",
+      "name_zh": "瑟堡要塞攻坚",
+      "name_en": "Cherbourg Fortress Assault",
+      "date": "1944-06-22",
+      "location_zh": "法国瑟堡",
+      "location_en": "Cherbourg, Cotentin Peninsula, France",
+      "coordinates": "49.64N 1.62W",
+      "mission_type": "siege",
+      "faction": "us",
+      "player_role_zh": "你是第 79 步兵师的一名战斗工兵，任务是在混凝土炮台下炸开一条通路。",
+      "player_class_recommended": ["engineer", "rifleman", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "突破瑟堡城南的混凝土筑垒带", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "用 155mm 火力与炸药包摧毁鲁尔要塞炮台", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "夺取港口设施，阻止德军彻底破坏船坞", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "切断要塞地下坑道的联络，孤立守军指挥所", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 14,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 4,
+        "ger_mp40_leader": 4,
+        "pak40": 4,
+        "flak36_88": 3,
+        "ger_sniper": 2,
+        "sdkfz_222": 2
+      },
+      "enemy_tactics_zh": "德军第 709 步兵师与要塞炮兵依托钢筋混凝土炮台、地下坑道与雷场节节抵抗，海军岸炮与 88mm 高平两用炮封锁接近路，工兵退却时布下地雷与绊索照明弹，并用喷火器反扑坑道口。",
+      "friendly_forces_zh": "柯林斯少将指挥的美军第 7 军以第 4、第 9、第 79 步兵师自南向北推进，第 79 师正面强攻鲁尔要塞，军属炮兵与舰炮火力压制岸防炮台，工兵营逐堡实施爆破。海军舰炮亦参与压制。",
+      "terrain": "fortress",
+      "weather": "rain",
+      "time_of_day": "day",
+      "visibility_m": 400,
+      "difficulty": 8,
+      "par_time_s": 1800,
+      "weight_budget_kg": 28.0,
+      "resupply_points": 2,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon"],
+      "historical_note_zh": "1944 年 6 月 22 日，柯林斯少将指挥第 7 军向科唐坦半岛根部发起总攻，切断瑟堡与后方的联系。第 4、第 9、第 79 步兵师自南向北推进，德军第 709 步兵师与要塞守备队在冯·施利本中将指挥下依托混凝土炮台抵抗。6 月 26 日美军突入瑟堡城区，第 79 师在鲁尔要塞展开逐堡争夺。6 月 29 日冯·施利本投降，大西洋壁垒的重要军港落入美军之手，但港口设施已被德军彻底破坏。美军以舰炮与工兵爆破逐堡推进，战斗持续整整一周。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 6 月 22 日第 7 军开始向科唐坦半岛根部进攻",
+          "第 4、第 9、第 79 步兵师参与瑟堡作战",
+          "1944 年 6 月 29 日瑟堡守军投降"
+        ],
+        "dramatized": [
+          "‘切断坑道联络’作为可选目标出现",
+          "港口被破坏的程度被简化处理"
+        ]
+      },
+      "design_note_zh": "本关教学『要塞攻坚与工兵破障』：正面冲击混凝土炮台只会送命，须先用 155mm 火力削平射界，再由工兵以爆破筒与喷火器清剿坑道出口。补给点固定，28kg 的重装配置会拖慢坑道内机动。失败条件是在坑道内被德军火焰封死。",
+      "music_mood": "厚重的低音铜管与雨点般的军鼓",
+      "unlock_reward": { "xp": 1300, "weapon": null, "class": "engineer" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.1 }
+    },
+    {
+      "id": "us_48_saint_lo_bocage",
+      "index": 48,
+      "number_in_campaign": 4,
+      "campaign_id": "us_western_1945",
+      "name_zh": "圣洛与灌木篱墙",
+      "name_en": "Saint-Lô and the Bocage",
+      "date": "1944-07-11",
+      "location_zh": "法国圣洛与佩里耶公路",
+      "location_en": "Saint-Lô and the Périers Road, Normandy",
+      "coordinates": "49.12N 1.09W",
+      "mission_type": "assault",
+      "faction": "us",
+      "player_role_zh": "你是第 29 步兵师的一名步兵，在诺曼底灌木篱墙间逐块田向前爬行。",
+      "player_class_recommended": ["rifleman", "engineer", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "掩护‘犀牛’坦克切开树篱，逐块田推进至圣洛城郊", "type": "primary", "required": true, "time_limit_s": 1400 },
+        { "id": "obj2", "text_zh": "夺取并守住佩里耶公路的交叉口", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "用烟幕掩护侧翼，清除藏在田角的 Pak40", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "呼叫 105mm 火力压制德军迫击炮阵地", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 15,
+        "ger_mg42_team": 5,
+        "ger_panzerfaust": 4,
+        "ger_mp40_leader": 4,
+        "ger_sniper": 3,
+        "pak40": 3,
+        "stug_iii_g": 2
+      },
+      "enemy_tactics_zh": "德军把每片树篱根部挖通成机枪巢，Pak40 反坦克炮藏在田角并以伪装网遮蔽，只在最有效的距离开火；迫击炮按标定诸元覆盖田块间的缺口，散兵潜伏在苹果园里袭击美军侧后。",
+      "friendly_forces_zh": "第 29 步兵师与第 35 步兵师并肩向圣洛推进，第 2 装甲师提供坦克支援，第 102 骑兵侦察队的‘犀牛’改装坦克在前开路，师属炮兵以 105mm 急促射压制树篱火力点。工兵逐段清除雷场与铁丝网障碍。",
+      "terrain": "field",
+      "weather": "mud",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 8,
+      "par_time_s": 1700,
+      "weight_budget_kg": 25.5,
+      "resupply_points": 3,
+      "available_support": ["us_105_howitzer", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon"],
+      "historical_note_zh": "1944 年 7 月，第 29 步兵师与第 35 步兵师在圣洛外围的灌木篱墙间逐块田推进，德军把每片树篱都改造成机枪与 Pak40 的支撑点。为破解篱墙，第 29 师第 102 骑兵侦察队的卡林中士在坦克推土铲上焊出钢齿，造出‘犀牛’坦克切开树篱为步兵开路。7 月 18 日圣洛陷落，全城几成废墟，美军称之为‘废墟之都’，此前的推进每公里都要付出数百人伤亡。每推进一块田地都要先用迫击炮与机枪压制树篱后的火力点，伤亡极为惨重。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 7 月美军在圣洛外围的灌木篱墙地区苦战",
+          "第 29 步兵师第 102 骑兵侦察队的‘犀牛’坦克切开树篱",
+          "圣洛于 1944 年 7 月 18 日陷落"
+        ],
+        "dramatized": [
+          "卡林中士改装坦克的时点在关卡中被提前数日",
+          "德军各炮位位置为关卡设计"
+        ]
+      },
+      "design_note_zh": "本关教学『灌木篱墙战术』：正面走进田块必被机枪横扫，必须贴住树篱根部逐段跃进，用 AN-M8 烟幕切断德军观察，再让‘犀牛’坦克开口；巴祖卡与炸药包负责清除田角的反坦克炮。失败条件是弹药耗尽仍在同一片田块反复冲击。",
+      "music_mood": "闷热的弦乐与履带碾过树篱的节奏",
+      "unlock_reward": { "xp": 1200, "weapon": "bazooka_m1a1", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.05 }
+    },
+    {
+      "id": "us_49_operation_cobra",
+      "index": 49,
+      "number_in_campaign": 5,
+      "campaign_id": "us_western_1945",
+      "name_zh": "眼镜蛇行动突破",
+      "name_en": "Operation Cobra Breakout",
+      "date": "1944-07-25",
+      "location_zh": "法国圣洛以西马里尼",
+      "location_en": "Marigny, west of Saint-Lô, Normandy",
+      "coordinates": "49.09N 1.20W",
+      "mission_type": "breakthrough",
+      "faction": "us",
+      "player_role_zh": "你是第 4 步兵师的一名步枪手，紧跟谢尔曼坦克穿过重轰炸机炸开的缺口。",
+      "player_class_recommended": ["rifleman", "anti_tank", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在轰炸烟尘中跟进坦克，穿过突破口", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "夺取马里尼与圣吉尔之间的公路交叉口", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "引导 P-47 打击德军装甲集结地", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保障装甲纵队侧翼，阻止德军从树线反击", "type": "primary", "required": true, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 18,
+        "ger_mg42_team": 5,
+        "ger_ss_grenadier": 8,
+        "ger_panzerfaust": 5,
+        "pak40": 5,
+        "stug_iii_g": 4,
+        "pzkpfw_iv_f2": 3,
+        "pzkpfw_v_panther": 2
+      },
+      "enemy_tactics_zh": "德军第 84 军以残存步兵与突击炮在树线后构筑临时防线，Pak40 与铁拳小组埋伏在麦田和果园里，豹式与四号坦克从预备阵地向突破口侧翼反击，并以火箭炮与迫击炮覆盖公路交叉口。",
+      "friendly_forces_zh": "布莱德雷中将的第 1 集团军以柯林斯的第 7 军为矛头，第 1、第 4、第 9 步兵师打开缺口，第 2、第 3 装甲师沿公路向阿夫朗什突击，第 19 战术空军司令部的 P-47 提供空中支援。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 900,
+      "difficulty": 7,
+      "par_time_s": 1800,
+      "weight_budget_kg": 26.0,
+      "resupply_points": 4,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_p47_strike", "us_sherman_platoon"],
+      "vehicle_available": ["us_sherman_platoon", "pzkpfw_iv_f2"],
+      "historical_note_zh": "1944 年 7 月 25 日，布莱德雷中将在圣洛以西发动‘眼镜蛇行动’，约 1800 架重轰炸机为第 7 军开辟突破口，其中一批炸弹短投在美军阵地上，造成莱斯利·麦克奈尔中将阵亡。柯林斯的第 7 军以第 1、第 4、第 9 步兵师打开缺口，第 2、第 3 装甲师随后涌入科唐坦以西的开阔地。突破成功后，美军装甲纵队一周内推进至阿夫朗什，诺曼底防线被彻底撕开。德军防线被撕开后，装甲师沿乡间公路高速推进，德军再也无法组织起连贯的防御。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 7 月 25 日美军在圣洛以西发动眼镜蛇行动",
+          "柯林斯的第 7 军打开突破口后第 2、第 3 装甲师投入",
+          "莱斯利·麦克奈尔中将在此次轰炸的短投中阵亡"
+        ],
+        "dramatized": [
+          "P-47 的呼叫流程被简化为一次支援呼叫",
+          "德军预备队投入的时点按关卡节奏调整"
+        ]
+      },
+      "design_note_zh": "本关教学『装甲步兵协同与空袭风险』：弹幕落地后要立刻跟进坦克，落后一步德军就会重新占领弹坑；P-47 只在晴朗天气可呼叫且需要标记目标，误落在友军附近会造成真实伤害。谢尔曼正面无法对抗豹式，须用烟幕掩护侧翼机动。",
+      "music_mood": "铜管齐鸣的行进曲，伴随飞机俯冲的轰鸣",
+      "unlock_reward": { "xp": 1500, "weapon": null, "class": "anti_tank" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "us_50_mortain_hill_317",
+      "index": 50,
+      "number_in_campaign": 6,
+      "campaign_id": "us_western_1945",
+      "name_zh": "莫尔坦 317 高地死守",
+      "name_en": "Mortain: Hold Hill 317",
+      "date": "1944-08-07",
+      "location_zh": "法国莫尔坦",
+      "location_en": "Mortain, Normandy, France",
+      "coordinates": "48.65N 0.94W",
+      "mission_type": "defense",
+      "faction": "us",
+      "player_role_zh": "你是第 30 步兵师的一名反坦克兵，被合围在高地上，只能用巴祖卡和无线电挡住德军装甲师。",
+      "player_class_recommended": ["anti_tank", "machine_gunner", "rifleman"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在 317 高地构筑反坦克支撑点", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "用巴祖卡与反坦克炮击退豹式与虎式的轮番冲锋", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "以无线电引导 105mm 炮火与 P-47 空袭装甲纵队", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "守住通往阿夫朗什的公路，直到援军打通", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 14,
+        "pzkpfw_v_panther": 4,
+        "pzkpfw_vi_tiger": 2,
+        "stug_iii_g": 3,
+        "ger_panzerfaust": 6,
+        "ger_mg42_team": 4,
+        "sdkfz_251": 3,
+        "pak40": 3
+      },
+      "enemy_tactics_zh": "党卫军第 1、第 2 装甲师以豹式与虎式掩护装甲掷弹兵沿公路和林间小路轮番冲击，铁拳小组贴着树线接近反坦克炮位，88mm 炮与迫击炮压制高地上的火力点，夜间以半履带车运兵渗透。",
+      "friendly_forces_zh": "第 30 步兵师第 120 步兵团第 2 营被合围于 317 号高地，第 117 与第 119 步兵团在外围抵抗，师属炮兵与第 823 坦克歼击营提供火力，P-47 战斗机按无线电引导攻击山下队形。炮兵观察员在高地上坚持呼叫火力。",
+      "terrain": "village",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 800,
+      "difficulty": 9,
+      "par_time_s": 1900,
+      "weight_budget_kg": 27.0,
+      "resupply_points": 2,
+      "available_support": ["us_105_howitzer", "us_p47_strike", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon", "pzkpfw_v_panther"],
+      "historical_note_zh": "1944 年 8 月 7 日，德军发动‘吕蒂希行动’，集中党卫军第 1、第 2 装甲师等部队猛攻莫尔坦，企图切断美军向布列塔尼的突击。第 30 步兵师第 120 步兵团第 2 营在 317 号高地被合围，靠无线电引导炮兵与空投补给坚持六天，被称为‘失落营’。该师在莫尔坦周围以巴祖卡、反坦克炮与 P-47 轰炸阻滞德军装甲纵队，德军未能突破，反攻以损失大批坦克告终。第 30 步兵师的炮兵观察员在山上坚持呼叫火力，为盟军争取到重新部署的时间。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 8 月 7 日德军发动吕蒂希行动进攻莫尔坦",
+          "第 30 步兵师第 120 步兵团第 2 营在 317 号高地被合围",
+          "美军以炮兵与空中支援阻止了德军突破"
+        ],
+        "dramatized": [
+          "‘失落营’六天的坚守被压缩为一关",
+          "虎式与豹式的出现数量按可玩性调整"
+        ]
+      },
+      "design_note_zh": "本关教学『反坦克支撑点与炮兵引导』：把巴祖卡、反坦克炮与机枪组成互相掩护的交叉火网，等坦克进入 150m 内再打侧后；观察员必须保持视线才能让 105mm 与 P-47 命中山下队形，观察员阵亡将立即失去炮火支援。防线被突破即告失败。",
+      "music_mood": "压抑的定音鼓与逐步升高的弦乐",
+      "unlock_reward": { "xp": 1600, "weapon": "bar_m1918a2", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    },
+    {
+      "id": "us_51_falaise_pocket",
+      "index": 51,
+      "number_in_campaign": 7,
+      "campaign_id": "us_western_1945",
+      "name_zh": "法莱斯口袋收口",
+      "name_en": "Closing the Falaise Pocket",
+      "date": "1944-08-16",
+      "location_zh": "法国阿让唐与尚布瓦",
+      "location_en": "Argentan and Chambois, Normandy",
+      "coordinates": "48.79N 0.15W",
+      "mission_type": "breakthrough",
+      "faction": "us",
+      "player_role_zh": "你是第 2 装甲师的一名坦克搭载步兵，任务是封死法莱斯口袋唯一的出口。",
+      "player_class_recommended": ["anti_tank", "rifleman", "medic"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿阿让唐—尚布瓦公路向北突击，封闭口袋缺口", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "夺取并守住尚布瓦镇", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "以炮火与 P-47 封锁突围的德军纵队", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "火力勿越界，避免误击北面的波兰第 1 装甲师阵地", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_ss_grenadier": 8,
+        "ger_panzerfaust": 5,
+        "pak40": 5,
+        "stug_iii_g": 3,
+        "pzkpfw_iv_f2": 3,
+        "ger_mg42_team": 4
+      },
+      "enemy_tactics_zh": "被围德军以掷弹兵、伞兵与残留装甲车辆组成突围纵队，沿公路和田地昼夜冲击美军阵地；沿途丢弃的车辆与牲畜阻塞道路，后卫用 Pak40 和铁拳小组在树线阻击，并试图从美军与波兰军结合部挤出去。",
+      "friendly_forces_zh": "第 2 装甲师与第 4 步兵师自阿让唐北上，第 90 步兵师与波兰第 1 装甲师从北面合拢，军属 155mm 重炮与 P-47 战斗机封锁尚布瓦走廊，侦察机负责报告纵队位置。两个军的分界线靠烟雾与信号弹标示。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 800,
+      "difficulty": 7,
+      "par_time_s": 1700,
+      "weight_budget_kg": 26.5,
+      "resupply_points": 4,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_p47_strike", "us_sherman_platoon"],
+      "vehicle_available": ["us_sherman_platoon", "pzkpfw_v_panther"],
+      "historical_note_zh": "1944 年 8 月 16 日，盟军向法莱斯—尚布瓦口袋收口。美军第 2 装甲师与第 4 步兵师自阿让唐北上，波兰第 1 装甲师与加拿大部队自北面南下，布莱德雷曾因担心友军误击而令巴顿在阿让唐止步。8 月 19 日至 21 日，德军约十个师试图从尚布瓦走廊突围，在美军炮兵与战斗机轰炸下损失惨重。口袋合拢后德军在诺曼底被俘约五万人，这条走廊被称为‘死亡走廊’。布莱德雷的谨慎与巴顿的急躁在阿让唐一线形成僵局，口袋最终靠南北合围才被封死。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 8 月美军向法莱斯—尚布瓦口袋推进",
+          "第 2 装甲师与第 4 步兵师自阿让唐北上",
+          "波兰第 1 装甲师参与合围并守住尚布瓦方向"
+        ],
+        "dramatized": [
+          "避免误击友军的判定为游戏化设计",
+          "突围德军的规模与时间被浓缩"
+        ]
+      },
+      "design_note_zh": "本关教学『走廊封锁与火力识别』：不要追击每一股突围部队，先把炮火与坦克炮对准公路两侧的杀伤区；155mm 与 P-47 只能落在指定网格，越界命中友军即计入失败条件。守住尚布瓦是唯一硬目标，贪功追击会让口袋重新裂开。",
+      "music_mood": "急促的进行曲与远处爆炸的低鸣",
+      "unlock_reward": { "xp": 1700, "weapon": null, "class": "mortarman" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "us_52_liberation_of_paris",
+      "index": 52,
+      "number_in_campaign": 8,
+      "campaign_id": "us_western_1945",
+      "name_zh": "巴黎解放之日",
+      "name_en": "The Liberation of Paris",
+      "date": "1944-08-25",
+      "location_zh": "法国巴黎",
+      "location_en": "Paris, France",
+      "coordinates": "48.86N 2.35E",
+      "mission_type": "urban_clearing",
+      "faction": "us",
+      "player_role_zh": "你是第 4 步兵师的一名步兵，沿奥尔良公路进城，在欢呼的人群与零星的枪声之间前进。",
+      "player_class_recommended": ["assault", "rifleman", "medic"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿奥尔良公路进城，与抵抗力量会合", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "肃清塞纳河桥头与市政厅周边的德军据点", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "抵达默里斯饭店，接受德军城防司令投降", "type": "primary", "required": true, "time_limit_s": null, "condition": "reach_location", "radius_m": 4, "marker_x_m": 18, "marker_y_m": 14 },
+        { "id": "obj4", "text_zh": "保护文物建筑与平民，避免重炮轰击市区", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 8,
+        "ger_mp40_leader": 2,
+        "ger_mg42_team": 2,
+        "ger_sniper": 1,
+        "sdkfz_222": 1
+      },
+      "enemy_tactics_zh": "德军城防部队在桥梁、政府大楼与屋顶布置机枪与狙击手，装甲侦察车在广场机动袭扰；冯·肖尔蒂茨为免城市被毁而消极抵抗，多数据点一触即退，但党卫军残部仍会死守个别建筑并对人群射击。",
+      "friendly_forces_zh": "美军第 4 步兵师第 8、第 22 步兵团沿奥尔良公路进入巴黎，法军第 2 装甲师从北面推进，法兰西内地军控制警察总署并引导街区，第 102 骑兵侦察群提供先遣侦察。",
+      "terrain": "city",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 1000,
+      "difficulty": 4,
+      "par_time_s": 1400,
+      "weight_budget_kg": 24.0,
+      "resupply_points": 3,
+      "available_support": ["us_105_howitzer", "us_sherman_platoon"],
+      "vehicle_available": ["us_sherman_platoon"],
+      "historical_note_zh": "1944 年 8 月 25 日，美军第 4 步兵师与法军第 2 装甲师进入巴黎。此前巴黎抵抗力量已于 8 月 19 日发动起义并占领警察总署。德军城防司令冯·肖尔蒂茨中将违反希特勒炸毁城市的命令，于当日下午在默里斯饭店签署投降书。8 月 26 日戴高乐沿香榭丽舍大街举行胜利阅兵，巴黎在四年占领后重获自由，第 4 步兵师成为解放首都的美军部队。第 4 步兵师进城时巴黎市民涌上街头，德军狙击手仍在个别屋顶射击，巷战与欢呼交织在一起。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 8 月 25 日第 4 步兵师与法军第 2 装甲师进入巴黎",
+          "冯·肖尔蒂茨违反爆破巴黎的命令并签署投降书",
+          "8 月 26 日戴高乐在香榭丽舍大街举行胜利阅兵"
+        ],
+        "dramatized": [
+          "抵抗力量的起义被简化为背景事件",
+          "城内战斗规模按关卡节奏缩减"
+        ]
+      },
+      "design_note_zh": "本关教学『要点控制与平民保护』：巴黎的抵抗微弱，但误伤平民或损毁文物会直接降低关卡评价。用 M1 卡宾枪与战壕霰弹枪清理街道两侧窗口的狙击手，尽量不要呼叫 155mm 重炮。目标是以最快速度抵达默里斯饭店，而不是杀敌数量。",
+      "music_mood": "手风琴与进行曲交织的欢庆旋律",
+      "unlock_reward": { "xp": 1400, "weapon": "thompson_m1a1", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 0.95 }
+    },
+    {
+      "id": "us_53_hurtgen_forest",
+      "index": 53,
+      "number_in_campaign": 9,
+      "campaign_id": "us_western_1945",
+      "name_zh": "许特根血桶森林",
+      "name_en": "The Hürtgenwald: Bloody Bucket",
+      "date": "1944-09-19",
+      "location_zh": "德国许特根森林",
+      "location_en": "Hürtgenwald, Germany",
+      "coordinates": "50.70N 6.35E",
+      "mission_type": "assault",
+      "faction": "us",
+      "player_role_zh": "你是第 28 步兵师的一名步枪手，在阴雨和泥泞中进入一片几乎看不见敌人的森林。",
+      "player_class_recommended": ["rifleman", "scout", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿林间小径穿过地雷与铁丝网，夺取第一道树线阵地", "type": "primary", "required": true, "time_limit_s": 1800 },
+        { "id": "obj2", "text_zh": "摧毁伪装在树冠与掩体后的机枪巢和 Pak40", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "在零补给条件下以 K 口粮与 D 口粮维持体力，守住已占领的林间阵地", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "引导 155mm 炮火轰击施密特方向的反击部队", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 18,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 4,
+        "ger_sniper": 4,
+        "ger_panzerfaust": 4,
+        "pak40": 4,
+        "stug_iii_g": 3,
+        "pzkpfw_iv_f2": 2
+      },
+      "enemy_tactics_zh": "德军在树线之间布下地雷与绊发雷，以桩柱标定射击诸元，MG42 与伪装狙击手从树冠和掩体后近距离开火；美军炮弹多在树冠上炸开，德军则依靠预构筑蔽所与反击小组逐块林区夺回阵地。",
+      "friendly_forces_zh": "第 9 步兵师与第 28 步兵师在阴雨中向许特根推进，第 1 步兵师与第 4 步兵师随后投入争夺施密特与鲁尔河大坝，工兵在雷场中开辟通道，炮兵因树冠遮蔽效果大减。",
+      "terrain": "forest",
+      "weather": "rain",
+      "time_of_day": "day",
+      "visibility_m": 120,
+      "difficulty": 9,
+      "par_time_s": 2100,
+      "weight_budget_kg": 23.0,
+      "resupply_points": 0,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon", "stug_iii_g"],
+      "historical_note_zh": "1944 年 9 月 19 日，美军开始向德比边境的许特根森林推进，第 9、第 28 步兵师在秋季泥泞与阴雨中撞进德军预设的树线火力点与地雷网。林中能见度不足百米，美军炮弹多在树冠上爆炸，弹片反而大量杀伤己方步兵。11 月初第 28 步兵师第 112 团一度占领施密特，随即被德军装甲反击逐出。第 1 步兵师与第 4 步兵师随后投入争夺施密特与鲁尔河大坝，这场‘血桶森林’之战美军伤亡逾两万四千人。德军在林中预设了大量诱杀阵地与坑道掩蔽所。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 9 月起美军在许特根森林与德军激战",
+          "第 28 步兵师第 112 团一度攻占施密特后被德军反击逐出",
+          "美军在森林战中伤亡约两万四千人"
+        ],
+        "dramatized": [
+          "第 9、第 28 与第 1 步兵师的作战时段被压缩进同一关卡",
+          "补给断绝与低温的生存压力为玩法化处理"
+        ]
+      },
+      "design_note_zh": "本关教学『恶劣天气下的生存压力』：全程 0 补给点，雨水与低温让食物、水与体温的消耗达到最高档，K 口粮与 D 口粮必须精打细算，M1 钢盔只挡破片挡不住近距离狙击。能见度仅 120m，炮击散布翻倍。失败条件是班组体力归零或弹药耗尽。",
+      "music_mood": "低沉的单簧管与雨声中零星的枪响",
+      "unlock_reward": { "xp": 1900, "weapon": "m2_flamethrower", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    },
+    {
+      "id": "us_54_aachen_streets",
+      "index": 54,
+      "number_in_campaign": 10,
+      "campaign_id": "us_western_1945",
+      "name_zh": "亚琛古城巷战",
+      "name_en": "Aachen Street Fighting",
+      "date": "1944-10-02",
+      "location_zh": "德国亚琛",
+      "location_en": "Aachen, Germany",
+      "coordinates": "50.78N 6.08E",
+      "mission_type": "urban_clearing",
+      "faction": "us",
+      "player_role_zh": "你是第 1 步兵师‘大红一师’的一名突击兵，逐屋清理第一座德国大城市。",
+      "player_class_recommended": ["assault", "engineer", "medic"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿亚琛西南缘逐屋推进，切断守军退路", "type": "primary", "required": true, "time_limit_s": 1500 },
+        { "id": "obj2", "text_zh": "用喷火器与炸药包肃清下水道与酒窖中的守军", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "夺取教堂钟楼与市政厅，建立观察所", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "呼叫 155mm 炮火摧毁街区尽头的反坦克炮阵地", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_volkssturm": 14,
+        "ger_landser_rifleman": 12,
+        "ger_mg42_team": 5,
+        "ger_panzerfaust": 6,
+        "ger_pioneer": 3,
+        "ger_sniper": 3,
+        "stug_iii_g": 3
+      },
+      "enemy_tactics_zh": "德军第 246 国民掷弹兵师与国民突击队把机枪架在楼房二层和街垒后，用铁拳封锁街口，工兵炸开路面引水灌入地下室，狙击手依托教堂与屋顶逐点射击，反击小组从巷口与下水道突然出现。",
+      "friendly_forces_zh": "第 1 步兵师在第 19 军编成内正面强攻亚琛，第 30 步兵师自北面合围，第 3 装甲师切断德军退路，军属炮兵与专门调来的喷火坦克支援逐屋清剿。喷火坦克沿街逐门支援步兵。",
+      "terrain": "city",
+      "weather": "rain",
+      "time_of_day": "day",
+      "visibility_m": 300,
+      "difficulty": 8,
+      "par_time_s": 1900,
+      "weight_budget_kg": 26.0,
+      "resupply_points": 2,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon"],
+      "historical_note_zh": "1944 年 10 月，美军第 1 步兵师与第 30 步兵师向亚琛合围。10 月 2 日第 19 军发起正面进攻，许布纳少将的‘大红一师’沿亚琛西南缘逐屋推进，第 3 装甲师在城北切断德军退路。德军第 246 国民掷弹兵师与国民突击队依托下水道、酒窖和教堂钟楼抵抗，工兵多次炸开街道灌水阻援。10 月 21 日亚琛守军投降，这是盟军攻占的第一座德国大城市，第 1 步兵师为此付出数千人伤亡。亚琛的陷落成为盟军推进到德国本土的标志，也让美军付出了高昂代价。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 10 月第 1 步兵师与第 30 步兵师合围亚琛",
+          "亚琛于 1944 年 10 月 21 日投降，是盟军攻占的第一座德国大城市",
+          "德军以国民掷弹兵师与国民突击队守城"
+        ],
+        "dramatized": [
+          "下水道与酒窖战斗为代表性再现",
+          "许布纳少将的指挥细节被简化"
+        ]
+      },
+      "design_note_zh": "本关教学『室内与地下空间清理』：投弹前要先判断 Mk 2 的 4.5 秒引信与墙面反弹角度，否则会被守军回掷；喷火器与炸药包是清剿地下室的主力但负重极高，M1919A4 只能架在街口封锁通道。失败条件是被反冲击切断进城部队的后路。",
+      "music_mood": "工业感的打击乐与不祥的大提琴",
+      "unlock_reward": { "xp": 1800, "weapon": "shotgun_m1897", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "us_55_bastogne_snow_line",
+      "index": 55,
+      "number_in_campaign": 11,
+      "campaign_id": "us_western_1945",
+      "name_zh": "巴斯托涅雪地防线",
+      "name_en": "Bastogne: The Snow Line",
+      "date": "1944-12-20",
+      "location_zh": "比利时巴斯托涅",
+      "location_en": "Bastogne, Belgium",
+      "coordinates": "50.00N 5.72E",
+      "mission_type": "defense",
+      "faction": "us",
+      "player_role_zh": "你是第 101 空降师第 506 伞降步兵团的一名伞兵，在雪雾中守住阿登公路的岔路口。",
+      "player_class_recommended": ["anti_tank", "machine_gunner", "medic"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在巴斯托涅四周构筑散兵坑与反坦克障碍", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "击退德军装甲掷弹兵与坦克的多次冲击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "在弹药药品短缺、气温零下的条件下守住路口，等待第 4 装甲师解围", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "以炮兵观察员引导 105mm 火力封锁林缘", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 12,
+        "ger_landser_rifleman": 14,
+        "pzkpfw_v_panther": 3,
+        "pzkpfw_vi_tiger": 2,
+        "stug_iii_g": 3,
+        "ger_panzerfaust": 5,
+        "ger_mg42_team": 4,
+        "sdkfz_251": 3
+      },
+      "enemy_tactics_zh": "德军以豹式和虎式坦克掩护装甲掷弹兵在雪雾中逼近，利用林缘与道路反斜面接近，铁拳小组潜行到近距攻击坦克歼击车；夜间用探照灯配合直射火力压制，突击队穿插进美军散兵坑之间。",
+      "friendly_forces_zh": "第 101 空降师第 506、第 501、第 502 伞降步兵团与第 10 装甲师 B 战斗群固守巴斯托涅路口，第 327 滑翔机步兵团与第 705 坦克歼击营提供反装甲火力，第 4 装甲师从南面打通解围走廊。",
+      "terrain": "forest",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 200,
+      "difficulty": 10,
+      "par_time_s": 2100,
+      "weight_budget_kg": 24.0,
+      "resupply_points": 0,
+      "available_support": ["us_105_howitzer", "us_bazooka_team_attach"],
+      "vehicle_available": ["us_sherman_platoon", "pzkpfw_vi_tiger"],
+      "historical_note_zh": "1944 年 12 月 20 日，第 101 空降师以第 506 伞降步兵团等部队先头进入巴斯托涅，与第 10 装甲师 B 战斗群会合，受命守住阿登公路的七条交叉路口。12 月 22 日德军劝降，麦考利夫准将回以‘Nuts!’。部队在零下严寒、弹药与药品短缺的条件下依托树林与散兵坑击退德军装甲步兵的多次冲击，直至 12 月 26 日第 4 装甲师打通走廊。巴斯托涅的防守挡住了德军向马斯河的推进。巴斯托涅的路口连通七条公路，是阿登地区最关键的位置，守住它等于掐住德军油料补给线。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 12 月 20 日第 101 空降师进入巴斯托涅设防",
+          "12 月 22 日麦考利夫准将回以‘Nuts!’拒绝劝降",
+          "12 月 26 日第 4 装甲师打通解围走廊"
+        ],
+        "dramatized": [
+          "零下气温与弹药短缺的数值为玩法化设定",
+          "德军进攻波次被压缩"
+        ]
+      },
+      "design_note_zh": "本关教学『冬季防御的生存极限』：0 补给点，积雪与零下气温让食物、水与体温消耗达到全局最高，弹药只能从阵亡者身上搜集；D 口粮可边移动边进食，是撑过夜间的唯一口粮。云层使 P-47 完全不可用，炮火与坦克歼击车是仅有支援。丢掉路口即失败。",
+      "music_mood": "寒风般的弦乐与远处坦克的低吼",
+      "unlock_reward": { "xp": 2200, "weapon": "m1919a4", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.2 }
+    },
+    {
+      "id": "us_56_remagen_bridge",
+      "index": 56,
+      "number_in_campaign": 12,
+      "campaign_id": "us_western_1945",
+      "name_zh": "雷马根大桥夺取",
+      "name_en": "The Bridge at Remagen",
+      "date": "1945-03-07",
+      "location_zh": "德国雷马根",
+      "location_en": "Remagen, Germany",
+      "coordinates": "50.58N 7.23E",
+      "mission_type": "river_crossing",
+      "faction": "us",
+      "player_role_zh": "你是第 9 装甲师的一名战斗工兵，冲上莱茵河上最后一座还立着的桥。",
+      "player_class_recommended": ["engineer", "assault", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在德军炸桥前冲过鲁登道夫大桥，夺取东岸桥头堡", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "清除桥塔与桥面的爆破装置，由工兵切断引信", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "建立桥头阵地，阻止德军装甲步兵反击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "引导 P-47 打击东岸高地上的 88mm 炮位", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 12,
+        "ger_mg42_team": 5,
+        "ger_panzerfaust": 5,
+        "ger_pioneer": 3,
+        "flak36_88": 3,
+        "pak40": 3,
+        "ger_sniper": 3,
+        "fw190": 2
+      },
+      "enemy_tactics_zh": "德军以 88mm 高射炮与机枪封锁桥面，工兵在桥体布设爆破装药并在美军逼近时点燃引信，东岸掷弹兵与铁拳小组依托铁路隧道和山坡反斜面反击，Fw 190 不时扫射桥头试图摧毁这座桥。",
+      "friendly_forces_zh": "第 9 装甲师 B 战斗群第 14 坦克营与第 27 装甲步兵营率先抵达雷马根，第 1 集团军随后投入第 78 步兵师等部队扩大桥头堡，工兵持续加固桥面并拆除残余装药，P-47 压制东岸高炮阵地。",
+      "terrain": "river",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 900,
+      "difficulty": 8,
+      "par_time_s": 1600,
+      "weight_budget_kg": 26.0,
+      "resupply_points": 3,
+      "available_support": ["us_105_howitzer", "us_155_heavy", "us_p47_strike", "us_sherman_platoon"],
+      "vehicle_available": ["us_sherman_platoon"],
+      "historical_note_zh": "1945 年 3 月 7 日，美国第 1 集团军第 9 装甲师 B 战斗群抵达雷马根，发现德军未能炸毁鲁登道夫大桥。蒂默曼中尉率第 27 装甲步兵营与第 14 坦克营的士兵在守军火力与炸桥爆炸中冲过大桥，当日下午建立东岸桥头堡。霍奇斯将军与布莱德雷迅速投入数个师扩大桥头阵地，希特勒震怒下令惩处失职军官。这是盟军跨过莱茵河的第一座桥，十天后因过载与爆破损伤而垮塌。美军工兵在德军炮火下抢修桥面，装甲部队连夜过河。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 3 月 7 日第 9 装甲师 B 战斗群夺取鲁登道夫大桥",
+          "蒂默曼中尉率第 27 装甲步兵营冲过桥面",
+          "大桥于十天后因损伤与超载垮塌"
+        ],
+        "dramatized": [
+          "爆破倒计时的秒数为关卡设计",
+          "德军高炮阵地位置按地形简化"
+        ]
+      },
+      "design_note_zh": "本关教学『桥梁夺取与拆弹时限』：地图上有倒计时爆破装置，必须在限定时间内夺取桥面并让工兵在桥塔处切断引信，任何迟疑都会以桥梁被炸毁告终。桥面狭窄无法展开，烟幕与压制火力是交替推进的前提；谢尔曼上不了桥，桥头只能靠步兵与巴祖卡夺取。",
+      "music_mood": "由远及近的鼓点与爆炸后的静默",
+      "unlock_reward": { "xp": 2800, "weapon": "springfield_m1903a4", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    }
+  ]
+}

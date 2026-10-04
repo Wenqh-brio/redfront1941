@@ -1,0 +1,31 @@
+Name,id,name_zh,name_en,faction,category,caliber,damage,rpm,magazine,reload_s,weight_kg,accuracy,effective_range_m,penetration_mm,mobility_mod,ammo_type,unlock_level,realism,note
+mosin_m1891_30,莫辛-纳甘 M1891/30,Mosin-Nagant M1891/30,soviet,rifle_bolt,7.62x54mmR,78,15,5,4.2,4,0.92,550,12,0.98,rifle_762x54,1,手动旋转后拉枪机，5发桥夹装填；伏击与远距点射的主力。,苏军步兵制式步枪，精度高但射速低，适合防守阶段。
+mosin_pu_sniper,莫辛-纳甘 PU 狙击型,Mosin-Nagant PU Sniper,soviet,sniper,7.62x54mmR,95,12,5,4.6,4.6,0.99,800,12,0.95,rifle_762x54,4,3.5x PU 镜，狙击手可标记目标并为炮击提供校射。,狙击专长核心武器；开镜时呼吸抖动需用屏息抑制。
+svt40,SVT-40 半自动步枪,SVT-40,soviet,rifle_semi,7.62x54mmR,72,150,10,3.4,4.1,0.88,500,12,0.98,rifle_762x54,3,半自动火力优于栓动，但结构复杂、维护需求高（雨天故障率 +）。,海军步兵与近卫部队常见。
+ppsh41,PPSh-41 冲锋枪,PPSh-41,soviet,smg,7.62x25mm,34,900,71,3,3.6,0.62,150,3,1,pistol_762x25,2,71发弹鼓，近距离压制力极强；后坐与散布在连发时显著上升。,城市巷战（斯大林格勒、柏林）的核心武器。
+pps43,PPS-43 冲锋枪,PPS-43,soviet,smg,7.62x25mm,32,700,35,2.4,3,0.66,150,3,1.03,pistol_762x25,5,折叠枪托、轻便，列宁格勒围城期间大量生产。,侦察兵与坦克搭载步兵优选。
+dp28,DP-27 轻机枪,DP-27,soviet,lmg,7.62x54mmR,74,550,47,5,9.1,0.72,700,12,0.82,rifle_762x54,6,47发盘形弹匣，需副射手装填；两脚架架设后精度提升。,机枪专长武器，架设/未架设两套射击参数。
+maxim_m1910,马克沁 M1910 重机枪,Maxim M1910,soviet,hmg_emplacement,7.62x54mmR,76,600,250,8,45,0.8,1000,12,0.35,rifle_762x54,8,带索科洛夫轮架，可转移阵地但极慢；水冷需注意冷却水。,防守关卡可部署，属于阵地支援装备而非随身武器。
+ptrds41,PTRD-41 反坦克枪,PTRD-41,soviet,at_rifle,14.5x114mm,55,8,1,5.5,17.3,0.85,400,35,0.7,at_145,7,单发后坐巨大，仅能击穿轻型装甲侧面与观察窗。,反坦克专长可携带；对四号/三号正面效果有限，需侧射。
+rpg43,RPG-43 反坦克手榴弹,RPG-43 AT Grenade,soviet,at_grenade_thrower,107mm HEAT,90,6,1,3.2,1.07,0.55,20,75,0.99,none,6,需命中装甲板法线附近才有效击穿，投掷距离短。,以投掷物形式消耗，不作为主武器槽。
+roks2,ROKS-2 喷火器,ROKS-2 Flamethrower,soviet,flamethrower,火焰,88,0,1,6,22,0.5,35,0,0.72,fuel_tank,12,对掩体/坑道内敌人极有效，燃料罐被击中会殉爆。,工兵专长解锁，适合要塞与地堡攻坚。
+nagant_m1895,纳甘 M1895 转轮手枪,Nagant M1895,soviet,sidearm,7.62x38mmR,30,40,7,5.5,0.8,0.6,40,2,1.02,pistol_762x38,1,装填需逐发退壳，射速极慢。,坦克手、医护兵的备用武器。
+tt33,TT-33 手枪,TT-33,soviet,sidearm,7.62x25mm,32,90,8,2,0.85,0.66,50,3,1.02,pistol_762x25,2,弹匣装填，抛壳迅猛。,军官与装甲兵配枪。
+m1_garand,M1 加兰德步枪,M1 Garand,us,rifle_semi,.30-06,76,130,8,2.8,4.3,0.9,550,12,0.98,rifle_3006,1,8发漏夹，打空时弹夹弹出有声（暴露位置）。,美军步兵班火力基础。
+m1_carbine,M1 卡宾枪,M1 Carbine,us,carbine,.30 Carbine,42,220,15,2.4,2.4,0.78,260,4,1.05,carbine_30,3,轻便但停止作用不足，对厚冬衣目标需多发命中。,军官、车辆乘员、支援兵种常用。
+thompson_m1a1,汤普森 M1A1 冲锋枪,Thompson M1A1,us,smg,.45 ACP,40,700,30,3,4.8,0.64,150,3,0.97,pistol_45,4,射速较 PPSh 低但停止作用强，弹匣容量小。,美军突击与班组指挥兵种。
+bar_m1918a2,BAR M1918A2 自动步枪,BAR M1918A2,us,lmg,.30-06,70,500,20,3.6,8.8,0.74,600,12,0.84,rifle_3006,6,20发弹匣，两脚架架设后可稳定连发。,美军自动步枪手（自动步枪班）核心。
+m1919a4,M1919A4 重机枪,M1919A4 Browning,us,lmg,.30-06,72,550,250,7,14,0.78,900,12,0.62,rifle_3006,9,需要三脚架与副射手，转移阵地耗时。,连/营属机枪，防守关卡可部署。
+springfield_m1903a4,斯普林菲尔德 M1903A4 狙击型,M1903A4 Sniper,us,sniper,.30-06,94,14,5,4.4,4.4,0.99,850,12,0.95,rifle_3006,5,2.5x 韦弗镜，无备用机械瞄具。,美军狙击手专长武器。
+bazooka_m1a1,M1A1 巴祖卡火箭筒,M1A1 Bazooka,us,at_rocket,60mm HEAT,92,5,1,6,6,0.62,120,90,0.88,rocket_60,7,尾焰明显，需开阔后方；对厚重装甲正面可能失效。,美军反坦克专长武器。
+shotgun_m1897,M1897 战壕霰弹枪,Winchester M1897 Trench Gun,us,shotgun,12号霰弹,96,70,5,5,3.6,0.35,25,2,1,shell_12,8,泵动，近距离一击致命，超过 25m 迅速失效。,太平洋/西线近战清屋利器。
+m2_flamethrower,M2 喷火器,M2 Flamethrower,us,flamethrower,凝固汽油,90,0,1,7,30,0.5,40,0,0.68,fuel_tank,12,重量大且持续约 10 秒，喷射罐为致命弱点。,战斗工兵专长武器。
+m1911a1,M1911A1 手枪,M1911A1,us,sidearm,.45 ACP,38,80,7,2.2,1.1,0.65,50,3,1.01,pistol_45,1,停止作用强，弹容量小。,美军制式手枪。
+kgb_captured_mp40,缴获 MP40,Captured MP40,captured,smg,9x19mm,36,550,32,2.6,3.9,0.7,150,3,1,pistol_9mm,10,弹药需从德军尸体/补给点搜集，resupply 稀缺。,侦察与游骑兵单位常缴获使用。
+captured_stg44,缴获 StG 44,Captured StG 44,captured,assault_rifle,7.92x33mm Kurz,52,500,30,3,4.6,0.76,300,6,0.98,kurz_792,16,介于冲锋枪与步枪之间，弹药极难补充。,1944 年后战场拾取，属于高风险高回报选择。
+captured_kar98k,缴获 Kar98k,Captured Kar98k,captured,rifle_bolt,7.92x57mm,79,16,5,4,3.9,0.92,550,12,0.99,mauser_792,9,与莫辛纳甘性能接近，弹药来源不稳。,游击队与缴获使用。
+captured_mg42,缴获 MG42,Captured MG42,captured,lmg,7.92x57mm,76,1200,50,6,11.6,0.7,800,12,0.76,mauser_792,17,极高射速带来极快弹药消耗与过热。,缴获后作为固定火力点使用。
+soviet_sapper_kit,工兵爆破包,Sapper Demolition Kit,soviet,demolition,TNT/炸药,100,0,3,4,6.5,0.9,8,60,0.9,charge,11,需贴近放置并撤离引爆，可破坏铁丝网、碉堡门与桥梁。,工兵专长，关卡目标常要求爆破。
+82mm_mortar,82-BM-37 82mm 迫击炮,82-BM-37 Mortar,soviet,mortar_indirect,82mm HE,105,12,1,3,12.4,0.55,3000,0,0.72,shell_82,8,班组迫击炮，需架设（1.5 秒）后曲射；最小射程 100m，无法用于 100m 内的近战。,迫击炮手专长核心装备：可打击掩体后方的机枪位。
+60mm_mortar_m2,M2 60mm 迫击炮,M2 60mm Mortar,us,mortar_indirect,60mm HE,85,14,1,2.6,8.2,0.58,1800,0,0.82,shell_60,8,连属迫击炮，可由一人携行转移；射程短但架设快。,美军迫击炮手专长装备，配合前进观察员校射。
+tanker_ppsh_short,坦克手 PPSh-41（短枪管）,Tanker PPSh-41,soviet,smg,7.62x25mm,33,880,71,3,3.2,0.6,120,3,1.02,pistol_762x25,4,车内携行型，跳车后自卫使用。,坦克搭载步兵与车组武器。

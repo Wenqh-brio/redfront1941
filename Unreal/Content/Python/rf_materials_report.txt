@@ -1,0 +1,20 @@
+======================================================================
+RedFront 1941 — UE 编辑器内材质与 Paper2D 资产生成
+清单：E:\GAMES\RedFront1941\Unreal\Content\RedFront\Art2D\art-manifest.json
+======================================================================
+导入贴图：102 张
+贴图属性设置完成：102/102
+  ✔ 使用已有 Master Material：M_Terrain_2D
+  ✔ 使用已有 Master Material：M_Sprite_Lit
+  ✔ 使用已有 Master Material：M_Decal_2D
+  ✔ 使用已有 Master Material：M_VFX_Additive
+  ✔ 使用已有 Master Material：M_Smoke_Translucent
+  ✔ 使用已有 Master Material：M_Parallax_Layer
+  ✔ 使用已有 Master Material：M_UI_Panel
+创建 Material Instance：69/69
+创建 Paper2D：Sprite 560 个 / 定向动画 Flipbook 100 个
+  ✔ 角色 Blueprint 已绑定四向待机动画：BP_SOV_PlayerCharacter
+  ✔ 角色 Blueprint 已绑定四向待机动画：BP_US_PlayerCharacter
+  ✔ 角色 Blueprint 已绑定四向待机动画：BP_GER_EnemyCharacter
+----------------------------------------------------------------------
+完成：Master Material 7 · Instance 69 · Sprite 560 · Flipbook 100 · Character BP 3

@@ -1,0 +1,211 @@
+{
+  "$schema": "redfront.equipment/1",
+  "units": { "weight": "kg", "hydration": "% 水壶容量", "calories": "kcal 折算的饱食度点数" },
+  "categories": {
+    "grenade": "手榴弹与投掷物",
+    "food": "食物",
+    "water": "饮水",
+    "medical": "医疗",
+    "tool": "工具与构筑",
+    "armor": "防护",
+    "ammo": "弹药"
+  },
+  "items": [
+    {
+      "id": "rgd33", "category": "grenade", "name_zh": "RGD-33 手榴弹", "name_en": "RGD-33",
+      "faction": "soviet", "weight_kg": 0.5, "count_per_slot": 2,
+      "effect": { "damage": 95, "radius_m": 6, "fuse_s": 3.5, "fragments": 12 },
+      "realism": "需先拉动引信再投掷，3.5 秒引信；室内反弹风险高。",
+      "note": "苏军标准杀伤手榴弹。"
+    },
+    {
+      "id": "f1_grenade", "category": "grenade", "name_zh": "F-1 防御手榴弹", "name_en": "F-1 Grenade",
+      "faction": "soviet", "weight_kg": 0.6, "count_per_slot": 2,
+      "effect": { "damage": 110, "radius_m": 9, "fuse_s": 4.0, "fragments": 22 },
+      "realism": "破片范围大，投掷者需掩蔽，属于防御型。",
+      "note": "「柠檬」手榴弹，城市防守好用。"
+    },
+    {
+      "id": "rg42_smoke", "category": "grenade", "name_zh": "RDG-42 发烟手榴弹", "name_en": "RDG-42 Smoke",
+      "faction": "soviet", "weight_kg": 0.55, "count_per_slot": 2,
+      "effect": { "damage": 0, "radius_m": 12, "fuse_s": 2.0, "smoke_duration_s": 22 },
+      "realism": "遮蔽机枪视线，掩护横越开阔地。",
+      "note": "攻坚与撤退必备。"
+    },
+    {
+      "id": "molotov", "category": "grenade", "name_zh": "燃烧瓶", "name_en": "Molotov Cocktail",
+      "faction": "soviet", "weight_kg": 0.9, "count_per_slot": 2,
+      "effect": { "damage": 70, "radius_m": 4, "fuse_s": 0, "fire_duration_s": 15, "penetration_mm": 25 },
+      "realism": "对发动机舱与观察窗有效，火焰持续阻挡通道。",
+      "note": "民兵与反坦克小组常用。"
+    },
+    {
+      "id": "mk2_grenade", "category": "grenade", "name_zh": "Mk 2 手榴弹", "name_en": "Mk 2 Grenade",
+      "faction": "us", "weight_kg": 0.6, "count_per_slot": 2,
+      "effect": { "damage": 100, "radius_m": 8, "fuse_s": 4.5, "fragments": 18 },
+      "realism": "4.5 秒引信较长，可能被敌人回掷。",
+      "note": "美军标准手榴弹（菠萝）。"
+    },
+    {
+      "id": "anm8_smoke", "category": "grenade", "name_zh": "AN-M8 发烟手榴弹", "name_en": "AN-M8 Smoke",
+      "faction": "us", "weight_kg": 0.7, "count_per_slot": 2,
+      "effect": { "damage": 0, "radius_m": 14, "fuse_s": 2.0, "smoke_duration_s": 25 },
+      "realism": "白磷/六氯乙烷烟幕，可掩护班组跃进。",
+      "note": "美军班组战术核心道具。"
+    },
+    {
+      "id": "satchel_charge", "category": "grenade", "name_zh": "炸药包", "name_en": "Satchel Charge",
+      "faction": "both", "weight_kg": 3.2, "count_per_slot": 1,
+      "effect": { "damage": 100, "radius_m": 8, "fuse_s": 6.0, "structure_damage": 300 },
+      "realism": "可爆破碉堡、桥梁与路障；需贴近放置并撤离。",
+      "note": "关卡目标道具，占用较大负重。"
+    },
+    {
+      "id": "rpg43_at", "category": "grenade", "name_zh": "RPG-43 反坦克手榴弹", "name_en": "RPG-43",
+      "faction": "soviet", "weight_kg": 1.07, "count_per_slot": 1,
+      "effect": { "damage": 90, "radius_m": 3, "fuse_s": 3.0, "penetration_mm": 75 },
+      "realism": "需命中装甲法线附近；投掷距离仅 15-20m，风险极高。",
+      "note": "反坦克专长的近距离最后手段。"
+    },
+    {
+      "id": "black_bread", "category": "food", "name_zh": "黑面包（每日配给）", "name_en": "Black Bread Ration",
+      "faction": "soviet", "weight_kg": 0.7, "count_per_slot": 3,
+      "effect": { "calories": 35, "morale": 5, "eat_time_s": 6.0 },
+      "realism": "野战面包，需停下进食，进食期间视野边缘下降。",
+      "note": "补给点可补充。"
+    },
+    {
+      "id": "canned_meat", "category": "food", "name_zh": "肉罐头", "name_en": "Canned Meat",
+      "faction": "soviet", "weight_kg": 0.5, "count_per_slot": 3,
+      "effect": { "calories": 45, "morale": 10, "eat_time_s": 5.0 },
+      "realism": "租借法案物资（SPAM）常见，是士气补给。",
+      "note": "高热量低重量，性价比最高的食物。"
+    },
+    {
+      "id": "vodka_ration", "category": "food", "name_zh": "伏特加配给（100g）", "name_en": "Vodka Ration",
+      "faction": "soviet", "weight_kg": 0.3, "count_per_slot": 2,
+      "effect": { "calories": 0, "morale": 40, "eat_time_s": 4.0, "debuff": "瞄准抖动 +25%，持续 40 秒；生命恢复 5%", "daily_limit": 1 },
+      "realism": "红军前线配给，短时间提振士气但降低射击精度。",
+      "note": "高风险士气道具，每关限用 1 次。"
+    },
+    {
+      "id": "k_ration", "category": "food", "name_zh": "K 口粮", "name_en": "K Ration",
+      "faction": "us", "weight_kg": 0.9, "count_per_slot": 2,
+      "effect": { "calories": 55, "morale": 15, "eat_time_s": 7.0 },
+      "realism": "含肉罐头、饼干、糖块与香烟，完整一餐。",
+      "note": "美军标准单兵口粮。"
+    },
+    {
+      "id": "d_bar", "category": "food", "name_zh": "D 口粮巧克力棒", "name_en": "D Ration Chocolate Bar",
+      "faction": "us", "weight_kg": 0.1, "count_per_slot": 3,
+      "effect": { "calories": 30, "morale": 8, "eat_time_s": 2.0 },
+      "realism": "可在移动中快速进食，口感差但热量高。",
+      "note": "唯一支持移动进食的食物。"
+    },
+    {
+      "id": "canteen_1l", "category": "water", "name_zh": "1L 军用水壶", "name_en": "1L Canteen",
+      "faction": "both", "weight_kg": 1.0, "count_per_slot": 1, "capacity": 100,
+      "effect": { "hydration": 100, "drink_time_s": 3.5 },
+      "realism": "满水 1kg，喝完减重 1kg（负重实时变化）。",
+      "note": "默认携带 1 个；可再加 1 个备用。"
+    },
+    {
+      "id": "flask_extra", "category": "water", "name_zh": "备用扁水壶（0.5L）", "name_en": "Extra Flask 0.5L",
+      "faction": "both", "weight_kg": 0.55, "count_per_slot": 1, "capacity": 55,
+      "effect": { "hydration": 55, "drink_time_s": 2.5 },
+      "realism": "容量小但可分摊重量，在长距离行军关卡有用。",
+      "note": "轻装潜行配置常见。"
+    },
+    {
+      "id": "water_can_5l", "category": "water", "name_zh": "班组水桶（5L）", "name_en": "Squad Water Can",
+      "faction": "both", "weight_kg": 5.6, "count_per_slot": 1, "capacity": 500,
+      "effect": { "hydration": 500, "drink_time_s": 8.0, "requires_settle": true },
+      "realism": "必须放下才能取水，为全队补给，极重。",
+      "note": "医护兵/机枪组的团队支援装备。"
+    },
+    {
+      "id": "bandage", "category": "medical", "name_zh": "绷带包", "name_en": "Bandage",
+      "faction": "both", "weight_kg": 0.2, "count_per_slot": 3,
+      "effect": { "heal": 20, "stop_bleed": true, "use_time_s": 7.0 },
+      "realism": "止血是主要功能，回复生命有限。",
+      "note": "每人至少带 1 个。"
+    },
+    {
+      "id": "sulfa_powder", "category": "medical", "name_zh": "磺胺粉", "name_en": "Sulfa Powder",
+      "faction": "us", "weight_kg": 0.15, "count_per_slot": 2,
+      "effect": { "heal": 15, "prevent_infection": true, "use_time_s": 5.0 },
+      "realism": "防止伤口感染导致的持续掉血。",
+      "note": "美军急救包内配发。"
+    },
+    {
+      "id": "medkit", "category": "medical", "name_zh": "战地急救包", "name_en": "Medkit",
+      "faction": "both", "weight_kg": 1.6, "count_per_slot": 1,
+      "effect": { "heal": 60, "stop_bleed": true, "use_time_s": 10.0, "revive": true },
+      "realism": "可用于救治倒地队友（需 10 秒无干扰）。",
+      "note": "医护兵核心装备。"
+    },
+    {
+      "id": "morphine", "category": "medical", "name_zh": "吗啡针剂", "name_en": "Morphine Syrette",
+      "faction": "both", "weight_kg": 0.05, "count_per_slot": 2,
+      "effect": { "heal": 10, "pain_ignore_s": 30, "warning": "过量使用导致移动速度永久下降" },
+      "realism": "短暂无视伤痛惩罚，但会成瘾（关卡内累计 3 次触发减益）。",
+      "note": "极限生存向道具。"
+    },
+    {
+      "id": "entrenching_tool", "category": "tool", "name_zh": "工兵铲", "name_en": "Entrenching Tool",
+      "faction": "both", "weight_kg": 0.9, "count_per_slot": 1,
+      "effect": { "melee_damage": 60, "dig_time_s": 12.0, "cover_bonus": 0.5, "mines_clear": true },
+      "realism": "苏军把它当作近战武器使用；可挖浅坑获得掩蔽。",
+      "note": "工具/近战双用途。"
+    },
+    {
+      "id": "wire_cutters", "category": "tool", "name_zh": "剪线钳", "name_en": "Wire Cutters",
+      "faction": "both", "weight_kg": 0.7, "count_per_slot": 1,
+      "effect": { "cut_wire_s": 4.0, "defuse_mine_s": 6.0 },
+      "realism": "破障必需；无此工具穿越铁丝网需绕行或承受伤害。",
+      "note": "工兵/侦察兵配置。"
+    },
+    {
+      "id": "binoculars", "category": "tool", "name_zh": "望远镜", "name_en": "Binoculars",
+      "faction": "both", "weight_kg": 0.4, "count_per_slot": 1,
+      "effect": { "mark_range_m": 400, "spot_time_s": 2.0, "artillery_accuracy_bonus": 0.35 },
+      "realism": "观察员可为炮击提供更精确坐标（散布 -35%）。",
+      "note": "呼叫炮击前使用可显著提升命中率。"
+    },
+    {
+      "id": "ssh40_helmet", "category": "armor", "name_zh": "SSh-40 钢盔", "name_en": "SSh-40 Helmet",
+      "faction": "soviet", "weight_kg": 1.2, "count_per_slot": 1,
+      "effect": { "head_protection": 0.35, "ricochet_chance": 0.15 },
+      "realism": "降低头部中弹致死率，但增加轻微负重。",
+      "note": "默认装备，可卸下减重（风险自担）。"
+    },
+    {
+      "id": "sn42_breastplate", "category": "armor", "name_zh": "SN-42 钢制胸甲", "name_en": "SN-42 Steel Breastplate",
+      "faction": "soviet", "weight_kg": 3.5, "count_per_slot": 1,
+      "effect": { "torso_protection": 0.55, "mobility_penalty": 0.93, "stamina_penalty": 1.2 },
+      "realism": "突击工兵（SHISBr）使用，能挡冲锋枪弹但显著增重。",
+      "note": "攻坚关卡推荐，长途行军不推荐。"
+    },
+    {
+      "id": "m1_helmet", "category": "armor", "name_zh": "M1 钢盔", "name_en": "M1 Helmet",
+      "faction": "us", "weight_kg": 1.3, "count_per_slot": 1,
+      "effect": { "head_protection": 0.4, "ricochet_chance": 0.12 },
+      "realism": "覆盖更广，护耳效果优于苏制钢盔。",
+      "note": "美军默认装备。"
+    },
+    {
+      "id": "ammo_pouch", "category": "ammo", "name_zh": "弹药携行具", "name_en": "Ammo Pouch",
+      "faction": "both", "weight_kg": 0.8, "count_per_slot": 1,
+      "effect": { "ammo_capacity_mult": 1.4, "reload_speed": 1.1 },
+      "realism": "提升弹药基数，但换来 0.8kg 固定重量。",
+      "note": "长时间交火关卡必备。"
+    },
+    {
+      "id": "rifle_ammo_box", "category": "ammo", "name_zh": "步枪弹药箱", "name_en": "Rifle Ammo Box",
+      "faction": "both", "weight_kg": 3.0, "count_per_slot": 1,
+      "effect": { "ammo_rifle": 120, "settle_required": true, "sharable": true },
+      "realism": "班组共享弹药，需要放下才能分发。",
+      "note": "机枪组与补给点相关。"
+    }
+  ]
+}

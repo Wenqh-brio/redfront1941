@@ -1,0 +1,66 @@
+{
+  "$schema": "redfront.campaigns/1",
+  "campaigns": [
+    {
+      "id": "sov_barbarossa_1941",
+      "name_zh": "第一部：巴巴罗萨 1941 — 崩坏的边境",
+      "name_en": "Part I: Barbarossa 1941 — The Broken Border",
+      "faction": "soviet", "front": "east", "levels": [1, 12],
+      "start_date": "1941-06-22", "end_date": "1942-01-20",
+      "tone": "从措手不及的溃退、绝望的防守，到莫斯科城下的第一次反击。",
+      "player_arc_zh": "边境哨所的一名红军步兵，在通讯中断、弹药短缺的条件下层层迟滞德军，最终参与莫斯科反攻。",
+      "mechanics_focus": ["weight", "food_water", "grenade", "bolt_action_rifle", "entrenchment", "winter"],
+      "unlock_progression": "火力贫弱，反坦克手段以 RPG-43、燃烧瓶与炸药包为主；支援火力申请困难（CP 回复慢 -30%）。"
+    },
+    {
+      "id": "sov_stalingrad_1942",
+      "name_zh": "第二部：斯大林格勒 1942 — 伏尔加河不屈",
+      "name_en": "Part II: Stalingrad 1942 — Volga Unyielding",
+      "faction": "soviet", "front": "east", "levels": [13, 22],
+      "start_date": "1942-05-12", "end_date": "1943-02-02",
+      "tone": "废墟中的近距离消耗战，与包围圈外敌军的解围冲击。",
+      "player_arc_zh": "从哈尔科夫失利的残兵，到第 62 集团军的一员，在拖拉机厂与街垒工厂的每一堵墙后作战。",
+      "mechanics_focus": ["urban_combat", "smg", "building_clear", "night_raid", "river_crossing", "encirclement"],
+      "unlock_progression": "PPSh-41 与手榴弹大量普及；狙击手与工兵专长解锁；呼叫炮击需极近距离（危险距离机制）。"
+    },
+    {
+      "id": "sov_kursk_1943",
+      "name_zh": "第三部：库尔斯克与第聂伯河 1943 — 钢铁与泥泞",
+      "name_en": "Part III: Kursk & the Dnieper 1943 — Steel and Mud",
+      "faction": "soviet", "front": "east", "levels": [23, 32],
+      "start_date": "1943-07-05", "end_date": "1944-08-01",
+      "tone": "纵深反坦克防御、史无前例的坦克会战，以及强渡大河的反攻。",
+      "player_arc_zh": "反坦克支撑点的构筑者与反攻的矛头，学习在雷区与反坦克炮网中生存。",
+      "mechanics_focus": ["anti_tank", "minefield", "arty_control", "river_crossing", "tank_desant", "mud"],
+      "unlock_progression": "122/152mm 炮击与 T-34 坦克排呼叫解锁；反坦克专长与 SN-42 胸甲成为主流配置。"
+    },
+    {
+      "id": "sov_berlin_1945",
+      "name_zh": "第四部：巴格拉季昂到柏林 1944-45 — 向西方进军",
+      "name_en": "Part IV: Bagration to Berlin 1944-45 — March to the West",
+      "faction": "soviet", "front": "east", "levels": [33, 44],
+      "start_date": "1944-08-20", "end_date": "1945-05-09",
+      "tone": "从白俄罗斯的纵深突破到国会大厦的逐层争夺。",
+      "player_arc_zh": "近卫部队的老兵，指挥突击组穿越泽洛高地的死亡地带，最终在柏林废墟中升起红旗。",
+      "mechanics_focus": ["assault", "fortification", "building_to_building", "subway", "katyusha", "isu152", "urban_ruins"],
+      "unlock_progression": "全部支援解锁；ISU-152、喀秋莎与突击工兵组可用；虎王/豹式成为主要装甲威胁。"
+    },
+    {
+      "id": "us_western_1945",
+      "name_zh": "第五部：西线 1944-45（美军）— 从奥马哈到易北河",
+      "name_en": "Part V: Western Front 1944-45 (US) — Omaha to the Elbe",
+      "faction": "us", "front": "west", "levels": [45, 56],
+      "start_date": "1944-06-06", "end_date": "1945-03-07",
+      "tone": "登陆、灌木篱墙、森林地狱与冬季反攻，物资充沛但战术要求更高。",
+      "player_arc_zh": "美军第一步兵师（大红一师）的一名班组成员，从奥马哈海滩打到鲁登道夫大桥。",
+      "mechanics_focus": ["amphibious", "hedgerow", "forest", "air_support", "bazooka", "winter_defense", "bridge_capture"],
+      "unlock_progression": "美军装备体系：M1 加兰德/BAR/巴祖卡，155mm 与 P-47 支援响应更快；负重上限 26kg，补给点更多。"
+    }
+  ],
+  "difficulty_scaling": {
+    "recruit": { "enemy_hp_mult": 0.8, "enemy_accuracy_mult": 0.8, "player_damage_mult": 1.2, "cp_regen_mult": 1.4, "desc": "新手：体验历史与剧情，敌火力明显削弱。" },
+    "regular": { "enemy_hp_mult": 1.0, "enemy_accuracy_mult": 1.0, "player_damage_mult": 1.0, "cp_regen_mult": 1.0, "desc": "标准：设计基准难度。" },
+    "veteran": { "enemy_hp_mult": 1.2, "enemy_accuracy_mult": 1.15, "player_damage_mult": 0.9, "cp_regen_mult": 0.85, "desc": "老兵：敌人会用侧翼与迫击炮回应，食物/水消耗 +20%。" },
+    "historical": { "enemy_hp_mult": 1.35, "enemy_accuracy_mult": 1.3, "player_damage_mult": 0.8, "cp_regen_mult": 0.7, "desc": "史实：单命、无 HUD 敌人标记、弹药按史实基数、食物水消耗 +50%。" }
+  }
+}

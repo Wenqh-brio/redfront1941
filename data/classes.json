@@ -1,0 +1,124 @@
+{
+  "$schema": "redfront.classes/1",
+  "design_rule": "每个专长定义『槽位容量修正 + 3 个被动 + 1 个主动技能』。负重上限 base 为 24kg（苏）/ 26kg（美），超载进入惩罚档。",
+  "weight_system": {
+    "base_capacity_kg": 24.0,
+    "us_capacity_kg": 26.0,
+    "load_bands": [
+      { "id": "light", "max_ratio": 0.6, "speed_mult": 1.08, "stamina_drain": 0.8, "desc": "轻装：跑动快、体力消耗低，但火力与续航不足。" },
+      { "id": "standard", "max_ratio": 0.85, "speed_mult": 1.0, "stamina_drain": 1.0, "desc": "标准战斗负重：无惩罚，推荐区间。" },
+      { "id": "heavy", "max_ratio": 1.0, "speed_mult": 0.92, "stamina_drain": 1.25, "desc": "重装：移动变慢，翻越与冲刺消耗增加。" },
+      { "id": "overloaded", "max_ratio": 99.0, "speed_mult": 0.78, "stamina_drain": 1.7, "desc": "超载：移动极慢、无法冲刺、爬梯需要更久，且倒地后起身更慢。" }
+    ]
+  },
+  "classes": [
+    {
+      "id": "rifleman", "name_zh": "步兵（步枪手）", "name_en": "Rifleman",
+      "factions": ["soviet", "us"], "signature_weapons": ["mosin_m1891_30", "svt40", "m1_garand", "m1_carbine"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 2, "supply": 4 },
+      "passives": [
+        { "id": "steady_aim", "name_zh": "稳定据枪", "effect": "静止 1.5 秒后，栓动/半自动步枪散布 -25%。" },
+        { "id": "bayonet_charge", "name_zh": "刺刀突击", "effect": "冲刺后首次近战伤害 +80%，并造成目标恐惧 1 秒。" },
+        { "id": "ration_discipline", "name_zh": "配给纪律", "effect": "食物与水的消耗速度 -15%。" }
+      ],
+      "active": { "name_zh": "坚守阵地", "cooldown_s": 90, "effect": "8 秒内受到伤害 -25%，且换弹速度 +20%。" },
+      "unlock_level": 1
+    },
+    {
+      "id": "assault", "name_zh": "突击兵（冲锋枪手）", "name_en": "Assault / SMG",
+      "factions": ["soviet", "us"], "signature_weapons": ["ppsh41", "pps43", "thompson_m1a1", "shotgun_m1897"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 4, "supply": 3 },
+      "passives": [
+        { "id": "close_quarters", "name_zh": "近战精通", "effect": "30m 内射击伤害 +15%，移动射击散布 -30%。" },
+        { "id": "fast_reload", "name_zh": "快速换弹", "effect": "冲锋枪换弹时间 -30%。" },
+        { "id": "grenade_throw", "name_zh": "老练投弹", "effect": "手榴弹投掷距离 +35%，引信计时可视化更精确。" }
+      ],
+      "active": { "name_zh": "突击冲刺", "cooldown_s": 60, "effect": "5 秒内移动速度 +35%、免疫压制，期间射击精度不变。" },
+      "unlock_level": 2
+    },
+    {
+      "id": "machine_gunner", "name_zh": "机枪手", "name_en": "Machine Gunner",
+      "factions": ["soviet", "us"], "signature_weapons": ["dp28", "maxim_m1910", "bar_m1918a2", "m1919a4"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 1, "supply": 3 },
+      "passives": [
+        { "id": "bipod_discipline", "name_zh": "架设纪律", "effect": "架设状态散布 -50%，但架设需 1.2 秒且不可移动。" },
+        { "id": "suppressive_fire", "name_zh": "压制火力", "effect": "对同一区域持续射击 2 秒后，区域内敌人移速 -30%、精度 -40%。" },
+        { "id": "ammo_bearer", "name_zh": "弹药携带", "effect": "机枪弹药基数 +50%，但移动速度额外 -5%。" }
+      ],
+      "active": { "name_zh": "火力覆盖", "cooldown_s": 120, "effect": "6 秒内无需换弹、无过热，射速 +15%。" },
+      "unlock_level": 3
+    },
+    {
+      "id": "sniper", "name_zh": "狙击手", "name_en": "Sniper",
+      "factions": ["soviet", "us"], "signature_weapons": ["mosin_pu_sniper", "springfield_m1903a4"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 2, "supply": 3 },
+      "passives": [
+        { "id": "hold_breath", "name_zh": "屏息", "effect": "开镜时可屏息 6 秒，期间镜头抖动归零，之后需 3 秒恢复。" },
+        { "id": "target_marking", "name_zh": "战场标记", "effect": "命中敌人后标记该目标及其 15m 内同伴 8 秒（全队可见）。" },
+        { "id": "concealment", "name_zh": "伪装潜行", "effect": "蹲伏不动时被敌人发现距离 -50%；开火后 1.5 秒暴露。" }
+      ],
+      "active": { "name_zh": "校射呼叫", "cooldown_s": 150, "effect": "对标记目标呼叫一次精确炮击，散布半径缩小 60%。" },
+      "unlock_level": 4
+    },
+    {
+      "id": "anti_tank", "name_zh": "反坦克兵", "name_en": "Anti-Tank",
+      "factions": ["soviet", "us"], "signature_weapons": ["ptrds41", "bazooka_m1a1", "rpg43"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 2, "supply": 3 },
+      "passives": [
+        { "id": "weak_point", "name_zh": "弱点识别", "effect": "瞄准载具 1.2 秒后显示可击穿区域（侧面/观察窗/履带）。" },
+        { "id": "immobilize", "name_zh": "打断履带", "effect": "命中履带使载具失去机动 6 秒，期间侧后方命中伤害 +40%。" },
+        { "id": "heavy_carry", "name_zh": "重装携行", "effect": "反坦克武器重量视为 -20%，但其他装备容量 -10%。" }
+      ],
+      "active": { "name_zh": "集束手雷", "cooldown_s": 75, "effect": "制作一枚集束手雷：对载具穿深 +35mm，对步兵溅射半径 5m。" },
+      "unlock_level": 6
+    },
+    {
+      "id": "engineer", "name_zh": "工兵（爆破）", "name_en": "Combat Engineer",
+      "factions": ["soviet", "us"], "signature_weapons": ["soviet_sapper_kit", "roks2", "m2_flamethrower"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 3, "supply": 4 },
+      "passives": [
+        { "id": "demolition_expert", "name_zh": "爆破专精", "effect": "炸药放置时间 -50%，装药威力 +30%，可拆除地雷与铁丝网。" },
+        { "id": "fortify", "name_zh": "野战筑城", "effect": "可在 8 秒内构筑沙袋掩体（提供 +60% 掩蔽），每关限 3 处。" },
+        { "id": "wire_cut", "name_zh": "破障", "effect": "清除铁丝网/地雷速度 +200%，并标记雷区给全队。" }
+      ],
+      "active": { "name_zh": "定向爆破", "cooldown_s": 100, "effect": "对碉堡门、桥梁、铁门造成必破效果，并击晕 6m 内敌人 3 秒。" },
+      "unlock_level": 7
+    },
+    {
+      "id": "medic", "name_zh": "医护兵", "name_en": "Combat Medic",
+      "factions": ["soviet", "us"], "signature_weapons": ["nagant_m1895", "tt33", "m1_carbine", "m1911a1"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 2, "supply": 6 },
+      "passives": [
+        { "id": "triage", "name_zh": "战地分诊", "effect": "治疗速度 +60%，可为倒地队友止血并拖拽（拖拽时速度 -40%）。" },
+        { "id": "stimulant", "name_zh": "兴奋剂", "effect": "被治疗者在 10 秒内体力不减、移速 +15%。" },
+        { "id": "water_purify", "name_zh": "净水", "effect": "饮水补充量 +25%，可净化污染水源。" }
+      ],
+      "active": { "name_zh": "战场救护", "cooldown_s": 110, "effect": "以自身为中心 10m 内全队恢复 35% 生命并解除流血。" },
+      "unlock_level": 5
+    },
+    {
+      "id": "scout", "name_zh": "侦察兵", "name_en": "Scout",
+      "factions": ["soviet", "us"], "signature_weapons": ["pps43", "m1_carbine", "kgb_captured_mp40"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 3, "supply": 3 },
+      "passives": [
+        { "id": "pathfinder", "name_zh": "先行侦察", "effect": "解锁关卡的隐藏路线与敌方布防图，全队在小地图上看到敌机枪位。" },
+        { "id": "silent_move", "name_zh": "静默移动", "effect": "移动噪音 -60%，奔跑不产生敌方警觉（除非进入 25m 视野）。" },
+        { "id": "light_foot", "name_zh": "轻装", "effect": "负重上限惩罚降低一档，翻越/攀爬速度 +40%。" }
+      ],
+      "active": { "name_zh": "侦察标记", "cooldown_s": 70, "effect": "标记 60m 内所有敌单位与载具 10 秒，并为炮击提供精确坐标（散布 -40%）。" },
+      "unlock_level": 4
+    },
+    {
+      "id": "mortarman", "name_zh": "迫击炮手", "name_en": "Mortarman",
+      "factions": ["soviet", "us"], "signature_weapons": ["82mm_mortar", "60mm_mortar_m2"],
+      "slots": { "primary": 1, "secondary": 1, "grenade": 1, "supply": 3 },
+      "passives": [
+        { "id": "quick_emplace", "name_zh": "快速架设", "effect": "迫击炮架设时间 -40%，可在弹坑与沙袋后架设。" },
+        { "id": "walking_barrage", "name_zh": "逐次弹幕", "effect": "连续发射时散布带自动向瞄准方向推进，压制范围更大。" },
+        { "id": "ammo_spotter", "name_zh": "弹药观察", "effect": "每命中 5 发为全队补充一次迫击炮弹药。" }
+      ],
+      "active": { "name_zh": "烟幕弹", "cooldown_s": 80, "effect": "发射 3 发烟幕弹，形成 20m 遮蔽带 20 秒，阻断敌方视线与机枪压制。" },
+      "unlock_level": 8
+    }
+  ]
+}

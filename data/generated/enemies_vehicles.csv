@@ -1,0 +1,10 @@
+Name,id,name_zh,name_en,faction,fronts,armor_mm,side_rear_ratio,hp,weapon,penetration_mm,speed_kph,engage_range_m,emplaced,threat,first_seen,note
+pzkpfw_iii,三号坦克,Panzer III,germany,east,30,0.5,220,50mm KwK 38,55,40,800,false,2,1941-06,1941 年东线主力，正面可被 45mm 反坦克炮击穿。
+pzkpfw_iv_f2,四号坦克 F2 型,Panzer IV Ausf. F2,germany,east,50,0.55,300,75mm KwK 40 L/43,99,38,1200,false,4,1942-05,长身管 75mm，是 T-34 的严重威胁。
+pzkpfw_vi_tiger,虎式重型坦克,Tiger I,germany,east|west,100,0.8,520,88mm KwK 36,120,30,1500,false,6,1942-08,正面几乎免疫常规反坦克火力，须侧射或用 122/152mm 火力。
+pzkpfw_v_panther,豹式坦克,Panther,germany,east|west,80,0.5,460,75mm KwK 42 L/70,138,46,1600,false,6,1943-07,库尔斯克首次大规模投入，侧面仍是弱点。
+stug_iii_g,三号突击炮 G 型,StuG III Ausf. G,germany,east|west,80,0.45,340,75mm StuK 40,99,40,1000,false,4,1942-03,低矮无炮塔，防御战中极难发现。
+sdkfz_251,Sd.Kfz.251 半履带装甲车,Sd.Kfz. 251,germany,east|west,14,0.6,160,MG42,8,52,400,false,2,1941-06,装甲掷弹兵输送车，可快速投入反冲击。
+sdkfz_222,Sd.Kfz.222 装甲侦察车,Sd.Kfz. 222,germany,east|west,12,0.6,120,20mm KwK 30,25,80,600,false,2,1941-06,快速侦察与侧翼袭扰。
+pak40,Pak 40 75mm 反坦克炮,7.5cm Pak 40,germany,east|west,5,1,90,75mm Pak 40,98,0,1200,true,5,1942-02,坦克头号杀手，需炮击或步兵清除。
+flak36_88,Flak 36 88mm 高射炮,8.8cm Flak 36,germany,east|west,5,1,110,88mm Flak 36,120,0,2000,true,6,1941-06,对地对空双用，也是呼叫空中支援的克星。

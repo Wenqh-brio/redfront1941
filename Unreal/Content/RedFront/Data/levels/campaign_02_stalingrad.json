@@ -1,0 +1,600 @@
+{
+  "$schema": "redfront.levels/1",
+  "campaign_id": "sov_stalingrad_1942",
+  "author_note": "第二部：斯大林格勒 1942 — 从哈尔科夫失败的残兵到百货大楼地下室，全部关卡以冲锋枪、手榴弹与废墟近战为核心。",
+  "levels": [
+    {
+      "id": "sov_13_barvenkovo_pocket",
+      "index": 13,
+      "number_in_campaign": 1,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "巴尔文科沃的合围",
+      "name_en": "Encirclement at Barvenkovo",
+      "date": "1942-05-12",
+      "location_zh": "巴尔文科沃",
+      "location_en": "Barvenkovo",
+      "coordinates": "48.91N 37.02E",
+      "mission_type": "delay",
+      "faction": "soviet",
+      "player_role_zh": "西南方面军第 6 集团军的一名步兵班长，在德军装甲楔形合拢后带残部向东突围。",
+      "player_class_recommended": ["rifleman", "assault"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "掩护团部与伤员沿东侧土路撤出包围圈", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "在公路拐弯处设伏，击毁或瘫痪两辆德军装甲车辆", "type": "primary", "required": true, "time_limit_s": null, "condition": "eliminate_count", "target_count": 2, "target_enemy_ids": ["pzkpfw_iii", "pzkpfw_iv_f2"] },
+        { "id": "obj3", "text_zh": "投掷发烟手榴弹穿越开阔麦田，全队减员不超过一半", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 14,
+        "ger_mp40_leader": 3,
+        "ger_mg42_team": 3,
+        "pzkpfw_iii": 3,
+        "pzkpfw_iv_f2": 1,
+        "ger_pioneer": 2
+      },
+      "enemy_tactics_zh": "德军以三号坦克沿公路快速楔入，车体机枪封锁麦田与沟壑，掷弹兵下车后成散兵线清剿。MG42 机枪组架在拖拉机和村舍屋顶形成交叉火网；先头坦克遭到反坦克枪射击会立刻转向碾击，工兵用火焰喷射器烧毁灌木丛，逼迫苏军残部离开掩体。",
+      "friendly_forces_zh": "西南方面军第 6 集团军第 47 步兵师的一个混编连，另有第 57 集团军炮兵残部与十余名伤员。全连不足 70 人，两挺马克沁机枪只剩半个弹药基数，没有反坦克炮，只有反坦克枪与燃烧瓶。",
+      "terrain": "field",
+      "weather": "mud",
+      "time_of_day": "dawn",
+      "visibility_m": 300,
+      "difficulty": 5,
+      "par_time_s": 900,
+      "weight_budget_kg": 24,
+      "resupply_points": 1,
+      "available_support": ["sov_mortar_82", "sov_smoke_screen"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 5 月 12 日，铁木辛哥指挥西南方面军从巴尔文科沃突出部发起哈尔科夫进攻，起初推进 20 至 40 公里。5 月 17 日，克莱斯特第 1 装甲集团军从南面发起「腓特烈一世」反攻，第 14 与第 16 装甲师于 5 月 22 日在突出部根部封闭合围口。圈内的苏军第 6 集团军、第 57 集团军与博布金集群被切断，5 月 29 日突围基本结束，苏军损失约 27 万人。本关描写合围圈东侧一支残部在泥泞草原上向东渗透的一天。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 5 月 12 日西南方面军由巴尔文科沃突出部发起哈尔科夫进攻",
+          "5 月 17 日克莱斯特第 1 装甲集团军反攻，5 月 22 日封闭合围口",
+          "苏军第 6、第 57 集团军与博布金集群在突出部内被围歼，损失约 27 万人"
+        ],
+        "dramatized": [
+          "玩家所在残部从装甲楔形间隙中渗透突围的具体路线",
+          "个别四号 F2 型坦克出现在本方向的时间点做了提前处理"
+        ]
+      },
+      "design_note_zh": "本关教学「脱离接触」：装甲楔形一旦合拢，正面硬拼必死。玩家要用发烟手榴弹切断坦克观察视线，沿沟壑与麦田分段跃进，并学会在弹药低于三分之一时主动放弃阵地。失败条件是团部与伤员被歼灭，而不是全员阵亡。",
+      "music_mood": "低沉的弦乐叠着远处履带声，压抑、疲惫而急促",
+      "unlock_reward": { "xp": 900, "weapon": "ppsh41", "class": null },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_14_don_bend",
+      "index": 14,
+      "number_in_campaign": 2,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "顿河大弯曲部防线",
+      "name_en": "The Don Bend Line",
+      "date": "1942-07-23",
+      "location_zh": "克列茨卡亚",
+      "location_en": "Kletskaya",
+      "coordinates": "49.30N 43.05E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "新组建的第 62 集团军步兵团的一名班长，在顿河右岸堑壕里挡住德军装甲矛头。",
+      "player_class_recommended": ["assault", "machine_gunner", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "守住第一道堑壕，阻止德军步兵突入炮兵观察所", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "用反坦克枪或集束手榴弹在河床前瘫痪一辆坦克", "type": "primary", "required": true, "time_limit_s": null, "condition": "eliminate_count", "target_count": 1, "target_enemy_ids": ["pzkpfw_iii", "stug_iii_g"] },
+        { "id": "obj3", "text_zh": "把被压制的机枪组从第一道壕撤到第二道壕重新架设", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "在德军炮火准备期间保全至少一半弹药基数", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 18,
+        "ger_mp40_leader": 4,
+        "ger_mg42_team": 4,
+        "ger_pioneer": 2,
+        "pzkpfw_iii": 3,
+        "stug_iii_g": 2,
+        "sdkfz_251": 2
+      },
+      "enemy_tactics_zh": "德军先以十分钟炮火准备犁平第一道壕，再由三号坦克与三号突击炮贴着向日葵地推进，半履带车把掷弹兵送到侧面。MG42 从两翼高地的反斜面持续压制，突击炮专打暴露的机枪位；一旦苏军退入第二道壕，工兵会携带喷火器沿交通壕逐个清理掩体。",
+      "friendly_forces_zh": "第 62 集团军第 192 步兵师的一个营，配属第 115 反坦克营两门 45mm 炮与一个反坦克枪班。全营约 300 人，刚在草原上构筑了三道堑壕，缺乏铁丝网与地雷，炮火支援只有一个 82mm 迫击炮连。",
+      "terrain": "trench",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 800,
+      "difficulty": 6,
+      "par_time_s": 1200,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": ["sov_mortar_82", "sov_howitzer_122", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 7 月 23 日，保卢斯的第 6 集团军以第 14 装甲军与第 8 军向顿河大弯曲部发起进攻，这是「蓝色行动」转向斯大林格勒后的第一阶段。刚组建的第 62 集团军（科尔帕克奇）与第 64 集团军（崔可夫）在克列茨卡亚至苏罗维基诺一线仓促设防，缺乏反坦克炮和纵深工事，只能靠干涸河床、向日葵地与反坦克壕逐次迟滞。7 月 26 日德军装甲军前出到顿河，8 月初苏军退过顿河。本关描写第 62 集团军一个步兵团在克列茨卡亚桥头堡外围守住三道堑壕的一天。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 7 月 23 日德军第 6 集团军在顿河大弯曲部发起进攻",
+          "第 62 集团军由科尔帕克奇指挥、第 64 集团军由崔可夫指挥，均在 1942 年 7 月组建",
+          "7 月 26 日德军装甲部队前出至顿河一线"
+        ],
+        "dramatized": [
+          "本方阵地上 45mm 反坦克炮的具体数量与部署位置",
+          "玩家所在营在桥头堡外围的确切番号与坚守天数"
+        ]
+      },
+      "design_note_zh": "本关教学「纵深堑壕与反坦克支撑点」：三道堑壕相距 80 米，玩家必须在炮火准备结束后抢先回到第一道壕，用反坦克枪侧射三号坦克，并把 MG42 的压制交给 82mm 迫击炮处理。三道壕全部失守即失败，退到第三道壕时增援才会到场。",
+      "music_mood": "干燥的鼓点与定音鼓滚奏，像炮火准备一步步逼近",
+      "unlock_reward": { "xp": 1000, "weapon": null, "class": "machine_gunner" },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 0.95 }
+    },
+    {
+      "id": "sov_15_volga_crossing",
+      "index": 15,
+      "number_in_campaign": 3,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "八月二十三日的伏尔加",
+      "name_en": "The Volga, 23 August",
+      "date": "1942-08-23",
+      "location_zh": "斯大林格勒伏尔加河渡口",
+      "location_en": "Volga Ferry Crossing, Stalingrad",
+      "coordinates": "48.72N 44.53E",
+      "mission_type": "river_crossing",
+      "faction": "soviet",
+      "player_role_zh": "第 62 集团军补充团的一名士兵，在燃烧的河面上随驳船强渡伏尔加河进入市区。",
+      "player_class_recommended": ["assault", "engineer", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在斯图卡俯冲间隙把驳船撑到东岸栈桥并下船", "type": "primary", "required": true, "time_limit_s": 480 },
+        { "id": "obj2", "text_zh": "抢占并守住栈桥两侧的仓库，掩护后续渡船靠岸", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "用发烟弹幕遮蔽河面至少一次，减少船只损失", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保住电台与弹药箱，不在落水时丢弃重装备", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_mp40_leader": 3,
+        "ger_mg42_team": 4,
+        "bf109_f": 3,
+        "ju87_stuka": 3,
+        "flak36_88": 2,
+        "sdkfz_222": 2
+      },
+      "enemy_tactics_zh": "德军白天以 Ju 87 编队对渡口和河面反复俯冲，250 公斤炸弹的落点会掀翻驳船；Bf 109 低空扫射落水人员。河岸高地上的 MG42 与 88mm 高射炮平射封锁栈桥，装甲侦察车沿河岸公路机动，专门打击刚上岸还未展开的苏军分队。",
+      "friendly_forces_zh": "第 62 集团军渡河指挥部组织的补充兵船队，包括第 13 近卫步兵师的一个先遣营与工兵摆渡班。可用船只有驳船、渔舟和一条拖船，没有护航火力，东岸仅有一个步兵连控制着栈桥与两座仓库。",
+      "terrain": "river",
+      "weather": "clear",
+      "time_of_day": "night",
+      "visibility_m": 350,
+      "difficulty": 6,
+      "par_time_s": 900,
+      "weight_budget_kg": 22,
+      "resupply_points": 0,
+      "available_support": ["sov_smoke_screen", "sov_mortar_82", "sov_il2_strafe"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 8 月 23 日，德军第 16 装甲师在第 14 装甲军编成内推进到雷诺克附近的伏尔加河岸，把斯大林格勒与城北苏军切成两段。同一天，德国空军第 4 航空队出动约 1600 架次，向市区投下数千吨炸弹，伏尔加河油库燃烧，河面被火焰与浓烟覆盖，市内木屋区几乎被夷平。当夜起，第 62 集团军的补充兵与第 13 近卫步兵师等部冒着俯冲轰炸与机枪扫射，用小艇、驳船和渡轮强渡伏尔加河进入市区。本关描写渡口船队在斯图卡尖啸声中抢渡的一夜。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 8 月 23 日德军第 16 装甲师突至雷诺克附近伏尔加河岸，切断城市与北部联系",
+          "同日德国空军第 4 航空队对斯大林格勒实施大规模轰炸，油库燃烧",
+          "第 62 集团军部队自 8 月 23 日夜起以小艇和渡轮不断强渡伏尔加河"
+        ],
+        "dramatized": [
+          "玩家所在驳船的具体航次与船名",
+          "船队遭 Ju 87 直接命中的次数与个体细节"
+        ]
+      },
+      "design_note_zh": "本关教学「船载补给与夜间渡河」：在摇晃的驳船上长枪精度归零，落水会丢失全部重装备与电台。每被击沉一艘船，后续关卡的初始补给基数下降。守住码头栈桥并且让至少两艘船靠岸，是唯一的胜利条件。",
+      "music_mood": "燃烧的低音提琴与远处斯图卡尖啸，水声与引擎声交错",
+      "unlock_reward": { "xp": 1100, "weapon": "svt40", "class": null },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_16_tractor_factory",
+      "index": 16,
+      "number_in_campaign": 4,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "拖拉机厂的血战",
+      "name_en": "The Tractor Factory",
+      "date": "1942-10-14",
+      "location_zh": "捷尔任斯基拖拉机厂",
+      "location_en": "Dzerzhinsky Tractor Factory",
+      "coordinates": "48.80N 44.61E",
+      "mission_type": "urban_clearing",
+      "faction": "soviet",
+      "player_role_zh": "第 37 近卫步兵师的一名突击组长，在装配车间的钢梁与地沟之间逐段夺回厂房。",
+      "player_class_recommended": ["assault", "engineer", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "肃清一号装配车间地面层并建立立足点", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "用炸药包炸开被封闭的车间隔墙，打通内部通道", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj3", "text_zh": "控制天车平台，压制从头顶投弹的德军", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保住锅炉房，不让德军切断厂区与河岸的联系", "type": "primary", "required": true, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 20,
+        "ger_mp40_leader": 5,
+        "ger_mg42_team": 5,
+        "ger_pioneer": 4,
+        "ger_sniper": 2,
+        "pzkpfw_iv_f2": 2,
+        "pzkpfw_vi_tiger": 1,
+        "stug_iii_g": 2
+      },
+      "enemy_tactics_zh": "德军以工兵为矛头，用炸药包和喷火器沿车间中轴线推进，MG42 架在天车梁上向下扫射，狙击手封锁厂区开阔地。四号坦克与突击炮从厂门外直射车间大门，虎式坦克停在 800 米外的土堤上专打任何冒头的火力点；一旦苏军退向锅炉房，德军会立刻布雷封门。",
+      "friendly_forces_zh": "第 37 近卫步兵师第 118 近卫步兵团与第 95 步兵师各一个营，另有拖拉机厂民兵工人队和坦克修理营。全团只剩两门 45mm 炮，反坦克手段以反坦克枪、集束手榴弹和燃烧瓶为主，尚有五辆刚下线未喷漆的 T-34。",
+      "terrain": "industrial",
+      "weather": "rain",
+      "time_of_day": "dawn",
+      "visibility_m": 250,
+      "difficulty": 8,
+      "par_time_s": 1500,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_mortar_82", "sov_smoke_screen", "engineer_assault_group"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1942 年 10 月 14 日，保卢斯集中第 14 装甲师、第 305 步兵师与第 389 步兵师，在五个工兵营和密集航空火力支援下猛攻捷尔任斯基拖拉机厂。若卢杰夫的第 37 近卫步兵师与第 95 步兵师的部队在厂房、装配线和锅炉房内逐屋抵抗，第 1243 步兵团一个连在车间里战至最后一人。德军一部当日突到伏尔加河岸，把第 62 集团军切成两段。拖拉机厂的工人在炮火中把刚下线、来不及喷漆的 T-34 直接开出厂门投入战斗。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 10 月 14 日德军集中第 14 装甲师、第 305 与第 389 步兵师猛攻拖拉机厂",
+          "第 37 近卫步兵师（若卢杰夫）与第 95 步兵师在厂区逐屋抵抗",
+          "德军突至伏尔加河岸，把第 62 集团军阵地切成两段"
+        ],
+        "dramatized": [
+          "虎式重型坦克在厂区外土堤上定点支援的具体安排",
+          "未喷漆 T-34 由工人直接开出厂门参战的个体场景"
+        ]
+      },
+      "design_note_zh": "本关教学「车间立体交火」：厂房分地面、天车平台与地下管道三层，手榴弹撞到钢梁会反弹回掷，必须先封锁头顶再推进。德军占领锅炉房并切断厂区通往河岸的通道即失败；炸药包是唯一能打通隔墙的手段。",
+      "music_mood": "金属回响与工业噪音，齿轮般的节奏里夹着火焰喷射器的嘶声",
+      "unlock_reward": { "xp": 1300, "weapon": "roks2", "class": "engineer" },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_17_barrikady_red_october",
+      "index": 17,
+      "number_in_campaign": 5,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "街垒厂与红十月厂",
+      "name_en": "Barrikady and Red October",
+      "date": "1942-11-11",
+      "location_zh": "街垒工厂厂区",
+      "location_en": "Barrikady Gun Factory",
+      "coordinates": "48.78N 44.57E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "第 95 步兵师的一名老兵，在烟囱与废钢堆之间反复易手每一段车间。",
+      "player_class_recommended": ["assault", "engineer", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "守住锅炉房外墙，阻止德军沿铁道突入厂区中部", "type": "primary", "required": true, "time_limit_s": 780 },
+        { "id": "obj2", "text_zh": "夺回被占领的烟囱基座并建立观察哨", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "用定向爆破打通两座车间之间的墙洞，绕开机枪封锁的大街", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "把伤员沿伏尔加河岸的后送壕送到渡口", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 20,
+        "ger_mp40_leader": 5,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 5,
+        "ger_sniper": 3,
+        "stug_iii_g": 3,
+        "flak36_88": 2,
+        "pzkpfw_iv_f2": 2
+      },
+      "enemy_tactics_zh": "德军以突击炮贴墙推进，用 88mm 炮平射穿墙，工兵在烟尘掩护下安放炸药包。MG42 占据废钢堆与铁道车皮，狙击手藏在烟囱残体上专打移动目标；每次占领一段车间就立即用铁丝网和地雷封住反冲击通道。",
+      "friendly_forces_zh": "第 95 步兵师（戈里亚乔夫）与第 45 步兵师各一个混编营，加上第 138 步兵师送来的一个连。全营约 240 人，一半装备 PPSh-41，其余是莫辛纳甘与缴获步枪，另有 6 支反坦克枪和十几具 ROKS-2 喷火器。",
+      "terrain": "industrial",
+      "weather": "fog",
+      "time_of_day": "day",
+      "visibility_m": 180,
+      "difficulty": 8,
+      "par_time_s": 1500,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_mortar_82", "sov_howitzer_122", "sov_guards_rifle_reinforcement", "engineer_assault_group"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 11 月 11 日，德军以第 305、第 389、第 79 步兵师和第 14、第 24 装甲师发起对「街垒」厂与「红十月」厂的最后一次总攻。第 95 步兵师（戈里亚乔夫）与第 45 步兵师在锅炉房、烟囱基座和废钢堆之间反复易手每一段车间，德军第 305 步兵师在街垒厂内几乎被消耗殆尽。到 11 月中旬，德军始终未能把苏军赶过伏尔加河，第 62 集团军控制的河岸阵地最窄处不足一公里。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 11 月 11 日德军对街垒厂与红十月厂发动十一月总攻",
+          "第 95 步兵师师长戈里亚乔夫在厂区战斗中阵亡",
+          "第 62 集团军被压缩至伏尔加河岸的狭窄阵地，但始终未被赶下河"
+        ],
+        "dramatized": [
+          "玩家所在混编营的临时编成与指挥关系",
+          "厂区内每一段车间的具体易手时间"
+        ]
+      },
+      "design_note_zh": "本关教学「三向接触的废墟战」：烟尘让小地图失效，敌我距离常在 15 米以内，玩家要靠脚步声与弹鼓余量判断推进节奏，并用定向爆破打通墙洞，而不要走被机枪封锁的大街。锅炉房失守即判负。",
+      "music_mood": "持续的定音鼓与金属摩擦声，压抑到几乎听不见旋律",
+      "unlock_reward": { "xp": 1300, "weapon": "dp28", "class": null },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_18_pavlov_house",
+      "index": 18,
+      "number_in_campaign": 6,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "巴甫洛夫大楼",
+      "name_en": "Pavlov's House",
+      "date": "1942-09-27",
+      "location_zh": "一月九日广场",
+      "location_en": "9 January Square",
+      "coordinates": "48.72N 44.52E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "第 13 近卫步兵师第 42 团的一名组长，带四人小组死守广场旁的四层公寓楼。",
+      "player_class_recommended": ["machine_gunner", "assault", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "守住一层与地下室，不让德军突入楼梯间", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "在二、三层设置狙击位，压制广场对面的德军狙击手", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "保持通往伏尔加河方向的补给壕畅通", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用反坦克枪击穿逼近楼体的突击炮侧面", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 14,
+        "ger_mp40_leader": 3,
+        "ger_mg42_team": 2,
+        "ger_pioneer": 2,
+        "ger_sniper": 2,
+        "stug_iii_g": 1,
+        "pzkpfw_iv_f2": 1
+      },
+      "enemy_tactics_zh": "德军先用突击炮抵近直射楼体，再以工兵携带炸药包与喷火器冲击一层窗口，步兵从广场对面废墟逐段跃进。狙击手占据水塔与街垒残骸，专门猎杀楼内的观察员；夜间则用机枪封锁楼后壕沟，切断城内与渡口的联系。",
+      "friendly_forces_zh": "第 13 近卫步兵师第 42 团第 7 连的一个排，由帕夫洛夫中士指挥，共二十余人，来自俄罗斯、乌克兰、格鲁吉亚与乌兹别克等民族。装备两挺 DP-27、数支 PPSh-41、三支反坦克枪和大量 F-1 手榴弹，补给靠楼后壕沟运送。",
+      "terrain": "city",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 200,
+      "difficulty": 7,
+      "par_time_s": 1200,
+      "weight_budget_kg": 24,
+      "resupply_points": 0,
+      "available_support": ["sov_mortar_82", "sov_smoke_screen"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 9 月 27 日，第 13 近卫步兵师第 42 团团长叶林下令，由帕夫洛夫中士率第 7 连的一个排夺取一月九日广场旁的四层公寓楼。此后近两个月，帕夫洛夫、阿法纳西耶夫、切尔诺夫等约二十余名来自多个民族的战士在此坚守，楼内地下室堆满反坦克枪与手榴弹，德军以坦克直射、工兵爆破和火焰喷射器轮番攻击仍未能占领。这座楼后来被称为巴甫洛夫大楼，守军直到 11 月 25 日才随反攻撤出。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 9 月 27 日第 13 近卫步兵师第 42 团的一个排占领一月九日广场旁公寓楼",
+          "守军由帕夫洛夫中士指挥，成员来自多个民族，坚守近两个月",
+          "德军以坦克直射、工兵爆破与火焰喷射器反复攻击仍未攻占该楼"
+        ],
+        "dramatized": [
+          "楼内四人小组的具体分工与楼层配置",
+          "补给壕被炮火切断的时长与细节"
+        ]
+      },
+      "design_note_zh": "本关教学「小队固守与楼层分工」：地下室埋伏反坦克枪、一层封锁街口、二三层压制狙击手，任何一层被突破都会让整栋楼失守。补给只能靠楼后壕沟用绳索运送，补给壕被炮火切断后必须靠备用口粮撑过最后五分钟。",
+      "music_mood": "稀疏的钢琴单音与远处手榴弹爆炸，克制的悲壮感",
+      "unlock_reward": { "xp": 1400, "weapon": null, "class": "sniper" },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.05 }
+    },
+    {
+      "id": "sov_19_lyudnikov_island",
+      "index": 19,
+      "number_in_campaign": 7,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "柳德尼科夫岛",
+      "name_en": "Lyudnikov Island",
+      "date": "1942-11-11",
+      "location_zh": "街垒厂以北的伏尔加河岸桥头堡",
+      "location_en": "Bridgehead North of the Barrikady",
+      "coordinates": "48.79N 44.56E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "第 138 步兵师的一名排长，在三面被围、背后是伏尔加河的桥头堡里组织环形防御。",
+      "player_class_recommended": ["assault", "engineer", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿冻土构筑环形壕沟，封住桥头堡唯一的陆上缺口", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "在夜间接应至少一波伏尔加河运补小船靠岸", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "用缴获的 MG42 建立固定火力点压制德军迫击炮观察哨", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "把重伤员沿河岸冰面转移出去", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_mp40_leader": 4,
+        "ger_mg42_team": 5,
+        "ger_pioneer": 4,
+        "ger_sniper": 2,
+        "stug_iii_g": 2,
+        "sdkfz_251": 1
+      },
+      "enemy_tactics_zh": "德军从三面高地上的废墟用 MG42 与迫击炮持续压制，用突击炮贴近河岸直射壕沟，工兵趁夜投掷集束手榴弹并剪断苏军铁丝网。半履带车在白天把突击组送到缺口处发起短促冲击，一旦苏军弹药见底就加大迫击炮火力，逼守军在冰面上暴露。",
+      "friendly_forces_zh": "第 138 步兵师（柳德尼科夫上校）残部约 400 人，另有第 95 步兵师的一个连和工兵渡河班。阵地纵深不足 500 米，弹药、面包和饮用水全靠夜间小船与冰面运送，伤员无法后送，全师仅剩四门 45mm 炮。",
+      "terrain": "river",
+      "weather": "rain",
+      "time_of_day": "night",
+      "visibility_m": 150,
+      "difficulty": 8,
+      "par_time_s": 1200,
+      "weight_budget_kg": 23,
+      "resupply_points": 0,
+      "available_support": ["sov_mortar_82", "sov_smoke_screen", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": [],
+      "historical_note_zh": "1942 年 11 月 11 日德军总攻之后，第 138 步兵师师长柳德尼科夫上校率残部被困在街垒厂以北、伏尔加河岸边一块约 700 米乘 400 米的桥头堡内，三面被德军包围，唯一的退路是背后结冰的伏尔加河。守军在冻土上挖出壕沟，弹药、面包和饮用水全靠夜间小船与冰面运送，重伤员无法后送。这块阵地被苏军称为柳德尼科夫岛，一直坚守到 1943 年 1 月反攻开始，是城内最后一个被围的桥头堡。",
+      "historical_accuracy": {
+        "verified_events": [
+          "第 138 步兵师在柳德尼科夫上校指挥下于街垒厂以北河岸坚守桥头堡",
+          "该阵地在 1942 年 11 月后三面被围，补给依靠伏尔加河夜间运输",
+          "桥头堡坚持到 1943 年 1 月苏军反攻开始"
+        ],
+        "dramatized": [
+          "运补小船靠岸的具体航次与夜间时间表",
+          "冻土壕沟的构筑速度与工兵作业细节"
+        ]
+      },
+      "design_note_zh": "本关教学「水域补给与冻土工事」：伏尔加河既是敌人也是补给线，小船靠岸前必须严格节约弹药；冻土无法正常挖掘，工兵构筑壕沟的时间翻倍，只能用冰块与废钢堆掩体。阵地纵深被压缩到 100 米以内即判负。",
+      "music_mood": "冰冷的低音持续音与风声，偶尔插入远处河面的船桨声",
+      "unlock_reward": { "xp": 1400, "weapon": "ptrds41", "class": null },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_20_operation_uranus",
+      "index": 20,
+      "number_in_campaign": 8,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "天王星行动：合围",
+      "name_en": "Operation Uranus: The Breakthrough",
+      "date": "1942-11-19",
+      "location_zh": "克列茨卡亚桥头堡",
+      "location_en": "Kletskaya Bridgehead",
+      "coordinates": "49.31N 43.06E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "第 21 集团军的一名突击班长，跟随 T-34 沿炮火弹幕撕开罗马尼亚军防线。",
+      "player_class_recommended": ["assault", "engineer", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在炮火弹幕延伸时冲过第一道罗马尼亚军堑壕", "type": "primary", "required": true, "time_limit_s": 420 },
+        { "id": "obj2", "text_zh": "清除封锁突破口的 Pak 40 反坦克炮阵地", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "守住公路交叉口，等待第 4 坦克军先头部队抵达", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj4", "text_zh": "用烟雾掩护 T-34 侧翼，避免坦克被反坦克炮伏击", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "romanian_infantry": 24,
+        "hungarian_infantry": 8,
+        "italian_alpini": 6,
+        "ger_landser_rifleman": 8,
+        "ger_mg42_team": 4,
+        "pak40": 3,
+        "pzkpfw_iii": 2,
+        "sdkfz_251": 2
+      },
+      "enemy_tactics_zh": "罗马尼亚第 3 集团军的防线正面以步枪与捷克造机枪为主，缺乏反坦克炮，前沿只靠三道铁丝网与浅壕。德军顾问在后面布置 Pak 40 与三号坦克作为骨干，一旦前沿被突破就用车载机枪与半履带车反击；浓雾中他们靠炮声判断方向，用拦阻射击封锁突破口两侧。",
+      "friendly_forces_zh": "西南方面军第 5 坦克集团军与顿河方面军第 21 集团军的突击集群，配属第 1 近卫机械化军与两个 T-34 坦克营，另有第 8 骑兵军跟进。步兵营满编 400 余人，几乎人手一支 PPSh-41，弹药基数充足，炮火支援由 122mm 榴弹炮群提供。",
+      "terrain": "field",
+      "weather": "snow",
+      "time_of_day": "dawn",
+      "visibility_m": 400,
+      "difficulty": 7,
+      "par_time_s": 1200,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_tank_t34_76", "sov_smoke_screen"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1942 年 11 月 19 日清晨，瓦图京的西南方面军与罗科索夫斯基的顿河方面军在大雪与浓雾中发起「天王星行动」。第 5 坦克集团军与第 21 集团军从谢拉菲莫维奇、克列茨卡亚桥头堡出击，以炮火集中轰击罗马尼亚第 3 集团军的防线；第 4 坦克军与第 26 坦克军当日突入纵深数十公里，11 月 23 日在卡拉奇附近的苏维埃茨基会师，合围德军第 6 集团军等部约 33 万人。本关描写苏军步兵跟随 T-34 撕开罗马尼亚军防线的一刻。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 11 月 19 日西南方面军与顿河方面军在大雪浓雾中发起天王星行动",
+          "第 5 坦克集团军与第 21 集团军从谢拉菲莫维奇和克列茨卡亚方向突破罗马尼亚第 3 集团军防线",
+          "11 月 23 日第 4 坦克军与第 26 坦克军在苏维埃茨基会师，完成对第 6 集团军的合围"
+        ],
+        "dramatized": [
+          "突破口上 Pak 40 阵地的具体数量与位置",
+          "玩家所在班在会师前坚守公路交叉口的时长"
+        ]
+      },
+      "design_note_zh": "本关教学「步坦协同与突破纵深」：玩家跟着 T-34 与炮火弹幕推进，坦克能碾平机枪阵地，但侧翼暴露给 Pak 40；烟雾弹是保护坦克的唯一手段。突破之后必须在限定时间内守住公路交叉口，否则合围口会重新封闭。",
+      "music_mood": "全奏铜管与合唱式的推进主题，风雪中带着决绝的昂扬",
+      "unlock_reward": { "xp": 1600, "weapon": "rpg43", "class": null },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_21_winter_storm",
+      "index": 21,
+      "number_in_campaign": 9,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "梅什科瓦河防线",
+      "name_en": "The Myshkova Line",
+      "date": "1942-12-12",
+      "location_zh": "梅什科瓦河与上库姆斯基",
+      "location_en": "Myshkova River / Verkhne-Kumsky",
+      "coordinates": "48.20N 43.10E",
+      "mission_type": "delay",
+      "faction": "soviet",
+      "player_role_zh": "第 2 近卫集团军的一名反坦克组组长，在零下二十度的草原上挡住曼施坦因的解围矛头。",
+      "player_class_recommended": ["assault", "engineer", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在铁路会让站两侧设置反坦克伏击阵地", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "把德军装甲纵队迟滞在梅什科瓦河以南至少二十分钟", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj3", "text_zh": "守住铁路桥，不让德军坦克越过梅什科瓦河", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用燃烧瓶与集束手榴弹在近战中瘫痪一辆重型坦克", "type": "secondary", "required": false, "time_limit_s": null, "condition": "eliminate_count", "target_count": 1, "target_enemy_ids": ["pzkpfw_vi_tiger"] }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_mp40_leader": 4,
+        "ger_mg42_team": 5,
+        "pzkpfw_iv_f2": 4,
+        "pzkpfw_vi_tiger": 1,
+        "stug_iii_g": 3,
+        "pak40": 3,
+        "sdkfz_251": 2
+      },
+      "enemy_tactics_zh": "德军第 6 与第 23 装甲师的战斗群沿铁路线呈楔形突击，四号坦克在 1200 米外先敌开火，虎式在后方压制任何反坦克炮阵地。掷弹兵乘半履带车绕到侧翼，用 MG42 与迫击炮封锁苏军交通壕；遭到伏击时会立刻展开成一线，用 Pak 40 与坦克火力交替掩护推进。",
+      "friendly_forces_zh": "第 2 近卫集团军（马利诺夫斯基）第 87 步兵师与近卫第 2 步兵军的一个团，配属第 4 机械化军的反坦克歼击团。严寒中冻伤减员严重，可用反坦克炮不足十门，主要依靠反坦克枪、RPG-43 与燃烧瓶在近距离作战，另有 T-34 一个连作机动预备队。",
+      "terrain": "field",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 8,
+      "par_time_s": 1400,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_mortar_82", "sov_tank_t34_76", "sov_smoke_screen"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1942 年 12 月 12 日，曼施坦因的顿河集团军群发起「冬季风暴」，第 57 装甲军以第 6、第 23 装甲师从科捷利尼科沃沿铁路北上。马利诺夫斯基的第 2 近卫集团军刚在梅什科瓦河一线展开，第 87 步兵师与近卫第 2 步兵军在零下二十度的草原上反复争夺上库姆斯基。12 月 19 日德军推进至梅什科瓦河，距被围的第 6 集团军仅约 48 公里，但保卢斯未获突围许可；12 月 24 日苏军转入反攻，解围企图失败。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942 年 12 月 12 日曼施坦因发起冬季风暴，第 57 装甲军从科捷利尼科沃北上",
+          "第 2 近卫集团军（马利诺夫斯基）在梅什科瓦河与上库姆斯基一线阻击",
+          "12 月 19 日德军进抵梅什科瓦河，距包围圈约 48 公里，12 月 24 日苏军反攻"
+        ],
+        "dramatized": [
+          "虎式重型坦克参与解围作战的具体数量与战术分工",
+          "玩家所在反坦克组在铁路会让站的伏击细节"
+        ]
+      },
+      "design_note_zh": "本关教学「反坦克伏击与冻土限制」：零下二十度让工兵铲构筑工事的时间翻倍，玩家只能利用村庄房基与雪堆架设反坦克枪，把四号与虎式放进 200 米内再打侧面。铁路桥被德军装甲部队突破即判负，T-34 预备队只能动用一次。",
+      "music_mood": "刺骨的弦乐颤音配以远处坦克引擎，紧张而克制",
+      "unlock_reward": { "xp": 1800, "weapon": null, "class": "anti_tank" },
+      "endless_seed_modifier": { "era": 1942, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_22_operation_ring",
+      "index": 22,
+      "number_in_campaign": 10,
+      "campaign_id": "sov_stalingrad_1942",
+      "name_zh": "包围圈的终结",
+      "name_en": "Operation Ring: The End of the Pocket",
+      "date": "1943-01-10",
+      "location_zh": "斯大林格勒市中心红场百货大楼",
+      "location_en": "Univermag Department Store, Stalingrad",
+      "coordinates": "48.71N 44.51E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "第 21 集团军的一名突击组长，带队逐楼清理市中心废墟，直逼保卢斯的指挥部地下室。",
+      "player_class_recommended": ["assault", "engineer", "sniper"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿马马耶夫岗方向逐楼肃清三条街区，与第 62 集团军会师", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "占领红场百货大楼并突入其地下室", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "接受至少三批德军成建制投降，不得射杀降兵", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "在 1943 年 2 月 2 日前肃清北部拖拉机厂集群残余抵抗", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 22,
+        "ger_mp40_leader": 5,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 4,
+        "ger_sniper": 3,
+        "stug_iii_g": 2,
+        "pak40": 3,
+        "pzkpfw_iv_f2": 2
+      },
+      "enemy_tactics_zh": "被围德军的弹药与口粮几近耗尽，但仍以 MG42 封锁街口，用仅存的突击炮和 Pak 40 直射苏军推进路线。工兵在楼内埋设绊发雷与诡雷，狙击手藏在百货大楼高层；一旦楼体被炮击坍塌，残余守军会退入地下室继续抵抗，最后才成批投降。",
+      "friendly_forces_zh": "顿河方面军第 21 集团军与第 65 集团军的突击群，加强第 4 坦克军残部与工兵爆破组，另配属两个 T-34 连。突击组装备 PPSh-41、ROKS-2 喷火器与炸药包，随行 122mm 与 152mm 火炮用于近距离拆楼，另有第 62 集团军城内守军在北面接应。",
+      "terrain": "city",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 300,
+      "difficulty": 9,
+      "par_time_s": 1800,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_152", "sov_mortar_82", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1943 年 1 月 10 日，罗科索夫斯基的顿河方面军以第 65、第 21、第 24 集团军等七个集团军发起「指环行动」，约七千门火炮与迫击炮轰击包围圈。苏军自西向东压缩，1 月 26 日在马马耶夫岗附近与坚守城内两个多月的第 62 集团军会师；1 月 31 日保卢斯在红场百货大楼地下室被俘，2 月 2 日北部集群停止抵抗，德军第 6 集团军约九万人被俘，斯大林格勒战役结束。本关描写突击组逐楼清理市中心废墟、直逼百货大楼的最后战斗。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943 年 1 月 10 日顿河方面军发起指环行动，以约七千门火炮轰击包围圈",
+          "1 月 26 日苏军在马马耶夫岗附近会师，被围德军被切成两块",
+          "1 月 31 日保卢斯在红场百货大楼地下室被俘，2 月 2 日北部集群投降"
+        ],
+        "dramatized": [
+          "玩家所在突击组在市中心三条街区的具体推进路线",
+          "T-34 直接参与街垒拆楼作战的个体场景"
+        ]
+      },
+      "design_note_zh": "本关教学「逐楼清理与敌军崩溃」：德军士气条会随弹药与口粮耗尽持续下降，玩家可以强攻也可以用喊话逼降；向已投降的敌军射击会扣减指挥点回复并影响结局评价。胜利条件是占领百货大楼地下室，并在 2 月 2 日前肃清北部集群残余抵抗。",
+      "music_mood": "由肃穆的合唱渐次转向低沉而空旷的终曲，雪落废墟的寂静",
+      "unlock_reward": { "xp": 3000, "weapon": "captured_mg42", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.2 }
+    }
+  ]
+}

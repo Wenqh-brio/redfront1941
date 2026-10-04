@@ -1,0 +1,4 @@
+Name,id,name_zh,name_en,faction,fronts,hp,weapon,threat,note
+bf109_f,Bf 109 战斗机,Bf 109,germany,east|west,120,机炮+机枪,4,对无掩护的补给纵队与暴露炮位威胁极大。
+ju87_stuka,Ju 87 斯图卡俯冲轰炸机,Ju 87 Stuka,germany,east|west,150,250/500kg 炸弹,6,俯冲尖啸声会造成未掩蔽单位士气下降（-30% 士气）。
+fw190,Fw 190 战斗轰炸机,Fw 190,germany,west,140,炸弹+机炮,5,西线常见的快速对地攻击机。

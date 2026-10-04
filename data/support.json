@@ -1,0 +1,167 @@
+{
+  "$schema": "redfront.support/1",
+  "design_rule": "所有支援通过『指挥点(CP)』+『通讯延迟』+『冷却』三重限制。呼叫不是即时胜利：从呼叫到弹着最快 25 秒，必须由观察员维持视线，否则弹着散布翻倍。",
+  "command_points": {
+    "start": 2,
+    "max": 10,
+    "regen_per_s": 0.035,
+    "objective_bonus": 2,
+    "kill_streak_bonus": 0.2,
+    "desc": "完成目标与连续击杀获得 CP；CP 不跨关卡继承，无限模式内每 5 波 +2。"
+  },
+  "comms": {
+    "radio_required": true,
+    "radio_weight_kg": 2.4,
+    "radio_slots": 1,
+    "line_break_effect": "通讯中断时已呼叫的支援延迟翻倍；无线电台被摧毁则 60 秒内无法呼叫。",
+    "signal_flare": "夜间/烟幕条件下需发射信号弹标记目标（+6 秒延迟，散布 -50%）。",
+    "counter_intel": "敌方无线电测向：呼叫后 20 秒内有概率引来敌方反炮兵火力（难度 ≥ 硬核 时启用）。"
+  },
+  "call_ins": [
+    {
+      "id": "sov_mortar_82", "name_zh": "82mm 迫击炮排急促射", "name_en": "82mm Mortar Fire Mission",
+      "faction": "soviet", "type": "indirect", "cp_cost": 1, "cooldown_s": 45, "delay_s": 12,
+      "radius_m": 18, "rounds": 8, "damage_per_round": 70, "shell": "HE 82mm",
+      "spread_base_m": 12, "requires": ["radio"], "best_against": ["infantry", "mg_nest"],
+      "realism": "弹道弯曲可打掩体后方；对坚固工事效果有限。",
+      "note": "最廉价、最常用的压制手段。"
+    },
+    {
+      "id": "sov_howitzer_122", "name_zh": "122mm 榴弹炮营火力急袭", "name_en": "122mm Howitzer Barrage",
+      "faction": "soviet", "type": "indirect", "cp_cost": 3, "cooldown_s": 150, "delay_s": 35,
+      "radius_m": 35, "rounds": 18, "damage_per_round": 110, "shell": "HE 122mm",
+      "spread_base_m": 20, "requires": ["radio", "observer_line_of_sight"], "best_against": ["infantry", "fortification", "at_gun"],
+      "realism": "弹坑可改造为掩体；对装甲直击有概率瘫痪履带。",
+      "note": "攻坚关卡的关键手段，散布需要望远镜校射。"
+    },
+    {
+      "id": "sov_howitzer_152", "name_zh": "152mm 重炮定点破坏", "name_en": "152mm Heavy Artillery Strike",
+      "faction": "soviet", "type": "indirect", "cp_cost": 5, "cooldown_s": 240, "delay_s": 50,
+      "radius_m": 28, "rounds": 9, "damage_per_round": 180, "shell": "HE 152mm",
+      "spread_base_m": 14, "requires": ["radio", "observer_line_of_sight"], "best_against": ["fortification", "heavy_tank_side", "building"],
+      "realism": "可摧毁砖石建筑与碉堡顶盖；对混凝土加厚掩体仍需多次命中。",
+      "note": "柏林巷战中用于逐楼清理。"
+    },
+    {
+      "id": "sov_katyusha", "name_zh": "BM-13「喀秋莎」齐射", "name_en": "BM-13 Katyusha Salvo",
+      "faction": "soviet", "type": "area_saturation", "cp_cost": 4, "cooldown_s": 210, "delay_s": 40,
+      "radius_m": 60, "rounds": 16, "damage_per_round": 95, "shell": "M-13 132mm rocket",
+      "spread_base_m": 45, "requires": ["radio", "eyes_on_target"], "best_against": ["infantry_in_open", "assembly_area", "convoy"],
+      "realism": "覆盖面积巨大但精度差，无法用于近战支援（最小安全距离 150m）。",
+      "note": "对集结地毁灭性打击；压制效果（士气 -60%）强于杀伤。"
+    },
+    {
+      "id": "sov_smoke_screen", "name_zh": "发烟弹幕", "name_en": "Smoke Screen Barrage",
+      "faction": "soviet", "type": "obscurant", "cp_cost": 2, "cooldown_s": 90, "delay_s": 18,
+      "radius_m": 40, "duration_s": 60, "requires": ["radio"], "best_against": [],
+      "realism": "阻断敌方机枪与观察哨视线，掩护渡河/横越开阔地。",
+      "note": "渡河与突破关卡的战术核心。"
+    },
+    {
+      "id": "sov_il2_strafe", "name_zh": "IL-2 强击机扫射", "name_en": "IL-2 Sturmovik Strafe",
+      "faction": "soviet", "type": "air", "cp_cost": 3, "cooldown_s": 180, "delay_s": 45,
+      "radius_m": 25, "passes": 2, "damage_per_pass": 130, "armor_penetration_mm": 45,
+      "requires": ["radio", "marked_target"], "best_against": ["vehicle_column", "infantry_in_open", "soft_skin"],
+      "realism": "需要目标标记；防空火力（Flak 36/FlaKvierling）可将其击落，届时不会投弹。",
+      "note": "仅白天与无低云条件可用。"
+    },
+    {
+      "id": "sov_tank_t34_76", "name_zh": "T-34/76 坦克排支援", "name_en": "T-34/76 Tank Platoon",
+      "faction": "soviet", "type": "armor", "cp_cost": 4, "cooldown_s": 200, "delay_s": 60,
+      "units": 3, "armor_mm": 45, "hp_each": 340, "weapon": "76mm F-34",
+      "penetration_mm": 78, "arrives_from": "rear_road", "desant_slots": 6,
+      "requires": ["radio"], "best_against": ["infantry", "light_tank", "fortification"],
+      "realism": "坦克走道路/开阔地形，无法穿越废墟与密林；油料与弹药有限（8 分钟后撤离）。",
+      "note": "可搭载 6 名步兵（坦克搭载步兵）随车冲击。"
+    },
+    {
+      "id": "sov_tank_isu152", "name_zh": "ISU-152 自行火炮支援", "name_en": "ISU-152 Self-Propelled Gun",
+      "faction": "soviet", "type": "armor_siege", "cp_cost": 6, "cooldown_s": 300, "delay_s": 75,
+      "units": 1, "armor_mm": 90, "hp_each": 520, "weapon": "152mm ML-20S",
+      "penetration_mm": 110, "arrives_from": "rear_road", "requires": ["radio"],
+      "best_against": ["fortification", "heavy_tank", "building"],
+      "realism": "装填极慢（20 秒/发），射界有限，需步兵保护免受铁拳袭击。",
+      "note": "攻坚利器，柏林战役「动物园杀手」。"
+    },
+    {
+      "id": "sov_guards_rifle_reinforcement", "name_zh": "近卫步兵班增援", "name_en": "Guards Rifle Squad Reinforcement",
+      "faction": "soviet", "type": "infantry", "cp_cost": 2, "cooldown_s": 160, "delay_s": 55,
+      "units": 1, "squad_size": 8, "weapon_mix": "6xPPSh-41 + 1xDP-27 + 1x狙击",
+      "behaviour": "从后方进入并占据最近掩体；不执行玩家微操，只按「推进/固守」指令行动。",
+      "realism": "增援来自营预备队，若关卡进入最后 2 分钟则不再可用。",
+      "note": "战线吃紧时的救命稻草。"
+    },
+    {
+      "id": "us_105_howitzer", "name_zh": "105mm 榴弹炮火力支援", "name_en": "105mm Howitzer Fire Mission",
+      "faction": "us", "type": "indirect", "cp_cost": 3, "cooldown_s": 140, "delay_s": 30,
+      "radius_m": 32, "rounds": 14, "damage_per_round": 100, "shell": "HE 105mm",
+      "spread_base_m": 16, "requires": ["radio", "forward_observer"], "best_against": ["infantry", "pak40", "fortification"],
+      "realism": "美军特色为火力请求响应快（延迟 30s），且有 FDC 校射。",
+      "note": "西线美军的标准火力支援。"
+    },
+    {
+      "id": "us_155_heavy", "name_zh": "155mm 重炮营压制", "name_en": "155mm Heavy Artillery",
+      "faction": "us", "type": "indirect", "cp_cost": 5, "cooldown_s": 240, "delay_s": 45,
+      "radius_m": 45, "rounds": 12, "damage_per_round": 150, "shell": "HE 155mm",
+      "spread_base_m": 18, "requires": ["radio", "forward_observer"], "best_against": ["fortification", "built_up_area"],
+      "realism": "可摧毁树线掩体后的目标；城市中会引发建筑坍塌（改变关卡地形）。",
+      "note": "卡朗唐与亚琛攻坚使用。"
+    },
+    {
+      "id": "us_p47_strike", "name_zh": "P-47 雷电战斗轰炸", "name_en": "P-47 Thunderbolt Strike",
+      "faction": "us", "type": "air", "cp_cost": 4, "cooldown_s": 190, "delay_s": 50,
+      "radius_m": 30, "passes": 2, "damage_per_pass": 150, "armor_penetration_mm": 70,
+      "requires": ["radio", "marked_target", "clear_weather"], "best_against": ["armor", "convoy", "strongpoint"],
+      "realism": "火箭弹+炸弹，对装甲比 IL-2 更强；同样受高炮威胁。",
+      "note": "西线美军的标志性空中支援。"
+    },
+    {
+      "id": "us_sherman_platoon", "name_zh": "M4A3 谢尔曼坦克排支援", "name_en": "M4A3 Sherman Platoon",
+      "faction": "us", "type": "armor", "cp_cost": 4, "cooldown_s": 200, "delay_s": 65,
+      "units": 3, "armor_mm": 51, "hp_each": 360, "weapon": "75mm M3",
+      "penetration_mm": 75, "arrives_from": "rear_road", "desant_slots": 5,
+      "requires": ["radio"], "best_against": ["infantry", "light_tank", "fortification"],
+      "realism": "正面无法对抗虎式/豹式，需烟幕掩护侧翼机动。",
+      "note": "数量优势与快速火力支援。"
+    },
+    {
+      "id": "us_bazooka_team_attach", "name_zh": "巴祖卡小组配属", "name_en": "Bazooka Team Attachment",
+      "faction": "us", "type": "infantry", "cp_cost": 2, "cooldown_s": 170, "delay_s": 45,
+      "units": 1, "squad_size": 2, "weapon_mix": "2xM1A1 巴祖卡 + M1 卡宾枪",
+      "behaviour": "跟随玩家 40m 内机动，优先射击 150m 内载具。",
+      "realism": "小组易被步兵压制，需要玩家掩护其侧翼。",
+      "note": "面对虎式集群的必要补充。"
+    },
+    {
+      "id": "engineer_assault_group", "name_zh": "突击工兵组（破障）", "name_en": "Engineer Assault Group",
+      "faction": "both", "type": "infantry", "cp_cost": 3, "cooldown_s": 220, "delay_s": 60,
+      "units": 1, "squad_size": 6, "weapon_mix": "喷火器 + 炸药包 + PPSh/M3",
+      "behaviour": "自动爆破标记的碉堡、铁丝网与雷区；不承担进攻任务。",
+      "realism": "SHISBr（苏）与战斗工兵（美）的真实编制用途。",
+      "note": "要塞攻坚关卡的战术选项。"
+    }
+  ],
+  "endless_mode": {
+    "id": "endless_waves",
+    "name_zh": "无限模式：永不停歇的战线",
+    "name_en": "Endless: The Line Never Rests",
+    "description": "在随机生成的战区地形上抵御无穷波次敌军。每 5 波为一个「战役阶段」，从 1941 年的德军步兵推进演变为 1945 年的虎王/豹式与国民突击队混合攻势。",
+    "rules": [
+      "波次之间 45 秒整备：可补给食物/水/弹药、更换武器、构筑掩体。",
+      "每波敌人组成随波次与所选年代加权（1941/1943/1945 三套表）。",
+      "玩家死亡即结束；每 5 波获得一次「复活卡」与 1 次免费支援。",
+      "天气与昼夜每 3 波随机变化，影响视野、炮击精度与空中支援可用性。",
+      "难度曲线：波次 n 的敌人数量 = 4 + floor(n*1.6)，精英单位从第 6 波开始出现。"
+    ],
+    "wave_table": [
+      { "wave": 1, "era": 1941, "composition": { "ger_landser_rifleman": 6, "ger_mp40_leader": 1 } },
+      { "wave": 2, "era": 1941, "composition": { "ger_landser_rifleman": 8, "ger_mg42_team": 1 } },
+      { "wave": 3, "era": 1941, "composition": { "ger_landser_rifleman": 10, "ger_mp40_leader": 2 } },
+      { "wave": 4, "era": 1942, "composition": { "ger_landser_rifleman": 10, "ger_mg42_team": 2, "pzkpfw_iii": 1 } },
+      { "wave": 5, "era": 1942, "composition": { "ger_ss_grenadier": 8, "ger_sniper": 2, "pzkpfw_iv_f2": 1 }, "boss": true },
+      { "wave": 6, "era": 1943, "composition": { "ger_ss_grenadier": 10, "ger_mg42_team": 2, "stug_iii_g": 2 } },
+      { "wave": 10, "era": 1943, "composition": { "ger_ss_grenadier": 14, "ger_panzerfaust": 4, "pzkpfw_v_panther": 2 }, "boss": true },
+      { "wave": 15, "era": 1945, "composition": { "ger_volkssturm": 20, "ger_ss_grenadier": 10, "pzkpfw_vi_tiger": 2, "pak40": 3 }, "boss": true }
+    ]
+  }
+}

@@ -1,0 +1,28 @@
+# Unreal Engine generated output
+**/Binaries/
+**/DerivedDataCache/
+**/Intermediate/
+**/Saved/
+**/.vs/
+*.sln
+*.slnx
+*.VC.db
+*.opendb
+*.pdb
+*.ilk
+*.obj
+*.exp
+*.lib
+*.target
+*.log
+__pycache__/
+*.py[cod]
+
+# Local and packaged build output
+/dist/
+node_modules/
+
+# Operating system files
+.DS_Store
+Thumbs.db
+Desktop.ini

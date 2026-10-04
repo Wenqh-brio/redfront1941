@@ -1,0 +1,13 @@
+Name,id,name_zh,name_en,faction,fronts,hp,armor_value,weapon,damage,fire_rate_s,accuracy,role,threat,awareness_m,reaction_s,suppression_resist,calls_support,note,ai_awareness_m,ai_reaction_s,ai_suppression_resist,ai_calls_support,ai_call_support_s,ai_relocates_after_shot,ai_targets_vehicles_first,ai_clears_bunkers,ai_morale_break_chance,ai_ambush_bonus
+ger_landser_rifleman,德军步兵（步枪）,Wehrmacht Rifleman,germany,east|west,100,0,kar98k,26,2.4,0.55,line,1,220,1.1,0.9,false,,220,1.1,0.9,false,,,,,,
+ger_mp40_leader,德军班长（MP40）,Wehrmacht Squad Leader,germany,east|west,110,0,mp40,14,0.16,0.45,leader,2,240,0.9,1,true,击杀后敌班协同下降，并可能提前触发敌方呼叫迫击炮。,240,0.9,1,true,40,,,,,
+ger_mg42_team,德军 MG42 机枪组,MG42 Machine Gun Team,germany,east|west,130,0,mg42,11,0.06,0.4,support,4,420,1.4,1.3,false,压制核心，必须用迫击炮/侧翼火力清除。,420,1.4,1.3,false,,,,,,
+ger_sniper,德军狙击手,Wehrmacht Sniper,germany,east|west,90,0,kar98k_scoped,45,4,0.82,sniper,3,500,1.2,1,false,开火后转移阵地，需要反狙击战术。,500,1.2,1,,,true,,,,
+ger_panzerfaust,德军铁拳反坦克兵,Panzerfaust Gunner,germany,east|west,100,0,panzerfaust,95,8,0.6,anti_armor,3,150,1.6,0.9,false,近距离对坦克威胁极大，坦克关卡的隐性失败条件。,150,1.6,0.9,,,,true,,,
+ger_pioneer,德军工兵（喷火/爆破）,Pionier,germany,east|west,120,2,flamethrower_41,20,0.1,0.5,assault,4,120,1.3,1,false,坑道/室内战斗的主要威胁。,120,1.3,1,,,,,true,,
+ger_volkssturm,国民突击队（民兵）,Volkssturm,germany,east|west,70,0,panzerfaust_or_rifle,18,3,0.35,militia,1,160,1.8,0.5,false,柏林战役特征单位，士气易崩溃。,160,1.8,0.5,,,,,,0.35,
+ger_ss_grenadier,武装党卫军掷弹兵,Waffen-SS Grenadier,germany,east|west,115,1,stg44_or_kar98k,22,1.2,0.62,elite,3,260,0.85,1.35,true,反冲击主力，1943 年后常见。,260,0.85,1.35,true,55,,,,,
+ger_fallschirmjager,德军伞兵,Fallschirmjäger,germany,west,120,1,fg42,24,0.4,0.7,elite,4,300,0.8,1.3,false,卡朗唐、蒙特堡方向的顽强对手。,300,0.8,1.3,,,,,,,1.4
+romanian_infantry,罗马尼亚步兵,Romanian Infantry,axis_aux,east,85,0,vz24,20,2.6,0.45,line,1,200,1.4,0.7,false,斯大林格勒包围圈侧翼部队，防线较薄弱。,200,1.4,0.7,,,,,,0.25,
+hungarian_infantry,匈牙利步兵,Hungarian Infantry,axis_aux,east,85,0,manlicher_31m,20,2.6,0.45,line,1,200,1.4,0.75,false,顿河方向防御部队。,200,1.4,0.75,,,,,,0.2,
+italian_alpini,意大利阿尔卑斯山地兵,Italian Alpini,axis_aux,east,90,0,carcano,21,2.5,0.48,line,2,220,1.3,0.8,false,顿河大弯曲部防线，冬季装备严重不足。,220,1.3,0.8,,,,,,,

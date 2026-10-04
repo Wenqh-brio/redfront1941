@@ -1,0 +1,1174 @@
+{
+  "$schema": "redfront.levels/1",
+  "campaign_id": "sov_barbarossa_1941",
+  "author_note": "十二个锚点，从 1941-06-22 布列斯特的第一声炮响到 1942-01 勒热夫的雪原；全部用真实番号与真实地名做骨架，无法考证的细节一律写进 dramatized。",
+  "levels": [
+    {
+      "id": "sov_01_brest_fortress",
+      "index": 1,
+      "number_in_campaign": 1,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "布列斯特要塞：没有命令的黎明",
+      "name_en": "Brest Fortress: A Dawn Without Orders",
+      "date": "1941-06-22",
+      "location_zh": "白俄罗斯布列斯特要塞",
+      "location_en": "Brest Fortress, Belorussia",
+      "coordinates": "52.08N 23.66E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "红军第 6 步兵师某团的一名步兵，凌晨在营房里被炮火掀下床铺，上级联系不上，只能跟着老兵守墙。",
+      "player_class_recommended": [
+        "rifleman",
+        "machine_gunner"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "守住布格河一侧的环形兵营阵地 8 分钟",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 540,
+          "condition": "hold_position",
+          "hold_time_s": 480,
+          "radius_m": 4
+        },
+        {
+          "id": "obj2",
+          "text_zh": "用仅存的备用弹药箱为机枪位补给一次",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 600
+        },
+        {
+          "id": "obj3",
+          "text_zh": "从废墟与营房中救出至少 6 名家属并护送撤离",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null,
+          "condition": "rescue_count",
+          "target_count": 6,
+          "rescue_points": [
+            { "x_m": -16, "y_m": -10 },
+            { "x_m": -12, "y_m": -7 },
+            { "x_m": -8, "y_m": -11 },
+            { "x_m": -4, "y_m": -6 },
+            { "x_m": -15, "y_m": 3 },
+            { "x_m": -9, "y_m": 5 },
+            { "x_m": -3, "y_m": 1 }
+          ]
+        },
+        {
+          "id": "obj4",
+          "text_zh": "有人活着撤到北面的桥头",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": null,
+          "condition": "reach_location",
+          "radius_m": 4,
+          "marker_x_m": 15,
+          "marker_y_m": 20
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 18,
+        "ger_mp40_leader": 2,
+        "ger_mg42_team": 2,
+        "ger_pioneer": 4,
+        "sdkfz_222": 1
+      },
+      "enemy_tactics_zh": "德军第 45 步兵师先以炮火与工兵喷火器逐段清扫兵营，机枪组架在桥头压制射击孔；一旦某段城墙被突破，步兵即以 MP40 沿走廊渗透，并利用装甲侦察车沿河堤绕后封堵出口。",
+      "friendly_forces_zh": "红军第 6 步兵师与第 42 步兵师残部混编，另有边防总队与家属。三面被布格河与穆哈维茨河包围，武器多为莫辛步枪与两挺马克沁，弹药按人头摊派，通讯只剩一部被炸坏的野战电话。",
+      "terrain": "fortress",
+      "weather": "clear",
+      "time_of_day": "dawn",
+      "visibility_m": 300,
+      "difficulty": 3,
+      "par_time_s": 1080,
+      "weight_budget_kg": 26,
+      "resupply_points": 0,
+      "available_support": [],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年六月二十二日凌晨，德军第 45 步兵师在炮兵与工兵支援下强攻布列斯特要塞。红军第 6 步兵师与第 42 步兵师的部分单位在通讯断绝、上级命令未能下达时自行防守，四面都是爆炸声。要塞三面被布格河与穆哈维茨河环抱，水源又被切断，守军只能在砖石工事与兵营走廊里逐屋逐墙抵抗，捷列斯波尔门与北桥反复易手，个别据点一直坚持到七月下旬仍在向外射击。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-06-22 德军第 45 步兵师开始强攻布列斯特要塞，红军第 6 步兵师与第 42 步兵师残部自发抵抗",
+          "要塞为三面环水的工事群，守军在孤立无援下坚持数周，个别据点坚持至 7 月下旬"
+        ],
+        "dramatized": [
+          "关卡中玩家所属的具体番号与家属疏散人数为虚构，史料未见对应记载",
+          "马克沁机枪数量与野战电话细节为可玩性压缩后的简化设定"
+        ]
+      },
+      "design_note_zh": "第一关做负重与弹药的入门课：补给点为零，弹药只能从尸体与营房废墟里翻捡，逼玩家第一次意识到多带一盒子弹就是少跑一步路。失败条件是机枪位被打哑或全员阵亡，撤到北面桥头可以保住少量战果，教学目标是学会在断粮断弹中分配每一发子弹。",
+      "music_mood": "低沉的大提琴与远处定音鼓，像被压在砖石下的心跳。",
+      "unlock_reward": {
+        "xp": 800,
+        "weapon": "mosin_m1891_30",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1.1
+      }
+    },
+    {
+      "id": "sov_02_raze_dubno",
+      "index": 2,
+      "number_in_campaign": 2,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "杜布诺路口：反突击的残骸",
+      "name_en": "Dubno Crossroads: Wreckage of the Counterstroke",
+      "date": "1941-06-23",
+      "location_zh": "乌克兰杜布诺以西",
+      "location_en": "West of Dubno, Ukraine",
+      "coordinates": "50.42N 25.75E",
+      "mission_type": "armored",
+      "faction": "soviet",
+      "player_role_zh": "第 34 坦克师的一名 T-26 车组乘员，反突击被德军三号坦克打散后，与疏散下来的步兵混在一起，在残骸间重组伏击线。",
+      "player_class_recommended": [
+        "anti_tank",
+        "rifleman"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "炸毁或瘫痪至少 2 辆德军坦克纵队中的车辆",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900,
+          "condition": "eliminate_count",
+          "target_count": 2,
+          "target_enemy_ids": ["pzkpfw_iii"]
+        },
+        {
+          "id": "obj2",
+          "text_zh": "守住浮桥路口 6 分钟，掩护 8 名掉队坦克兵归队",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 360
+        },
+        {
+          "id": "obj3",
+          "text_zh": "把反坦克枪从燃烧的 T-26 里取出",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "在德军工兵修好浮桥前离开阵地",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1020
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 14,
+        "ger_mp40_leader": 2,
+        "pzkpfw_iii": 3,
+        "sdkfz_251": 2,
+        "sdkfz_222": 2,
+        "ger_mg42_team": 1
+      },
+      "enemy_tactics_zh": "德军装甲集群以三号坦克为矛头沿公路挺进，半履带车随行投送装甲掷弹兵抢占路口；遭伏击后立即展开战斗队形，用坦克炮压制正面、掷弹兵从排水沟侧翼包抄，同时呼叫装甲侦察车绕圈侦察伏击炮位。",
+      "friendly_forces_zh": "西南方面军第 8 机械化军第 34 坦克师残部与第 12 坦克师掉队车组，车辆多为 T-26 与 BT 系列，油料与 45mm 炮弹严重不足；步兵以 RPG-43 与燃烧瓶充当主要反装甲手段，另有 2 门完好的 45mm 反坦克炮。",
+      "terrain": "field",
+      "weather": "rain",
+      "time_of_day": "day",
+      "visibility_m": 600,
+      "difficulty": 5,
+      "par_time_s": 1320,
+      "weight_budget_kg": 25,
+      "resupply_points": 1,
+      "available_support": [
+        "sov_mortar_82"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年六月二十三日起，红军西南方面军投入第 8、第 9、第 15、第 19、第 22 机械化军的约两千辆坦克，在布罗迪、杜布诺与卢茨克三角地带对德军第 1 装甲集群发起战争初期规模最大的装甲反突击，第 34 坦克师与第 12 坦克师都在其中。由于油料短缺、指挥混乱加上德军反坦克炮网，反突击到六月底彻底瓦解，公路上遍布被遗弃与烧毁的坦克，车组只能丢下车徒步后撤，能带走的炮弹没有几发。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-06-23 起苏军五个机械化军在杜布诺—布罗迪方向发起大规模装甲反突击",
+          "第 34 坦克师与第 12 坦克师属于第 8 机械化军，参加了杜布诺方向战斗"
+        ],
+        "dramatized": [
+          "关卡中浮桥争夺与具体归队人数为虚构，用于承载反装甲教学",
+          "玩家以 T-26 车组身份下车作战的桥段为叙事压缩"
+        ]
+      },
+      "design_note_zh": "本关首次引入重装携行与近距反坦克投掷：PTRD-41 重逾 17 公斤，背着它跑不动，必须交给队友或提前选好射位。教学要点是正面打不穿三号坦克，只有侧后与履带有效；听见半履带车引擎就该换位置，否则会被掷弹兵侧翼包抄。",
+      "music_mood": "急促的弦乐切分与金属摩擦声，混乱中带着硬撑的节奏。",
+      "unlock_reward": {
+        "xp": 1100,
+        "weapon": "ptrds41",
+        "class": "anti_tank"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1.05
+      }
+    },
+    {
+      "id": "sov_03_minsk_pocket",
+      "index": 3,
+      "number_in_campaign": 3,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "明斯克口袋：弹药见底的突围",
+      "name_en": "Minsk Pocket: Breakout on Empty Pouches",
+      "date": "1941-06-28",
+      "location_zh": "白俄罗斯明斯克东郊",
+      "location_en": "Eastern Outskirts of Minsk, Belorussia",
+      "coordinates": "53.90N 27.57E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "第 100 步兵师的一名班长，部队在明斯克以东被合围，弹药只剩半个基数，必须组织残兵在合围圈上撕开一个口子。",
+      "player_class_recommended": [
+        "rifleman",
+        "assault",
+        "engineer"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "在德军封锁线上打开缺口并让 15 名幸存者通过",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj2",
+          "text_zh": "带队穿过铁路桥",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj3",
+          "text_zh": "在弹药彻底耗尽前撤离明斯克市区",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1080
+        },
+        {
+          "id": "obj4",
+          "text_zh": "炸毁铁路桥上的德军弹药车",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": 720
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 16,
+        "ger_mg42_team": 3,
+        "ger_mp40_leader": 3,
+        "sdkfz_251": 2,
+        "pzkpfw_iii": 2,
+        "ger_pioneer": 2
+      },
+      "enemy_tactics_zh": "德军以装甲掷弹兵封锁所有出城道路，机枪组交叉布置在铁路路基与瓦砾楼上，反坦克炮控制桥面；对突围人群使用照明弹与迫击炮拦阻，并以半履带车快速抢占突破口两翼，逼迫守军重新缩回街巷。",
+      "friendly_forces_zh": "西方方面军第 100 步兵师与第 13 步兵师被围残部、几个混编的筑垒地域守备队。没有骑兵，没有坦克，一半人只剩三五发子弹，携行多为伤员与空水壶，指挥靠口头传递，掉队的人只能自己找路。",
+      "terrain": "city",
+      "weather": "fog",
+      "time_of_day": "dawn",
+      "visibility_m": 250,
+      "difficulty": 6,
+      "par_time_s": 1440,
+      "weight_budget_kg": 22,
+      "resupply_points": 1,
+      "available_support": [
+        "sov_mortar_82"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年六月二十八日，德军第 2 与第 3 装甲集群在明斯克以东会师，把西方方面军第 3、第 10、第 13 集团军的大部合围在比亚韦斯托克与明斯克之间，第 100 步兵师也在包围圈里。被围部队与外界联络中断，弹药和油料几乎耗尽，只能分成小股向东突围，许多人一直退到别列津纳河才重新编成部队，沿途不断有人掉队或失散。明斯克就在当天失守，后方机关与仓库来不及撤离，物资大多落到了德军手里。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-06-28 德军装甲集群在明斯克以东合围苏军西方方面军主力，明斯克当日失守",
+          "第 100 步兵师为被围部队之一，突围后残部继续向东退却"
+        ],
+        "dramatized": [
+          "铁路桥爆破与具体的 15 名幸存者门槛为关卡化虚构",
+          "包围圈上单一突破口的空间尺度被压缩"
+        ]
+      },
+      "design_note_zh": "本关教突围节奏：为掉队单位停下的每一分钟都在烧弹药与体力，玩家必须在回去救人和继续跑之间做选择。工兵铲能在冻土与瓦砾上挖浅坑提供有限掩蔽，但弹药一旦见底就会被压制在开阔地上动弹不得，失败条件正是弹药归零且无法脱离接触。",
+      "music_mood": "阴冷的弦乐持续音，雾里只有脚步与弹壳声。",
+      "unlock_reward": {
+        "xp": 1300,
+        "weapon": null,
+        "class": "engineer"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_04_smolensk",
+      "index": 4,
+      "number_in_campaign": 4,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "斯摩棱斯克：第聂伯河对岸",
+      "name_en": "Smolensk: Across the Dnieper",
+      "date": "1941-07-16",
+      "location_zh": "俄罗斯斯摩棱斯克市区",
+      "location_en": "Smolensk, Russia",
+      "coordinates": "54.78N 32.05E",
+      "mission_type": "delay",
+      "faction": "soviet",
+      "player_role_zh": "第 16 集团军第 152 步兵师的一名步兵，随残部在第聂伯河南岸的街道上逐屋迟滞德军，为主力争取渡河时间。",
+      "player_class_recommended": [
+        "rifleman",
+        "machine_gunner",
+        "engineer"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "在市中心 3 处路口各维持 4 分钟迟滞",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 720
+        },
+        {
+          "id": "obj2",
+          "text_zh": "炸掉第聂伯河渡口留存的浮桥",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj3",
+          "text_zh": "撤出 2 门缺少炮弹的反坦克炮",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "在德军合拢前把伤员送过河",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1080
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 20,
+        "ger_mg42_team": 3,
+        "ger_mp40_leader": 3,
+        "pzkpfw_iii": 3,
+        "sdkfz_251": 2,
+        "ju87_stuka": 1
+      },
+      "enemy_tactics_zh": "德军以装甲矛头沿主要街道推进，遇到街垒立即呼叫斯图卡俯冲，工兵用爆破筒清屋；机枪组占据钟楼与百货大楼高层俯射，装甲车沿河堤迂回切断退路，压迫守军向渡口溃退，再用迫击炮封锁桥面。",
+      "friendly_forces_zh": "第 16 集团军第 152 步兵师与第 129 步兵师残部，加上民警与工人营。迫击炮弹按发分配，反坦克炮弹几乎见底，通讯靠传令兵；多数人两昼夜未合眼，行军水壶已空，伤员只能靠市民用板车往河边送。",
+      "terrain": "city",
+      "weather": "clear",
+      "time_of_day": "dusk",
+      "visibility_m": 500,
+      "difficulty": 5,
+      "par_time_s": 1440,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_smoke_screen"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年七月十六日，德军第 29 摩托化师突入斯摩棱斯克市区，红军第 16 集团军第 152 步兵师等部在第聂伯河南岸逐街抵抗，同时掩护主力渡河东撤。守军极度缺乏反坦克炮弹，只能靠燃烧瓶与炸药包近身对付坦克，市区在巷战中反复易手，街道被瓦砾和弹坑堵死，伤员要从河岸一点点往后送。斯摩棱斯克会战从七月上旬一直打到九月初，把德军向莫斯科方向的推进拖了将近两个月。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-07-16 德军突入斯摩棱斯克市区，苏军第 16 集团军所部展开巷战与渡河防御",
+          "斯摩棱斯克会战自 7 月上旬持续至 9 月初，迟滞了德军向莫斯科方向的推进"
+        ],
+        "dramatized": [
+          "关卡浮桥爆破与伤员渡河的具体时序为设计需要",
+          "第 152 步兵师在市区某一路口的具体防御位置被简化"
+        ]
+      },
+      "design_note_zh": "本关第一次教迟滞作战：防线可以丢，时间不能丢，倒计时替代血条成为主要压力，允许玩家主动后撤换阵地。烟幕弹幕首次可用，教学点是遮断钟楼机枪的视线远比硬拼省命，同时要把仅剩的弹药留给掩护渡河的最后几分钟。",
+      "music_mood": "缓慢推进的低音提琴，间或有斯图卡鸣笛般的尖锐单音。",
+      "unlock_reward": {
+        "xp": 1500,
+        "weapon": "mosin_pu_sniper",
+        "class": "sniper"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_05_yelnya",
+      "index": 5,
+      "number_in_campaign": 5,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "叶利尼亚：突出部的第一次反击",
+      "name_en": "Yelnya: First Counterstroke of the Salient",
+      "date": "1941-08-30",
+      "location_zh": "俄罗斯叶利尼亚突出部",
+      "location_en": "Yelnya Salient, Russia",
+      "coordinates": "54.57N 33.40E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "第 24 集团军第 19 步兵师的一名突击组组长，准备把德军从叶利尼亚高地上赶出去。",
+      "player_class_recommended": [
+        "assault",
+        "engineer",
+        "rifleman"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "夺取突出部内的两处高地支撑点",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj2",
+          "text_zh": "用爆破包清除地雷与铁丝网封锁线",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 600
+        },
+        {
+          "id": "obj3",
+          "text_zh": "在德军反冲击下守住已夺阵地 5 分钟",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 300
+        },
+        {
+          "id": "obj4",
+          "text_zh": "缴获一门完好的德军反坦克炮",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 22,
+        "ger_mg42_team": 4,
+        "ger_mp40_leader": 3,
+        "ger_pioneer": 3,
+        "pzkpfw_iii": 2,
+        "sdkfz_251": 1
+      },
+      "enemy_tactics_zh": "德军把高地反斜面作为预备阵地，正面只放观察哨与前哨班，苏军冲上棱线时用机枪与迫击炮交叉覆盖；失守后立刻以装甲掷弹兵和两到三辆三号坦克实施反冲击，并沿林间小路埋设反步兵地雷，逼迫进攻方留在开阔坡地上。",
+      "friendly_forces_zh": "预备队方面军第 24 集团军第 19、第 100、第 120 步兵师与第 107 坦克师部分车辆。突击组以步枪与 RGD-33 为骨干，工兵配爆破包与剪线钳；炮弹基数只够一次火力准备，冲击波次有限，伤员后送要靠担架队穿过林间小路。",
+      "terrain": "forest",
+      "weather": "rain",
+      "time_of_day": "dawn",
+      "visibility_m": 350,
+      "difficulty": 6,
+      "par_time_s": 1500,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_howitzer_122"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年八月三十日，预备队方面军第 24 集团军对叶利尼亚突出部发起反攻，第 19、第 100、第 120 步兵师在森林与高地之间逐段推进。德军第 10 装甲师与党卫军帝国师依托反斜面工事、地雷和铁丝网顽强抵抗，红军反复冲击九天，直到九月六日才肃清整个突出部，自己也伤亡惨重，许多连队只剩不到一半人，补充兵往往当天就上了阵地。这是战争初期少有的成功进攻，德军第一次被迫放弃阵地后撤。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-08-30 第 24 集团军对叶利尼亚突出部发起攻势，9 月 6 日收复该地",
+          "参战部队包括第 19、第 100、第 120 步兵师，对手为德军第 10 装甲师等部"
+        ],
+        "dramatized": [
+          "关卡中的具体高地编号与缴获火炮情节为虚构",
+          "九日战斗被压缩为一次连续的关卡流程"
+        ]
+      },
+      "design_note_zh": "本关把进攻中的负重矛盾摆上台面：爆破包重 3.2 公斤，带两包就跑不动，不带又破不开铁丝网与雷区。教学点是反斜面阵地必须靠迫击炮曲射才能压制，122mm 火力急袭每关只能申请一次，最好留着砸德军的装甲反冲击。",
+      "music_mood": "紧张的进行曲片段，冲锋号式的铜管被雨声压住。",
+      "unlock_reward": {
+        "xp": 1700,
+        "weapon": "svt40",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_06_kiev_pocket",
+      "index": 6,
+      "number_in_campaign": 6,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "基辅口袋：向东，只剩泥和雨",
+      "name_en": "Kiev Pocket: East Through Mud and Rain",
+      "date": "1941-09-15",
+      "location_zh": "乌克兰基辅以东",
+      "location_en": "East of Kiev, Ukraine",
+      "coordinates": "50.45N 30.52E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "第 37 集团军的一名连长，合围已经合拢，命令是丢掉重装备、向东突出去。",
+      "player_class_recommended": [
+        "rifleman",
+        "engineer",
+        "medic"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "在德军合围圈上打开一条通道",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj2",
+          "text_zh": "带 20 名伤员或掉队者穿过通道",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj3",
+          "text_zh": "在天黑前渡过苏拉河支流的浅滩",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1200
+        },
+        {
+          "id": "obj4",
+          "text_zh": "销毁无法带走的反坦克炮",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 24,
+        "ger_mg42_team": 4,
+        "ger_mp40_leader": 4,
+        "pzkpfw_iii": 4,
+        "sdkfz_251": 3,
+        "ger_pioneer": 2,
+        "flak36_88": 1
+      },
+      "enemy_tactics_zh": "德军第 1 装甲集群以坦克与摩托化步兵构成内外两层封锁线，88mm 高射炮部署在制高点封锁开阔地；封锁线上铺设地雷与铁丝网，并用装甲车沿公路巡逻堵截突围人群，对泅渡点施以机枪与迫击炮火力，迫使被围部队在泥地里分散。",
+      "friendly_forces_zh": "西南方面军第 37 集团军与第 5 集团军被围残部，另有若干筑垒地域部队与民兵。燃油耗尽，火炮缺弹，骡马比卡车更可靠；士兵泡在泥水里，很多人已经出现战壕足，口粮按半份发放，饮水靠田里的积水与井水。",
+      "terrain": "river",
+      "weather": "rain",
+      "time_of_day": "dusk",
+      "visibility_m": 300,
+      "difficulty": 7,
+      "par_time_s": 1560,
+      "weight_budget_kg": 23,
+      "resupply_points": 1,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_smoke_screen"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年九月十五日，德军第 1 装甲集群与第 2 装甲集群在洛赫维察会师，把红军西南方面军主力合围在基辅以东，第 37 集团军与第 5 集团军的大部都陷在圈内。秋雨把道路泡成泥沼，重炮与车辆无法带走，突围部队大多弃炮东行，只能靠步行和骡马，只有少数人渡过苏拉河一线回到己方阵地。基辅在九月十九日陷落，方面军司令部大部没能脱出，被俘失踪者极多，这场合围成为战争初期最惨重的失利之一。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-09-15 德军装甲集群在洛赫维察会师，完成对基辅以东苏军主力的合围",
+          "基辅于 1941-09-19 被德军占领，被围苏军损失惨重"
+        ],
+        "dramatized": [
+          "关卡中 20 名伤员的门槛值与具体浅滩位置为设计虚构",
+          "销毁火炮与 88mm 炮封锁的情节为可玩性提炼"
+        ]
+      },
+      "design_note_zh": "本关把泥泞与战壕足写进机制：在泥地里奔跑额外消耗体力，湿透的鞋袜持续降低移动效率，取暖只能靠伏特加配给，代价是瞄准抖动上升。教学点是抛弃重装备换生存，弹药与食物、水的三角权衡第一次变成硬约束，扛不动的东西就该炸掉。",
+      "music_mood": "阴郁的女声哼鸣与泥浆般的低频，没完没了的雨。",
+      "unlock_reward": {
+        "xp": 1900,
+        "weapon": "ppsh41",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 0.95
+      }
+    },
+    {
+      "id": "sov_07_vyazma_bryansk",
+      "index": 7,
+      "number_in_campaign": 7,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "维亚济马：两个口袋之间",
+      "name_en": "Vyazma: Between Two Pockets",
+      "date": "1941-10-07",
+      "location_zh": "俄罗斯维亚济马以西",
+      "location_en": "West of Vyazma, Russia",
+      "coordinates": "55.21N 34.29E",
+      "mission_type": "delay",
+      "faction": "soviet",
+      "player_role_zh": "第 30 集团军的一名被切断通讯的排长，台风行动下两个包围圈正在合拢，你要为身后的部队争取撤退的时间。",
+      "player_class_recommended": [
+        "rifleman",
+        "scout",
+        "engineer"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "在公路两侧构筑并守住 3 处拦阻阵地",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj2",
+          "text_zh": "掩护 30 名撤退人员通过路口",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1200
+        },
+        {
+          "id": "obj3",
+          "text_zh": "在浓雾中找回与主力失联的一个班",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "在包围圈合拢前向东北撤退",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1380
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 22,
+        "ger_mg42_team": 4,
+        "ger_mp40_leader": 4,
+        "pzkpfw_iii": 4,
+        "sdkfz_251": 3,
+        "sdkfz_222": 2,
+        "ju87_stuka": 1
+      },
+      "enemy_tactics_zh": "德军第 3 与第 4 装甲集群以钳形向维亚济马合拢，装甲侦察车在雾中沿乡道渗透寻找空隙，坦克纵队紧贴公路推进；遇到拦阻即以机枪与坦克炮压制，随后派掷弹兵在林线两侧迂回包抄，斯图卡则对暴露的拦阻阵地补刀。",
+      "friendly_forces_zh": "西方方面军第 30、第 19、第 20 集团军被切断的部队，师与师之间只剩约两个团的实兵。通讯靠传令兵穿越雾线，弹药按班摊派，撤退队伍里混着筑垒地域工人、区党委工作人员和拖着行李的市民，谁也说不清前线究竟在哪。",
+      "terrain": "forest",
+      "weather": "fog",
+      "time_of_day": "dawn",
+      "visibility_m": 180,
+      "difficulty": 7,
+      "par_time_s": 1620,
+      "weight_budget_kg": 23,
+      "resupply_points": 1,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_smoke_screen"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年十月二日，德军发起台风行动，第 3 与第 4 装甲集群在维亚济马方向实施钳形突击，十月七日在维亚济马附近会师，把红军西方方面军与预备队方面军的大部合围；与此同时古德里安的装甲部队在布良斯克方向形成第二个包围圈。被围红军在小股单位之间失去联络，通信与补给同时断线，一部分人向东分散突围，另一部分被留在了口袋里，突围的人往往只剩一支步枪和几发子弹。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-10-02 德军发起台风行动，10-07 在维亚济马附近完成合围",
+          "布良斯克方向同时形成第二个包围圈，苏军多个集团军被围"
+        ],
+        "dramatized": [
+          "关卡内 30 名撤退人员的数值与找回失联班的情节为虚构",
+          "雾中具体渗透路线为关卡设计需要"
+        ]
+      },
+      "design_note_zh": "本关是低能见度的雾战教学：视距只有 180 米，听到引擎声时对方已经太近，侦察兵的标记技能第一次变得决定性。三处拦阻阵地允许放弃一到两处来换取时间，但如果三处全部丢失就直接失败，逼迫玩家做出取舍。",
+      "music_mood": "单簧管与低音提琴的雾中对话，远处偶尔传来坦克的金属摩擦。",
+      "unlock_reward": {
+        "xp": 2100,
+        "weapon": null,
+        "class": "scout"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 0.95
+      }
+    },
+    {
+      "id": "sov_08_mozhaisk_line",
+      "index": 8,
+      "number_in_campaign": 8,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "莫扎伊斯克：莫斯科城下的壕沟",
+      "name_en": "Mozhaisk Line: Last Trench Before Moscow",
+      "date": "1941-10-18",
+      "location_zh": "俄罗斯莫扎伊斯克防线",
+      "location_en": "Mozhaisk Defence Line, Russia",
+      "coordinates": "55.51N 36.02E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "第 5 集团军的一名步兵，在匆忙挖出的反坦克壕与混凝土掩体后面，必须把德军挡在莫斯科公路之外。",
+      "player_class_recommended": [
+        "rifleman",
+        "engineer",
+        "machine_gunner"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "守住反坦克壕沿线的主阵地 10 分钟",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 660,
+          "condition": "hold_position",
+          "hold_time_s": 600,
+          "radius_m": 4
+        },
+        {
+          "id": "obj2",
+          "text_zh": "用爆破包炸断坦克可通行的堤道路口",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 720
+        },
+        {
+          "id": "obj3",
+          "text_zh": "保证明斯克公路上的渡口不被封锁",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "协助波多利斯克军校学员的拦阻阵地",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 26,
+        "ger_mg42_team": 4,
+        "ger_mp40_leader": 4,
+        "pzkpfw_iii": 5,
+        "sdkfz_251": 3,
+        "ger_pioneer": 3,
+        "ju87_stuka": 1
+      },
+      "enemy_tactics_zh": "德军装甲部队沿明斯克公路突击，工兵用爆破筒与喷火器清理混凝土掩体与铁丝网，坦克以 50mm 炮直射火力点，步兵在炮火掩护下渡河；对反坦克壕则以推土与爆破寻找缺口，并用迫击炮持续压制后方的预备阵地与渡口。",
+      "friendly_forces_zh": "第 5 集团军第 32 步兵师、第 110 步兵师残部与波多利斯克步兵学校的学员队，另有工人营。反坦克炮数量极少且只剩几发炮弹，反坦克壕挖在冻土与泥泞上，缺炸药就用木板铁钉充数，掩体多是用枕木临时加固的土木工事。",
+      "terrain": "trench",
+      "weather": "mud",
+      "time_of_day": "day",
+      "visibility_m": 400,
+      "difficulty": 7,
+      "par_time_s": 1680,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_howitzer_122"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年十月中旬，红军把西方方面军的残部与后备部队沿莫扎伊斯克一线展开，组成莫斯科接近地的主要防御地带。十月十八日前后，德军装甲部队在这个方向持续施压，第 5 集团军与波多利斯克步兵学校的学员队在伊林斯科耶和小雅罗斯拉韦茨一带用反坦克壕与临时工事迟滞德军。泥泞让车辆寸步难行，双方都在冻土上抢挖掩体，冻伤的人几乎与战伤一样多。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941 年 10 月苏军沿莫扎伊斯克防线展开防御，构成莫斯科接近地防御地带",
+          "波多利斯克步兵学校学员队在小雅罗斯拉韦茨—伊林斯科耶方向执行拦阻作战"
+        ],
+        "dramatized": [
+          "关卡中的具体反坦克壕坐标与掩体数量为设计虚构",
+          "第 5 集团军所部与学员队在同一战壕并肩作战的情节为叙事压缩"
+        ]
+      },
+      "design_note_zh": "工兵铲与野战筑城是本关主角：掩体加装沙袋有额外减伤，但挖掘吃掉的是搬运弹药与饮水的时间。教学点是反坦克壕只能拦车辆不能拦步兵，必须提前标定德军工兵的破障路线，122mm 火力要留着砸渡口与堤道口。",
+      "music_mood": "凝重的管风琴式和弦，泥水与铁镐敲击的节奏。",
+      "unlock_reward": {
+        "xp": 2300,
+        "weapon": "dp28",
+        "class": "machine_gunner"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_09_tula_defense",
+      "index": 9,
+      "number_in_campaign": 9,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "图拉：拖拉机厂的街垒",
+      "name_en": "Tula: Barricades at the Tractor Works",
+      "date": "1941-10-30",
+      "location_zh": "俄罗斯图拉市区",
+      "location_en": "Tula, Russia",
+      "coordinates": "54.20N 37.62E",
+      "mission_type": "urban_clearing",
+      "faction": "soviet",
+      "player_role_zh": "第 50 集团军教导营的一名队员，德军装甲部队沿奥廖尔公路压向图拉，你要在厂房与木屋间逐屋清理突入的敌军。",
+      "player_class_recommended": [
+        "assault",
+        "engineer",
+        "sniper"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "肃清工厂区 3 座建筑内的德军步兵",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 720
+        },
+        {
+          "id": "obj2",
+          "text_zh": "守住拖拉机厂的东门不让坦克突入",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj3",
+          "text_zh": "在城市保持完整的前提下把德军逐出火车站",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1200
+        },
+        {
+          "id": "obj4",
+          "text_zh": "回收工人营遗弃的反坦克枪弹药",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 24,
+        "ger_mg42_team": 3,
+        "ger_mp40_leader": 4,
+        "ger_pioneer": 4,
+        "pzkpfw_iii": 4,
+        "sdkfz_251": 2,
+        "ger_sniper": 2
+      },
+      "enemy_tactics_zh": "德军以坦克沿街道掩护步兵逐屋推进，工兵用喷火器与爆破筒烧毁木屋区，狙击手占据水塔与厂房高处点射指挥员；遭到反击后退入相邻院落构筑临时支撑点，并在夜间用装甲车沿城市外围巡逻，切断居民对守军的补给与支援。",
+      "friendly_forces_zh": "第 50 集团军教导营、第 260 步兵师残部与图拉工人团。武器混杂，既有莫辛与少量 PPSh，也有工厂自制的简易燃烧瓶与改装反坦克枪；居民帮运弹药与伤员，但城市供暖与饮水全面紧张，夜里厂房里挤满冻得发抖的人。",
+      "terrain": "industrial",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 450,
+      "difficulty": 7,
+      "par_time_s": 1560,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_howitzer_122"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年十月三十日，古德里安指挥的德军第 2 装甲集团军从奥廖尔方向猛攻图拉。红军第 50 集团军在工人团、民兵与市民支援下固守城市，把工人营与教导营摆在拖拉机厂和火车站一线。德军未能一举突入城区，只能转为长期围攻，图拉在严寒、弹药短缺与半包围状态下始终没有被攻下，工人团在街口用燃烧瓶和反坦克枪顶住了装甲冲击，居民把自家地窖让给伤员，一直守到反攻开始。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-10-30 德军第 2 装甲集团军开始进攻图拉，城市在此后长期处于半包围状态",
+          "图拉由第 50 集团军防守，工人团与市民参与防御工事构筑与后勤支援"
+        ],
+        "dramatized": [
+          "关卡内逐屋清理的路线与建筑数量为设计虚构",
+          "工人营遗弃弹药的具体情节为可玩性安排"
+        ]
+      },
+      "design_note_zh": "城市攻坚的第一课：房间清理要用手榴弹而不是硬冲，RGD-33 在室内会反弹，3.5 秒引信必须算准，否则伤到自己。教学点是狙击手与机枪位必须优先清除，否则每次推进都要付出两倍代价，同时水与食物在本关消耗速度明显加快。",
+      "music_mood": "手风琴与定音鼓的工业节拍，冷硬、克制、消耗感强。",
+      "unlock_reward": {
+        "xp": 2400,
+        "weapon": "rpg43",
+        "class": "mortarman"
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_10_dubosekovo",
+      "index": 10,
+      "number_in_campaign": 10,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "杜博谢科沃：二十八人的伏击",
+      "name_en": "Dubosekovo: The Anti-Tank Ambush",
+      "date": "1941-11-16",
+      "location_zh": "俄罗斯杜博谢科沃会让站",
+      "location_en": "Dubosekovo Siding, Russia",
+      "coordinates": "55.98N 36.12E",
+      "mission_type": "ambush",
+      "faction": "soviet",
+      "player_role_zh": "第 316 步兵师第 1075 团的一名反坦克手，趴在沃洛科拉姆斯克公路旁的雪坑里，等德军坦克进入 20 米。",
+      "player_class_recommended": [
+        "anti_tank",
+        "rifleman",
+        "engineer"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "在会让站前以反坦克手榴弹与燃烧瓶击毁 6 辆坦克",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900,
+          "condition": "eliminate_count",
+          "target_count": 6,
+          "target_enemy_ids": ["pzkpfw_iii"]
+        },
+        {
+          "id": "obj2",
+          "text_zh": "用 PTRD-41 击穿 2 辆坦克的侧面",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 720
+        },
+        {
+          "id": "obj3",
+          "text_zh": "守住会让站路基阵地 5 分钟",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 360,
+          "condition": "hold_position",
+          "hold_time_s": 300,
+          "radius_m": 4
+        },
+        {
+          "id": "obj4",
+          "text_zh": "把反坦克枪手从侧射位置撤回主阵地",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        }
+      ],
+      "enemy_composition": {
+        "pzkpfw_iii": 6,
+        "ger_landser_rifleman": 20,
+        "ger_mg42_team": 2,
+        "ger_mp40_leader": 2,
+        "ger_sniper": 2
+      },
+      "enemy_tactics_zh": "德军坦克沿沃洛科拉姆斯克公路成纵队推进，以车体机枪与伴随步兵清扫公路两侧的雪地与灌木，步兵在坦克后跟进巩固战果；遭伏击后先以坦克炮轰击可疑的雪堆与灌木，再派掷弹兵从铁路路基侧翼包抄，狙击手专门压制反坦克手。",
+      "friendly_forces_zh": "第 316 步兵师第 1075 团第 4 连的反坦克组，另有第 1073 团与骑兵第 44 师在侧翼策应。阵地只是雪地里的浅坑，仅有 2 支 PTRD-41、少量手榴弹与燃烧瓶，没有一门反坦克炮，弹药按发点算，手指冻得几乎拉不开引信。",
+      "terrain": "field",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 700,
+      "difficulty": 8,
+      "par_time_s": 1500,
+      "weight_budget_kg": 25,
+      "resupply_points": 0,
+      "available_support": [
+        "sov_mortar_82"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年十一月十六日，德军装甲部队沿沃洛科拉姆斯克公路进攻，红军第 316 步兵师第 1075 团在杜博谢科沃会让站附近顽强阻击。政治指导员克洛奇科夫所在的反坦克小组用反坦克枪、手榴弹与燃烧瓶同坦克群近距离厮杀，据记载当日击毁多辆坦克，全组大部分人阵亡，阵地前的雪地被履带和血迹翻得稀烂，幸存者很快被编入新的反坦克小组。该师因为战功在十一月十八日改称第 8 近卫步兵师。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-11-16 第 316 步兵师第 1075 团在杜博谢科沃一带与德军坦克交战，克洛奇科夫的政治指导员小组几乎全部阵亡",
+          "第 316 步兵师于 1941-11-18 因战功改编为第 8 近卫步兵师"
+        ],
+        "dramatized": [
+          "「二十八人」的具体人数与击毁坦克数字在战史研究中有争议，关卡采用广为流传的版本",
+          "骑兵第 44 师策应的具体时序与地点被简化"
+        ]
+      },
+      "design_note_zh": "本关是反坦克手榴弹的实战教学：RPG-43 只有 20 米有效距离与 75mm 穿深，必须让坦克进到射程内再起身，提前暴露就等于送死。教学点是先打履带再打侧后，严寒会延长引信操作时间，负重越高匍匐越慢，雪地伪装只在开火前有效。",
+      "music_mood": "低沉的男声合唱与雪原上的静默，只有履带声越来越近。",
+      "unlock_reward": {
+        "xp": 2600,
+        "weapon": "rpg43",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1941,
+        "weight_mult": 1.05
+      }
+    },
+    {
+      "id": "sov_11_moscow_counter",
+      "index": 11,
+      "number_in_campaign": 11,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "莫斯科反攻：向克林方向",
+      "name_en": "Moscow Counteroffensive: Toward Klin",
+      "date": "1941-12-05",
+      "location_zh": "俄罗斯莫斯科西北克林方向",
+      "location_en": "Klin Axis, Northwest of Moscow, Russia",
+      "coordinates": "56.33N 36.71E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "加里宁方面军第 30 集团军的一名步兵，苏军第一次在严寒中转入反攻，你要在没膝的雪里把一个村子接一个村子拿下来。",
+      "player_class_recommended": [
+        "rifleman",
+        "assault",
+        "scout"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "夺取公路沿线的两处村庄",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        },
+        {
+          "id": "obj2",
+          "text_zh": "在雪原上击退德军装甲反冲击",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 600
+        },
+        {
+          "id": "obj3",
+          "text_zh": "保持至少一个滑雪分队的机动能力",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "推进到克林—莫斯科公路并建立拦阻阵地",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1500
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 26,
+        "ger_mg42_team": 4,
+        "ger_mp40_leader": 4,
+        "pzkpfw_iii": 3,
+        "sdkfz_251": 3,
+        "ger_pioneer": 2,
+        "flak36_88": 1
+      },
+      "enemy_tactics_zh": "德军退守村庄，把房屋烧掉一半以制造射界，用 88mm 高射炮平射封锁公路；反冲击以三号坦克为先导，步兵搭乘半履带车跟随。严寒中德军装备严重不适应，机枪常被冻住，但仍以照明弹与迫击炮维持夜间警戒，并在村口埋设地雷。",
+      "friendly_forces_zh": "加里宁方面军第 30 集团军与第 31 集团军、西方方面军第 20 集团军的部分兵力，另有滑雪营与骑兵。补给线拉得太长，油料与粮食靠雪橇运送，很多人没有真正的冬靴，冻伤比枪伤更多，连队人数常不足编制的一半。",
+      "terrain": "village",
+      "weather": "snow",
+      "time_of_day": "dawn",
+      "visibility_m": 600,
+      "difficulty": 8,
+      "par_time_s": 1680,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_howitzer_122"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四一年十二月五日，加里宁方面军率先转入反攻，第 30 集团军与第 31 集团军向克林和加里宁方向突击；第二天西方方面军与西南方面军也发起进攻，这是莫斯科会战由防御转向反攻的起点。气温降到零下二十度以下，红军用滑雪分队和骑兵在雪原上迂回村庄，十二月中旬收复克林，德军被迫向西退却，沿途丢弃了大量冻住的车辆和火炮，雪地上留下成排的废弃坦克。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1941-12-05 加里宁方面军发起反攻，随后西方方面军于 12-06 转入进攻",
+          "第 30 集团军向克林方向作战，克林于 12 月中旬被苏军收复"
+        ],
+        "dramatized": [
+          "关卡中「两处村庄」的具体地名与滑雪分队编制为设计虚构",
+          "88mm 炮平射封锁公路的部署数量被压缩"
+        ]
+      },
+      "design_note_zh": "本关是反攻节奏的第一课：从守转攻，玩家第一次要自己决定推进速度，冲太快会被村庄火力与 88mm 炮点掉。教学点是严寒持续消耗体力与食物，必须进村找热食与饮水，雪地伪装利于接敌，但开火后的热迹会暴露位置。",
+      "music_mood": "由低沉转明亮的小调进行曲，雪地上第一次响起进攻的鼓点。",
+      "unlock_reward": {
+        "xp": 2800,
+        "weapon": "pps43",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1942,
+        "weight_mult": 1
+      }
+    },
+    {
+      "id": "sov_12_rzhev_vyazma",
+      "index": 12,
+      "number_in_campaign": 12,
+      "campaign_id": "sov_barbarossa_1941",
+      "name_zh": "勒热夫：雪原上的冬季攻势",
+      "name_en": "Rzhev: Winter Offensive in the Snow",
+      "date": "1942-01-08",
+      "location_zh": "俄罗斯勒热夫以西",
+      "location_en": "West of Rzhev, Russia",
+      "coordinates": "56.26N 34.33E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "加里宁方面军的一名老兵，1942 年 1 月投入勒热夫—维亚济马攻势，在冻硬的雪地上向德军支撑点持续施压。",
+      "player_class_recommended": [
+        "rifleman",
+        "machine_gunner",
+        "engineer"
+      ],
+      "objectives": [
+        {
+          "id": "obj1",
+          "text_zh": "夺取德军在村外的两处永备支撑点",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 1080
+        },
+        {
+          "id": "obj2",
+          "text_zh": "在雪原上建立并守住补给点，保证进攻分队有水有弹",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj3",
+          "text_zh": "切断支撑点之间的交通壕联系",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null
+        },
+        {
+          "id": "obj4",
+          "text_zh": "在德军装甲反冲击中守住已夺房屋",
+          "type": "primary",
+          "required": true,
+          "time_limit_s": 900
+        }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 30,
+        "ger_mg42_team": 5,
+        "ger_mp40_leader": 4,
+        "ger_pioneer": 4,
+        "pzkpfw_iii": 4,
+        "sdkfz_251": 3,
+        "flak36_88": 2
+      },
+      "enemy_tactics_zh": "德军依托勒热夫外围村庄与高地构筑环形支撑点，反坦克炮埋伏在村口与公路转弯处，机枪组沿交通壕机动；苏军炮火准备一停即以装甲车与步兵实施反冲击，并用雪堆改造房屋形成射界，夜里用照明弹维持前沿监视，冻硬的土层让挖壕极其困难。",
+      "friendly_forces_zh": "加里宁方面军第 29 集团军与第 39 集团军部分兵力，从莫斯科反攻起连续作战至今未获整补。雪橇运来的口粮与饮水常在半路消耗殆尽，炮弹限量，士兵在零下三十度的雪坑里轮班取暖，冻伤与战壕足同时蔓延，师属炮兵一天只能打几个齐射。",
+      "terrain": "village",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 9,
+      "par_time_s": 1800,
+      "weight_budget_kg": 23,
+      "resupply_points": 3,
+      "available_support": [
+        "sov_mortar_82",
+        "sov_howitzer_122",
+        "sov_guards_rifle_reinforcement"
+      ],
+      "vehicle_available": [],
+      "historical_note_zh": "一九四二年一月八日，红军加里宁方面军与西方方面军发起勒热夫—维亚济马攻势，第 29 集团军与第 39 集团军由勒热夫以西向德军中央集团军群的防线突击。严寒、补给中断加上德军支撑点的交叉火网，使进攻代价极其沉重，部分突入的部队随后被切断包围。攻势拖延数月之久，双方在雪原上反复争夺同一片高地，勒热夫突出部直到一九四三年三月才被德军主动放弃。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1942-01-08 苏军发起勒热夫—维亚济马攻势，加里宁方面军第 29 集团军等部参战",
+          "进攻陷入长期消耗，勒热夫突出部至 1943 年 3 月才被德军放弃"
+        ],
+        "dramatized": [
+          "关卡中的两处支撑点与补给点位置为设计虚构",
+          "第 39 集团军被切断的具体时序被简化"
+        ]
+      },
+      "design_note_zh": "收官关把负重、食物与水的压力推到极点：雪橇补给点一旦被火力压制，全队体力与饮水就开始崩塌，进攻与保水第一次互相冲突。教学点是支撑点必须先用 122mm 火力削掉机枪位与 pak40，再由工兵爆破，正面强攻只会把整个连耗在雪地里。",
+      "music_mood": "悲怆的合唱与长号，像在雪原上一步一步往前挪的呼吸。",
+      "unlock_reward": {
+        "xp": 3000,
+        "weapon": "soviet_sapper_kit",
+        "class": null
+      },
+      "endless_seed_modifier": {
+        "era": 1942,
+        "weight_mult": 1
+      }
+    }
+  ]
+}

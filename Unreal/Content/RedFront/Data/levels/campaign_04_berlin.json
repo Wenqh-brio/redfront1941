@@ -1,0 +1,728 @@
+{
+  "$schema": "redfront.levels/1",
+  "campaign_id": "sov_berlin_1945",
+  "author_note": "第四部全支援展示段：33-34 关与上一战役在时间上重叠，但换到雅西与波罗的海两个完全不同的战略方向，作为『方面军群视角』的重叠叙事。",
+  "levels": [
+    {
+      "id": "sov_33_iasi_kishinev",
+      "index": 33,
+      "number_in_campaign": 1,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "雅西-基什尼奥夫合围",
+      "name_en": "Encirclement at Iasi-Chisinau",
+      "date": "1944-08-20",
+      "location_zh": "罗马尼亚雅西",
+      "location_en": "Iasi, Romania",
+      "coordinates": "47.16N 27.59E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你是第 2 乌克兰方面军的一名突击组长，任务是在罗马尼亚第 3 集团军的纵深堑壕上撕开缺口，为坦克军打开通往普鲁特河的道路。",
+      "player_class_recommended": ["assault", "engineer", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在炮火准备后夺取第一道堑壕", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "爆破雷区并在铁丝网上开辟通路", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "掩护第 6 坦克集团军先头旅进入突破口", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "摧毁村口的德军反坦克炮阵地", "type": "secondary", "required": false, "time_limit_s": 600 }
+      ],
+      "enemy_composition": {
+        "romanian_infantry": 24,
+        "ger_landser_rifleman": 18,
+        "ger_mp40_leader": 5,
+        "ger_mg42_team": 6,
+        "pak40": 4,
+        "stug_iii_g": 3
+      },
+      "enemy_tactics_zh": "罗马尼亚步兵依托巴胡卢伊河与高地修筑纵深堑壕，机枪在谷地形成交叉火力；德军督战队躲在第二线，StuG 与 Pak 40 藏在村庄和玉米地后，一旦突破口停滞便立刻反冲击。",
+      "friendly_forces_zh": "第 2 乌克兰方面军第 27 集团军第 35 近卫步兵军担任第一梯队，第 6 坦克集团军第 5 近卫坦克军在后方待命；配属一个 152mm 榴弹炮团与 IL-2 强击机群。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "dawn",
+      "visibility_m": 900,
+      "difficulty": 6,
+      "par_time_s": 1500,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_il2_strafe", "sov_smoke_screen"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1944 年 8 月 20 日，马利诺夫斯基大将的第 2 乌克兰方面军与托尔布欣大将的第 3 乌克兰方面军从雅西西北和宾杰里以南同时发起进攻，第 6 坦克集团军随后投入突破口。罗马尼亚第 3、第 4 集团军防线两天内崩溃，8 月 24 日德军重建的第 6 集团军主力在普鲁特河以东被合围，约 18 个师被歼。8 月 23 日罗马尼亚转向同盟国。红军仅用十天便打开巴尔干门户，为进军匈牙利与南斯拉夫铺平道路。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 8 月 20 日第 2、第 3 乌克兰方面军发起雅西-基什尼奥夫攻势",
+          "德军第 6 集团军主力在普鲁特河以东被合围歼灭",
+          "1944 年 8 月 23 日罗马尼亚退出轴心国阵营"
+        ],
+        "dramatized": [
+          "玩家小组在一次战斗内完成从堑壕突破到接应坦克军的全过程",
+          "将德军督战队与罗马尼亚部队的协同简化为同一区段的混合防线"
+        ]
+      },
+      "design_note_zh": "本关教授『突破口扩张』：先炮火压制第一道堑壕，工兵在雷区开道，再呼叫坦克搭载步兵沿公路突入。失败条件是突破口在 12 分钟内被反冲击封死，或玩家被 MG42 交叉火力钉在山脊超过 90 秒。",
+      "music_mood": "黎明号声与低音鼓推进，庄严而克制。",
+      "unlock_reward": { "xp": 1200, "weapon": "svt40", "class": "medic" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_34_riga_kurland",
+      "index": 34,
+      "number_in_campaign": 2,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "里加与库尔兰包围圈",
+      "name_en": "Riga and the Kurland Pocket",
+      "date": "1944-10-10",
+      "location_zh": "拉脱维亚里加",
+      "location_en": "Riga, Latvia",
+      "coordinates": "56.95N 24.11E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "你在波罗的海第 3 方面军的突击群中，从沼泽与松林间攻向里加城郊，同时听见西面海岸方向传来切断北方集团军群的消息。",
+      "player_class_recommended": ["engineer", "assault", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "穿越松林沼泽夺取道加瓦河渡口", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "用突击工兵清除街垒与地雷", "type": "primary", "required": true, "time_limit_s": 1500 },
+        { "id": "obj3", "text_zh": "击退党卫军装甲掷弹兵的反冲击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保存渡口附近的两座铁路桥", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 20,
+        "ger_landser_rifleman": 14,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 4,
+        "pak40": 4,
+        "pzkpfw_v_panther": 2
+      },
+      "enemy_tactics_zh": "德军把松林边缘和排水渠改造成抵抗枢纽，MG42 封锁林间通道，工兵在渡口埋设 T 型地雷；豹式坦克藏在树线后作远程火力点，只在红军炮兵转移时前出射击。",
+      "friendly_forces_zh": "波罗的海第 3 方面军第 67 集团军与第 61 集团军的突击群，配属第 10 近卫坦克军的一个旅；突击工兵组携带 SN-42 胸甲，专司破障与巷战。",
+      "terrain": "forest",
+      "weather": "rain",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 7,
+      "par_time_s": 1600,
+      "weight_budget_kg": 26,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_152", "sov_howitzer_122", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152", "sov_tank_t34_76"],
+      "historical_note_zh": "1944 年 9 月 14 日，波罗的海第 1、第 2、第 3 方面军发起里加攻势，经一个月苦战于 10 月 13 日进入里加城区。10 月 10 日，巴格拉米扬大将的波罗的海第 1 方面军前出至帕兰加海岸，切断了德军北方集团军群与东普鲁士的联系，约 30 个师被压缩进库尔兰半岛，形成所谓库尔兰包围圈。此后红军以炮兵和航空兵反复压缩阵地，守军一直坚持到 1945 年 5 月 8 日才投降。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 10 月 10 日苏军抵达波罗的海海岸，合围北方集团军群",
+          "库尔兰包围圈内的德军约 30 个师被孤立",
+          "里加于 1944 年 10 月 13 日被苏军攻占"
+        ],
+        "dramatized": [
+          "豹式坦克在松林间的固定伏击点被压缩为单一场景遭遇",
+          "玩家小组同时承担渡口夺取与铁路桥保存两项任务"
+        ]
+      },
+      "design_note_zh": "本关引入『沼泽地形减速与工兵破障』：泥泞与林间排水渠使负重惩罚提前生效，SN-42 胸甲带来防护但也让越野更慢。ISU-152 视野受限，必须由步兵在侧翼掩护以免被铁拳近距击毁。",
+      "music_mood": "雨声、低音提琴与远处炮声交织，冷峻而绵长。",
+      "unlock_reward": { "xp": 1400, "weapon": "pps43", "class": "scout" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.05 }
+    },
+    {
+      "id": "sov_35_budapest_siege",
+      "index": 35,
+      "number_in_campaign": 3,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "布达佩斯围城战",
+      "name_en": "Siege of Budapest",
+      "date": "1944-12-26",
+      "location_zh": "匈牙利布达佩斯",
+      "location_en": "Budapest, Hungary",
+      "coordinates": "47.50N 19.04E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "你是第 2 乌克兰方面军第 18 近卫步兵军的一名突击队员，在多瑙河两岸的楼房与下水道之间逐屋推进，同时警惕城外德军的解围突击。",
+      "player_class_recommended": ["engineer", "assault", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "夺取佩斯一侧的火车站街区", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "用 152mm 炮火摧毁街角的碉堡", "type": "primary", "required": true, "time_limit_s": 1400 },
+        { "id": "obj3", "text_zh": "沿多瑙河桥梁推进至布达城下", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "守住侧翼以防解围部队突入", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 22,
+        "ger_volkssturm": 18,
+        "hungarian_infantry": 12,
+        "ger_mg42_team": 7,
+        "ger_panzerfaust": 6,
+        "pak40": 3,
+        "flak36_88": 2
+      },
+      "enemy_tactics_zh": "德匈守军把楼房改造成多层火力点，机枪架在二层窗口扫射街道，地窖里藏铁拳小组专打逼近的装甲；88 炮平射封锁多瑙河沿岸的宽阔马路，反冲击则由党卫军装甲掷弹兵承担。",
+      "friendly_forces_zh": "第 2 乌克兰方面军第 46 集团军与第 18 近卫步兵军从佩斯方向进攻，第 7 近卫空降师担任巷战尖刀；突击工兵组负责爆破楼房底层与地下通道。",
+      "terrain": "city",
+      "weather": "snow",
+      "time_of_day": "dusk",
+      "visibility_m": 300,
+      "difficulty": 8,
+      "par_time_s": 1800,
+      "weight_budget_kg": 25,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_152", "sov_katyusha", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152"],
+      "historical_note_zh": "1944 年 12 月 26 日，马利诺夫斯基的第 2 乌克兰方面军与托尔布欣的第 3 乌克兰方面军在埃斯泰尔戈姆附近会师，完成对布达佩斯的合围，约 7.9 万德匈守军被困。德军先后发动三次代号康拉德的解围突击，最远逼近布达城区不到 25 公里。城内逐街逐屋血战持续 102 天，第 18 近卫步兵军与第 7 近卫空降师从佩斯一侧推进，1945 年 2 月 13 日布达城堡陷落。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 12 月 26 日苏军完成对布达佩斯的合围",
+          "德军发动三次康拉德解围突击均告失败",
+          "1945 年 2 月 13 日布达城堡守军投降"
+        ],
+        "dramatized": [
+          "把 102 天的围城压缩为一次连续推进的关卡流程",
+          "匈牙利部队与党卫军在同一街区混合编组以简化敌军逻辑"
+        ]
+      },
+      "design_note_zh": "本关教学重点是『垂直空间与地窖威胁』：窗口机枪需要火炮或烟幕解决，地窖铁拳组必须由工兵用火焰与炸药清除。城中 152mm 火力最小安全距离为 60 米，落点过近会连带杀伤本队。",
+      "music_mood": "冬夜的手风琴与定音鼓，压抑中带一丝哀伤。",
+      "unlock_reward": { "xp": 1600, "weapon": null, "class": "mortarman" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.05 }
+    },
+    {
+      "id": "sov_36_vistula_oder",
+      "index": 36,
+      "number_in_campaign": 4,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "维斯瓦-奥得河攻势",
+      "name_en": "Vistula-Oder Offensive",
+      "date": "1945-01-12",
+      "location_zh": "波兰马格努谢夫桥头堡",
+      "location_en": "Magnuszew Bridgehead, Poland",
+      "coordinates": "51.75N 21.35E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你随白俄罗斯第 1 方面军从马格努谢夫桥头堡出发，在结冰的维斯瓦河平原上冲击德军纵深阵地，目标是把战线一直推到奥得河。",
+      "player_class_recommended": ["assault", "anti_tank", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "摧毁第一线德军支撑点", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "击退虎式与豹式坦克的反冲击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "引导喀秋莎齐射覆盖敌军集结地", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "夺取公路交叉口的补给站", "type": "secondary", "required": false, "time_limit_s": 700 }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 20,
+        "ger_ss_grenadier": 16,
+        "ger_mg42_team": 6,
+        "pak40": 5,
+        "flak36_88": 3,
+        "pzkpfw_v_panther": 3,
+        "pzkpfw_vi_tiger": 2
+      },
+      "enemy_tactics_zh": "德军在雪原村落里预设反坦克炮交叉火力，88 炮负责远距点名，豹式与虎式沿硬质公路机动侧击；步兵退守砖石房屋，等红军坦克陷入泥雪后由铁拳小组近距伏击。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 8 近卫集团军与第 5 突击集团军为第一梯队，第 1、第 2 近卫坦克集团军随后进入突破口；配属 152mm 重炮旅与 BM-13 火箭炮团。",
+      "terrain": "field",
+      "weather": "snow",
+      "time_of_day": "dawn",
+      "visibility_m": 700,
+      "difficulty": 8,
+      "par_time_s": 1700,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_152", "sov_katyusha", "sov_il2_strafe", "engineer_assault_group"],
+      "vehicle_available": ["sov_tank_t34_76", "sov_tank_isu152"],
+      "historical_note_zh": "1945 年 1 月 12 日，白俄罗斯第 1 方面军从马格努谢夫和普瓦维桥头堡发起维斯瓦-奥得河攻势。第 8 近卫集团军、第 5 突击集团军与第 1、第 2 近卫坦克集团军在二十天内推进约 500 公里，1 月 17 日解放华沙，随后越过瓦尔塔河与波兹南，1 月底前出至奥得河并夺取屈斯特林桥头堡。德军 A 集团军群损失惨重，苏军把战线从维斯瓦河直接推到柏林以东约 70 公里。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 1 月 12 日维斯瓦-奥得河攻势自马格努谢夫与普瓦维桥头堡发起",
+          "1945 年 1 月 17 日苏军与波兰第 1 集团军解放华沙",
+          "攻势结束前苏军已进抵奥得河并夺取屈斯特林桥头堡"
+        ],
+        "dramatized": [
+          "把 500 公里的纵深推进压缩为单张地图上的连续突破",
+          "虎式坦克在开阔雪原上的机动被限制在固定路线"
+        ]
+      },
+      "design_note_zh": "本关教学重点是『重炮反装甲与最小安全距离』：152mm 与喀秋莎能清理集结地，但弹着点 150 米内会对己方造成杀伤，因此必须先用望远镜标定目标再呼叫。虎式正面无效，要引导炮击或绕侧。",
+      "music_mood": "铜管齐鸣的雪原进行曲，推进感强烈。",
+      "unlock_reward": { "xp": 1800, "weapon": "dp28", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_37_konigsberg",
+      "index": 37,
+      "number_in_campaign": 5,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "柯尼斯堡要塞攻坚",
+      "name_en": "Fortress Konigsberg",
+      "date": "1945-04-06",
+      "location_zh": "东普鲁士柯尼斯堡",
+      "location_en": "Konigsberg, East Prussia",
+      "coordinates": "54.71N 20.51E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "你是第 11 近卫集团军突击组的一员，在晨雾中进攻东普鲁士首府的三道环形工事，眼前是装甲炮台与地下坑道组成的要塞体系。",
+      "player_class_recommended": ["engineer", "assault", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "突破外围第一道环形壕沟", "type": "primary", "required": true, "time_limit_s": 1300 },
+        { "id": "obj2", "text_zh": "用爆破筒炸开要塞侧门", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "清剿地下坑道内的守军", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "夺取军械库以补充弹药", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_volkssturm": 20,
+        "ger_ss_grenadier": 14,
+        "ger_landser_rifleman": 12,
+        "ger_mg42_team": 6,
+        "ger_pioneer": 4,
+        "flak36_88": 3,
+        "pak40": 3
+      },
+      "enemy_tactics_zh": "守军依托砖石要塞与地下通道节节抵抗，探照灯与固定机枪封锁护城壕，工兵在坑道口布置火焰陷阱；88 炮平射压制接近的突击组，弹药耗尽前不会投降。",
+      "friendly_forces_zh": "白俄罗斯第 3 方面军第 11 近卫集团军与第 43、第 50 集团军担任主攻，配属 5000 余门火炮；突击工兵组携带炸药包与 ROKS-2 喷火器逐洞清剿。",
+      "terrain": "fortress",
+      "weather": "fog",
+      "time_of_day": "dawn",
+      "visibility_m": 400,
+      "difficulty": 8,
+      "par_time_s": 1900,
+      "weight_budget_kg": 26,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_152", "sov_katyusha", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152"],
+      "historical_note_zh": "1945 年 4 月 6 日，华西列夫斯基元帅指挥的白俄罗斯第 3 方面军对东普鲁士首府柯尼斯堡发起总攻。守军为德军第 4 集团军与要塞部队约 13 万人，依托三道环形工事、装甲炮台和地下坑道抵抗。苏军投入第 11 近卫集团军与第 43、第 50 集团军，以五千余门火炮和航空兵密集轰击，4 月 9 日夜攻入市中心，城防司令拉斯签署投降书。此役成为要塞攻坚的范本，柯尼斯堡战后改名加里宁格勒。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 6 日白俄罗斯第 3 方面军发起柯尼斯堡攻坚",
+          "守军约 13 万人依托三道环形工事防御",
+          "1945 年 4 月 9 日城防司令拉斯投降"
+        ],
+        "dramatized": [
+          "要塞纵深的数日战斗被压缩为单一关卡的四阶段目标",
+          "地下坑道战的规模缩小为可探索的短距离通道"
+        ]
+      },
+      "design_note_zh": "本关教学重点是『要塞工事与喷火清洞』：混凝土工事只能用 152mm 直击或炸药包破坏，坑道内 ROKS-2 与手榴弹是唯一高效手段。工兵被动『定向爆破』可一举炸开要塞门并击晕门后守军。",
+      "music_mood": "雾中的低音铜管，沉重而机械。",
+      "unlock_reward": { "xp": 2000, "weapon": "roks2", "class": "engineer" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_38_kustrin_bridgehead",
+      "index": 38,
+      "number_in_campaign": 6,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "库斯特林桥头堡防守",
+      "name_en": "Defense of the Kustrin Bridgehead",
+      "date": "1945-02-06",
+      "location_zh": "奥得河畔库斯特林",
+      "location_en": "Kustrin on the Oder",
+      "coordinates": "52.59N 14.66E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "你是奥得河西岸桥头堡的守备步兵，面前是结冰的河面与德军装甲反扑，身后是等待渡河的整条方面军补给线。",
+      "player_class_recommended": ["machine_gunner", "anti_tank", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在河堤上构筑并守住反坦克支撑点", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "击退第一波装甲掷弹兵冲击", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj3", "text_zh": "用炮兵压制对岸德军集结地", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保住浮桥不被炮火摧毁", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 20,
+        "ger_volkssturm": 12,
+        "ger_mg42_team": 8,
+        "ger_panzerfaust": 6,
+        "pzkpfw_v_panther": 3,
+        "stug_iii_g": 4,
+        "pak40": 4
+      },
+      "enemy_tactics_zh": "德军以炮兵先行软化河堤，再让装甲掷弹兵随豹式与三号突击炮沿冰面与公路夹击；铁拳小组贴着弹坑与灌木推进到 50 米内，专门猎杀支撑点里的反坦克火力。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 5 突击集团军与第 8 近卫集团军的桥头堡守备营，配属反坦克炮兵与工兵筑垒分队；方面军炮兵群在河东岸提供火力支援。",
+      "terrain": "river",
+      "weather": "snow",
+      "time_of_day": "day",
+      "visibility_m": 600,
+      "difficulty": 7,
+      "par_time_s": 1600,
+      "weight_budget_kg": 26,
+      "resupply_points": 3,
+      "available_support": ["sov_howitzer_152", "sov_howitzer_122", "sov_guards_rifle_reinforcement", "sov_smoke_screen"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1945 年 2 月初，白俄罗斯第 1 方面军第 5 突击集团军与第 8 近卫集团军在华沙-柏林方向上逼近奥得河，2 月 2 日在屈斯特林附近夺取西岸桥头堡。德军维斯瓦集团军群以第 25 装甲师等部从法兰克福与施韦特方向连续反扑，企图拔除这个距柏林仅 70 公里的登陆场。红军工兵在冰水泥泞中加固工事，炮兵以直瞄射击抗击坦克冲击，桥头堡一直坚守到 4 月柏林总攻发起。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 2 月初苏军在屈斯特林附近建立奥得河西岸桥头堡",
+          "德军以装甲部队多次反扑屈斯特林桥头堡",
+          "该桥头堡后来成为柏林战役的主要出发阵地"
+        ],
+        "dramatized": [
+          "把数周的反扑与防守压缩为一场连续防御战",
+          "浮桥的存亡被设为可选目标以强化防守取舍"
+        ]
+      },
+      "design_note_zh": "本关教学重点是『防御中的最小安全距离与烟幕救场』：迫击炮与 122mm 可以打退步兵，但弹着点靠近河堤时同样会伤及己方，必须用望远镜与信号弹校准；烟幕用来切断铁拳小组的接近路线。",
+      "music_mood": "紧绷的低音持续音，夹杂冰面碎裂声。",
+      "unlock_reward": { "xp": 1700, "weapon": "ptrds41", "class": "anti_tank" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_39_zeelow_heights",
+      "index": 39,
+      "number_in_campaign": 7,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "泽洛高地探照灯夜攻",
+      "name_en": "Zelew Heights: Searchlight Night Attack",
+      "date": "1945-04-16",
+      "location_zh": "德国泽洛高地",
+      "location_en": "Seelow Heights, Germany",
+      "coordinates": "52.53N 14.38E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你是第 8 近卫集团军的一名突击组长，凌晨三点随探照灯光柱冲上泽洛高地，奥得河沼泽与高地反斜面的机枪火力正在等着你。",
+      "player_class_recommended": ["assault", "engineer", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "越过奥得河沼泽并夺取第一道战壕", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "夺取棱线上的炮兵观察所", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "为 152mm 重炮标定反斜面目标", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "清除高地上的地雷与铁丝网", "type": "secondary", "required": false, "time_limit_s": 800 }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 24,
+        "ger_landser_rifleman": 18,
+        "ger_mg42_team": 9,
+        "ger_panzerfaust": 8,
+        "pak40": 6,
+        "flak36_88": 4,
+        "pzkpfw_vi_tiger": 3
+      },
+      "enemy_tactics_zh": "德军第 9 集团军把主力藏在高地反斜面，探照灯亮起时步兵仍在掩体中，待红军越过沼泽才用 MG42 与 88 炮平射收割；虎式坦克沿棱线机动射击，铁拳小组占据弹坑等待近距交战。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 8 近卫集团军（崔可夫）担任正面主攻，第 1 近卫坦克集团军随后投入；方面军在 30 分钟炮火准备中动用 9000 余门火炮与迫击炮。",
+      "terrain": "field",
+      "weather": "fog",
+      "time_of_day": "night",
+      "visibility_m": 250,
+      "difficulty": 9,
+      "par_time_s": 1800,
+      "weight_budget_kg": 25,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_152", "sov_katyusha", "sov_smoke_screen", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152", "sov_tank_t34_76"],
+      "historical_note_zh": "1945 年 4 月 16 日莫斯科时间凌晨 3 时，朱可夫的白俄罗斯第 1 方面军从屈斯特林桥头堡发起柏林战役。第 8 近卫集团军正面是泽洛高地，奥得河沼泽与高地反斜面部署着德军第 9 集团军。朱可夫下令同时开启 140 部探照灯照射敌军，并以九千余门火炮轰击，但晨雾与反斜面工事使首日推进受阻，泽洛与施劳弗高地反复易手，直到 4 月 19 日才被完全突破。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 16 日凌晨白俄罗斯第 1 方面军发起柏林战役",
+          "朱可夫在泽洛高地方向使用探照灯照明助攻",
+          "泽洛高地防线直到 4 月 19 日才被突破"
+        ],
+        "dramatized": [
+          "探照灯的照明效果被简化为玩家视野与敌人警觉的变化",
+          "把四天的高地争夺压缩为一夜的连续强攻"
+        ]
+      },
+      "design_note_zh": "夜攻教学：探照灯照亮区即敌人火力区，玩家须沿弹坑阴影前进。152mm 与喀秋莎存在最小安全距离，重炮弹着点 60 米内、喀秋莎 150 米内会直接杀伤本队，反斜面目标必须先夺棱线观察所才能校射。",
+      "music_mood": "探照灯扫过的刺耳弦乐与战鼓，神经紧绷。",
+      "unlock_reward": { "xp": 2200, "weapon": "maxim_m1910", "class": "machine_gunner" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_40_berlin_spandau",
+      "index": 40,
+      "number_in_campaign": 8,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "施潘道与策伦多夫",
+      "name_en": "Spandau and Zehlendorf",
+      "date": "1945-04-20",
+      "location_zh": "德国柏林施潘道与策伦多夫",
+      "location_en": "Spandau and Zehlendorf, Berlin",
+      "coordinates": "52.53N 13.20E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "你是第 3 突击集团军的一名班长，从柏林西北的施潘道工业区与南面的策伦多夫街区同时压入城郊，面前是街垒、路障和藏在楼下的铁拳手。",
+      "player_class_recommended": ["assault", "engineer", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "清除街垒与反坦克路障", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "夺取施潘道运河上的桥梁", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "清剿地窖中的铁拳小组", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保护 ISU-152 免遭近距袭击", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_volkssturm": 22,
+        "ger_ss_grenadier": 18,
+        "ger_mg42_team": 8,
+        "ger_panzerfaust": 9,
+        "pak40": 4,
+        "flak36_88": 4,
+        "pzkpfw_v_panther": 2
+      },
+      "enemy_tactics_zh": "国民突击队用家具与电车车厢堆成街垒，党卫军把机枪架在楼顶与街角形成交叉火力；铁拳手藏在地下室和防空洞口，等坦克驶过路口才从背后开火，88 炮则平射封锁长直街道。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 3 突击集团军与第 47 集团军从西北进攻，第 3 近卫坦克集团军从南面经策伦多夫方向楔入；ISU-152 与突击工兵配合逐楼清剿。",
+      "terrain": "city",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 9,
+      "par_time_s": 1700,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_152", "sov_katyusha", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152"],
+      "historical_note_zh": "1945 年 4 月 20 日，柏林战役进入城郊阶段。白俄罗斯第 1 方面军的第 3 突击集团军、第 47 集团军与第 2 近卫坦克集团军从东北和东南逼近柏林的施潘道、潘科一带，第 3 近卫坦克集团军则从南面经策伦多夫方向楔入市区。4 月 21 日，第 1 近卫坦克集团军的坦克炮首次轰击柏林市中心。市民被编入国民突击队，用手里的铁拳和街垒抵抗，红军只能以 ISU-152 与步兵混合编组逐个街区推进。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 20 日苏军炮兵首次轰击柏林市区",
+          "第 3 突击集团军与第 47 集团军从柏林西北方向进攻",
+          "国民突击队被大量投入柏林城防"
+        ],
+        "dramatized": [
+          "策伦多夫方向的推进被并入同一关卡以展现南北夹击",
+          "铁拳伏击被集中设计为可清除的地下室点位"
+        ]
+      },
+      "design_note_zh": "本关教学重点是『街垒与地下室反坦克伏击』：坦克在街道上是活靶，必须由步兵先行清屋。152mm 炮击的最小安全距离为 60 米，在街区宽度不足 40 米时呼叫重炮等于自杀；SN-42 胸甲在此几乎必带，代价是翻越街垒更慢。",
+      "music_mood": "工业区回响的打击乐与瓦砾声，混乱而急促。",
+      "unlock_reward": { "xp": 2400, "weapon": "captured_stg44", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_41_berlin_ubahn",
+      "index": 41,
+      "number_in_campaign": 9,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "施普雷河与地铁坑道",
+      "name_en": "The Spree, the U-Bahn and the Flood Tunnels",
+      "date": "1945-04-25",
+      "location_zh": "德国柏林市中心施普雷河",
+      "location_en": "Spree River, Berlin Centre",
+      "coordinates": "52.52N 13.40E",
+      "mission_type": "urban_clearing",
+      "faction": "soviet",
+      "player_role_zh": "你是第 8 近卫集团军的突击队员，在施普雷河两岸的烟尘里逐楼推进，脚下是德军用来机动的地铁隧道与防洪地道。",
+      "player_class_recommended": ["engineer", "assault", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "强渡施普雷河并夺取桥头", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "清剿地铁隧道内的守军", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "爆破防洪闸门切断敌军地下通道", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "在烟尘中保持班组联络", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_volkssturm": 24,
+        "ger_ss_grenadier": 20,
+        "ger_panzerfaust": 10,
+        "ger_mg42_team": 8,
+        "ger_pioneer": 5,
+        "ger_sniper": 4
+      },
+      "enemy_tactics_zh": "守军把隧道口、竖井与地铁站台连成地下机动网，从背后突然出现在红军已占领的街区；地面上海军与党卫军狙击手占据楼层窗口，用烟尘与瓦砾掩护射击，铁拳手则守着每个街角。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 8 近卫集团军与第 3 突击集团军在施普雷河沿岸逐屋清剿，乌克兰第 1 方面军同日从南面完成会师；突击工兵组负责地下坑道与闸门爆破。",
+      "terrain": "city",
+      "weather": "fog",
+      "time_of_day": "night",
+      "visibility_m": 150,
+      "difficulty": 10,
+      "par_time_s": 1800,
+      "weight_budget_kg": 27,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_152", "sov_smoke_screen", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152"],
+      "historical_note_zh": "1945 年 4 月 25 日，白俄罗斯第 1 方面军与乌克兰第 1 方面军在柏林南部的托伊皮茨和凯特钦一带会师，城内德军被分割成数块。第 8 近卫集团军与第 3 突击集团军在施普雷河沿岸逐屋争夺，德军把地铁隧道、竖井和防洪地道当作机动通道，双方在黑暗的水道里反复冲击。为切断守军的地下联系，苏军工兵在兰德韦尔运河等地段实施爆破，隧道随之进水，成为柏林战役中最黑暗的一页。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 25 日两个方面军在柏林南部会师，完成对市区的分割",
+          "德军利用地铁隧道与地下管网进行兵力和物资机动",
+          "苏军工兵爆破隧道与运河闸门，导致地铁区间进水"
+        ],
+        "dramatized": [
+          "隧道内平民伤亡的规模与具体淹水时段未作定论，关卡只呈现灌水本身",
+          "把数日的地下战斗集中于一次连续通道清剿"
+        ]
+      },
+      "design_note_zh": "地道与烟尘教学：地铁隧道是绕过街垒的捷径，也是诡雷与反冲击的陷阱；爆破防洪闸门会永久改变地图通路，代价是可能困住本方人员。152mm 重炮最小安全距离 60 米，在此街区宽度下必须改用烟幕与工兵；SN-42 胸甲能扛住隧道内的冲锋枪弹，但爬竖井更慢。",
+      "music_mood": "滴水与金属回声构成的不安氛围，远处闷响不断。",
+      "unlock_reward": { "xp": 2500, "weapon": null, "class": "assault" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.2 }
+    },
+    {
+      "id": "sov_42_reichstag",
+      "index": 42,
+      "number_in_campaign": 10,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "国会大厦逐层争夺",
+      "name_en": "The Reichstag, Floor by Floor",
+      "date": "1945-04-30",
+      "location_zh": "德国柏林国会大厦",
+      "location_en": "Reichstag, Berlin",
+      "coordinates": "52.5186N 13.3762E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "你是第 150 步兵师第 756 团的一名突击队员，在国王广场的废墟中冲向国会大厦，任务是把红旗插上被炮火熏黑的圆顶。",
+      "player_class_recommended": ["engineer", "assault", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "穿越国王广场接近大厦外墙", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "摧毁国会大厦底层入口的封锁工事", "type": "primary", "required": true, "time_limit_s": null, "condition": "destroy_target", "target_count": 1, "marker_x_m": -8, "marker_y_m": -8, "target_points": [{ "x_m": -8, "y_m": -8, "health": 300 }] },
+        { "id": "obj3", "text_zh": "逐层清剿直至屋顶与圆顶", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "把第 150 步兵师的红旗插上圆顶", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj5", "text_zh": "保护旗手免遭狙击手射击", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 22,
+        "ger_volkssturm": 16,
+        "ger_panzerfaust": 8,
+        "ger_mg42_team": 7,
+        "ger_pioneer": 4,
+        "flak36_88": 3
+      },
+      "enemy_tactics_zh": "守军以党卫军为骨干、国民突击队填充，把大厦内层、地窖和屋顶平台变成多层火力网；入口被铁拳与机枪封锁，楼梯间用手榴弹反扑，狙击手从对面楼顶专门射击旗手与军官。",
+      "friendly_forces_zh": "第 3 突击集团军第 79 步兵军的第 150 步兵师第 756 团与第 171 步兵师第 380 团担任主攻，配属 ISU-152 与 152mm 火炮直瞄射击，战斗工兵携带 SN-42 胸甲跟随突击。",
+      "terrain": "city",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 300,
+      "difficulty": 10,
+      "par_time_s": 1500,
+      "weight_budget_kg": 26,
+      "resupply_points": 0,
+      "available_support": ["sov_howitzer_152", "sov_smoke_screen", "engineer_assault_group", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_isu152"],
+      "historical_note_zh": "1945 年 4 月 30 日，第 3 突击集团军第 79 步兵军对国会大厦发起强攻，先头是第 150 步兵师第 756 团（团长济琴科）与第 171 步兵师第 380 团。守军由党卫军与国民突击队混合编成，依托建筑内部、地窖和屋顶顽抗。苏军把 ISU-152 与 152mm 火炮推到广场直瞄轰击，逐层用手榴弹和火焰争夺。5 月 1 日凌晨，叶戈罗夫中士与坎塔里亚下士把第 150 步兵师的红旗插上圆顶，5 月 2 日柏林守军投降。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 30 日第 150 步兵师第 756 团与第 171 步兵师第 380 团强攻国会大厦",
+          "叶戈罗夫与坎塔里亚将第 150 步兵师红旗插上国会大厦圆顶",
+          "1945 年 5 月 2 日柏林城防部队投降"
+        ],
+        "dramatized": [
+          "升旗的具体时间与执行人员史载略有出入，关卡采用通行的 5 月 1 日凌晨说法",
+          "内部战斗被压缩为连续的四层清剿流程"
+        ]
+      },
+      "design_note_zh": "终局攻坚教学：ISU-152 直瞄是打开底层入口的唯一手段，但装填 20 秒且射界有限，必须由步兵守住侧翼。室内 20 米交火要求频繁换位与手榴弹清角，红旗目标一旦被狙击手打断需重新夺取。",
+      "music_mood": "庄严的合唱主题在炮声中逐渐浮现。",
+      "unlock_reward": { "xp": 3000, "weapon": "captured_mg42", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.2 }
+    },
+    {
+      "id": "sov_43_torgau_elbe",
+      "index": 43,
+      "number_in_campaign": 11,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "易北河畔托尔高会师",
+      "name_en": "Link-up at Torgau on the Elbe",
+      "date": "1945-04-25",
+      "location_zh": "德国托尔高",
+      "location_en": "Torgau, Germany",
+      "coordinates": "51.56N 13.00E",
+      "mission_type": "relief",
+      "faction": "soviet",
+      "player_role_zh": "你是第 5 近卫集团军第 58 近卫步兵师的一名侦察兵，任务不是歼灭，而是在托尔高的废墟与断桥边找到美军巡逻队并把他们安全带回东岸。",
+      "player_class_recommended": ["scout", "medic", "rifleman"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "肃清托尔高城内的零星抵抗", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "在易北河断桥处与美军会合", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj3", "text_zh": "护送美军联络组安全返回", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "不误伤任何盟军人员", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_volkssturm": 12,
+        "ger_landser_rifleman": 8,
+        "ger_panzerfaust": 3,
+        "ger_mg42_team": 2,
+        "ger_sniper": 2
+      },
+      "enemy_tactics_zh": "城内只剩零散的国民突击队与后卫狙击手，他们不谋求守住阵地，只在桥头与楼顶零星射击，用铁拳袭击靠近断桥的车辆；真正的危险是误判对面而来的盟军巡逻队。",
+      "friendly_forces_zh": "乌克兰第 1 方面军第 5 近卫集团军第 58 近卫步兵师的一个侦察分队，与美军第 1 集团军第 69 步兵师在易北河两岸相互接应；第 173 近卫步兵团在施特雷拉附近保持接触。",
+      "terrain": "river",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 900,
+      "difficulty": 4,
+      "par_time_s": 1200,
+      "weight_budget_kg": 23,
+      "resupply_points": 3,
+      "available_support": ["sov_mortar_82", "sov_smoke_screen", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": [],
+      "historical_note_zh": "1945 年 4 月 25 日，乌克兰第 1 方面军第 5 近卫集团军第 58 近卫步兵师在易北河畔托尔高附近与美军第 1 集团军第 69 步兵师率先会师，双方士兵在托尔高废墟和断裂的易北河桥头相遇。同一天，苏军第 173 近卫步兵团在施特雷拉附近再次与美军接触。这次会师把德军在南北方向上彻底割裂，东线与西线战场从此连成一体，也成为欧洲战场胜利前最著名的象征性时刻之一。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 4 月 25 日苏军第 58 近卫步兵师与美军第 69 步兵师在托尔高会师",
+          "同日苏军第 173 近卫步兵团在施特雷拉附近与美军接触",
+          "易北河会师将德军南北两个集团割裂"
+        ],
+        "dramatized": [
+          "把跨越易北河的联络过程设计为护送任务",
+          "城内残余抵抗的规模为关卡节奏作了缩减"
+        ]
+      },
+      "design_note_zh": "情绪与识别教学：本关敌人密度极低，核心是敌我识别与护送。玩家携带不发光的信号旗，必须在 50 米外确认对方身份再开火；误伤盟军会立即判定失败。这是全战役唯一的低强度抒情关。",
+      "music_mood": "单簧管与手风琴的温暖主题，短暂而明亮的喘息。",
+      "unlock_reward": { "xp": 900, "weapon": null, "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 0.9 }
+    },
+    {
+      "id": "sov_44_prague_offensive",
+      "index": 44,
+      "number_in_campaign": 12,
+      "campaign_id": "sov_berlin_1945",
+      "name_zh": "布拉格最后攻势",
+      "name_en": "The Prague Offensive",
+      "date": "1945-05-06",
+      "location_zh": "捷克斯洛伐克布拉格",
+      "location_en": "Prague, Czechoslovakia",
+      "coordinates": "50.08N 14.44E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你是乌克兰第 1 方面军近卫坦克集团军的一名搭载步兵，翻越厄尔士山脉向布拉格急进，去接应正在起义的布拉格市民与被困的盟军战俘。",
+      "player_class_recommended": ["assault", "anti_tank", "machine_gunner"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "穿越厄尔士山脉隘口", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "击穿德军后卫的公路封锁线", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj3", "text_zh": "与布拉格起义者建立联系", "type": "primary", "required": true, "time_limit_s": null },
+        {
+          "id": "obj4",
+          "text_zh": "摧毁伏尔塔瓦河桥梁上的爆破装置，阻止德军炸桥",
+          "type": "secondary",
+          "required": false,
+          "time_limit_s": null,
+          "condition": "destroy_target",
+          "target_count": 1,
+          "marker_x_m": 12,
+          "marker_y_m": 8,
+          "target_points": [
+            {
+              "x_m": 12,
+              "y_m": 8,
+              "health": 160,
+              "name_zh": "伏尔塔瓦河桥爆破装置"
+            }
+          ]
+        }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 20,
+        "ger_landser_rifleman": 18,
+        "ger_volkssturm": 14,
+        "ger_mg42_team": 6,
+        "ger_panzerfaust": 5,
+        "pak40": 4,
+        "stug_iii_g": 3
+      },
+      "enemy_tactics_zh": "德军中央集团军群的后卫沿山地公路设伏，把 Pak 40 与机枪架在弯道内侧，工兵预先在桥梁与隧道装药准备爆破；他们不求守住，只求拖住红军直到主力向西撤退。",
+      "friendly_forces_zh": "乌克兰第 1 方面军第 4 近卫坦克集团军与第 3 近卫坦克集团军担任主攻矛头，第 2、第 4 乌克兰方面军从东面协同；捷克起义者控制着布拉格的部分街区与广播电台。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 800,
+      "difficulty": 8,
+      "par_time_s": 1700,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": ["sov_katyusha", "sov_howitzer_122", "sov_il2_strafe", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_t34_76", "sov_tank_isu152"],
+      "historical_note_zh": "1945 年 5 月 5 日布拉格市民起义，5 月 6 日乌克兰第 1 方面军的第 4 近卫坦克集团军与第 3 近卫坦克集团军从德累斯顿方向翻越厄尔士山脉南下，第 2、第 4 乌克兰方面军同时从东面推进。5 月 9 日凌晨坦克进入布拉格，这是欧洲战场最后一次大规模进攻。德军中央集团军群约 86 万人在布拉格以东被合围，直到 5 月 11 日才停止抵抗。5 月 9 日后来被定为苏联卫国战争胜利日。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1945 年 5 月 5 日布拉格爆发反德起义",
+          "1945 年 5 月 6 日苏军发起布拉格攻势，5 月 9 日进入布拉格",
+          "德军中央集团军群主力在布拉格以东被围，5 月 11 日停止抵抗"
+        ],
+        "dramatized": [
+          "翻越厄尔士山脉的三天行程被压缩为单张地图上的连续突破",
+          "起义者与红军的具体联络细节作了情节化处理"
+        ]
+      },
+      "design_note_zh": "收官关教学重点是『胜利前夕的授权火力』：喀秋莎与 IL-2 全数可用，但山地公路狭窄、最小安全距离 150 米极易误伤，玩家必须在推进节奏与呼叫火力之间取舍。可选目标是保住桥梁，为战后叙事留出余韵。",
+      "music_mood": "辽阔的合唱与渐强的进行曲，带着胜利与疲惫。",
+      "unlock_reward": { "xp": 2800, "weapon": "captured_kar98k", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    }
+  ]
+}

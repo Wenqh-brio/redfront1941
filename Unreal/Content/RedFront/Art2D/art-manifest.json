@@ -1,0 +1,3430 @@
+{
+  "$schema": "redfront.art-manifest/1",
+  "generated": "2026-10-03 18:02",
+  "generator": "tools/generate_art.py",
+  "quick_mode": false,
+  "categories": [
+    "environment",
+    "overlays",
+    "decals",
+    "vfx",
+    "characters",
+    "ui",
+    "parallax"
+  ],
+  "resolutions": {
+    "terrain": 2048,
+    "normal": 1024,
+    "overlay": 1024,
+    "decal": 512,
+    "decal_large": 1024,
+    "vfx": 256,
+    "character": 128,
+    "parallax": [
+      2048,
+      512
+    ],
+    "ui_panel": 256
+  },
+  "note": "本清单由程序化生成器产出，供 Unreal/Content/Python/rf_generate_materials.py 自动创建材质、材质实例与 Paper2D 精灵。",
+  "assets": [
+    {
+      "path": "RedFront/Art2D/Environment/T_field_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "field",
+      "desc": "旷野：土壤 + 草簇 + 碎石，夏秋过渡色"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_field_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "field"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_field_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "field"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_city_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "city",
+      "desc": "城市：破碎沥青 + 砖石粉 + 弹坑尘"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_city_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "city"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_city_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "city"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_forest_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "forest",
+      "desc": "森林：腐叶层 + 树根 + 苔藓斑"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_forest_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "forest"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_forest_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "forest"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_village_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "village",
+      "desc": "村落：踩实土路 + 麦秸 + 木屑"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_village_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "village"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_village_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "village"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_river_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "river",
+      "desc": "河岸：湿泥 + 卵石 + 浅滩水痕（低粗糙度）"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_river_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "river"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_river_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "river"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_rail_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "rail",
+      "desc": "铁路：道砟 + 枕木碎屑 + 油污"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_rail_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "rail"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_rail_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "rail"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_industrial_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "industrial",
+      "desc": "工业区：混凝土板 + 铁锈 + 积尘"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_industrial_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "industrial"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_industrial_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "industrial"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_fortress_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "fortress",
+      "desc": "要塞：红砖 + 灰浆 + 弹痕（布列斯特/柯尼斯堡）"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_fortress_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "fortress"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_fortress_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "fortress"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_trench_BaseColor.png",
+      "role": "basecolor",
+      "width": 2048,
+      "height": 2048,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "terrain": "trench",
+      "desc": "战壕：翻浆泥 + 积水 + 木板残骸"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_trench_Normal.png",
+      "role": "normal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Normalmap",
+      "tiling": true,
+      "terrain": "trench"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_trench_Roughness.png",
+      "role": "roughness",
+      "width": 1024,
+      "height": 1024,
+      "srgb": false,
+      "compression": "TC_Grayscale",
+      "tiling": true,
+      "terrain": "trench"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_Crack_Damage.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "混凝土/沥青裂缝（叠加混合）"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_Scorch_Overlay.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "烟熏/烧焦叠加"
+    },
+    {
+      "path": "RedFront/Art2D/Environment/T_Moss_Overlay.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "苔藓/植被侵蚀叠加"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_snow_fresh.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "新雪覆盖（几乎不透明，冬季关卡基底）",
+      "weather": "snow_fresh"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_snow_trodden.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "踩踏积雪（带足迹与车辙压痕）",
+      "weather": "snow_trodden"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_mud_wet.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "湿泥浆（雨后地面）",
+      "weather": "mud_wet"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_water_film.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "薄水膜（低粗糙度、高反射）",
+      "weather": "water_film"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_dust_dry.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "干尘土（夏季行军扬尘）",
+      "weather": "dust_dry"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_ash_scorch.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "焦土与灰烬（燃烧后的地表）",
+      "weather": "ash_scorch"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_frost_crystal.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "霜冻结晶（清晨低温）",
+      "weather": "frost_crystal"
+    },
+    {
+      "path": "RedFront/Art2D/Overlays/T_rain_sheen.png",
+      "role": "overlay",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "desc": "雨幕水光（持续降雨）",
+      "weather": "rain_sheen"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_crater_small.png",
+      "role": "decal",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_crater_medium.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_crater_large.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_rubble.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_blood_1.png",
+      "role": "decal",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_blood_2.png",
+      "role": "decal",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_blood_3.png",
+      "role": "decal",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_tracks_straight.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_tracks_turn.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_burn_scorch.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_bootprints.png",
+      "role": "decal",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/Decals/D_puddle.png",
+      "role": "decal",
+      "width": 1024,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false,
+      "usage": "deferred_decal"
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Muzzle_rifle.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Muzzle_smg.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Muzzle_smg9.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Muzzle_us_rifle.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Muzzle_mg.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Explosion.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 2,
+      "fps": 24,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Smoke.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 12,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 3,
+      "fps": 14,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Fire.png",
+      "role": "vfx_sheet",
+      "width": 1024,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 2,
+      "fps": 16,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_dirt.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_metal.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_wood.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_brick.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_water.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Impact_flesh.png",
+      "role": "vfx_sheet",
+      "width": 768,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/VFX/VFX_Tracer.png",
+      "role": "vfx_sheet",
+      "width": 192,
+      "height": 64,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 3,
+      "frame_w": 64,
+      "frame_h": 64,
+      "cols": 3,
+      "rows": 1,
+      "fps": 30,
+      "blend": "additive",
+      "animated": true
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_rifleman_idle.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 6,
+      "unit": "sov_rifleman",
+      "anim": "idle"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_rifleman_walk.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 14,
+      "unit": "sov_rifleman",
+      "anim": "walk"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_rifleman_fire.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 16,
+      "unit": "sov_rifleman",
+      "anim": "fire"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_rifleman_reload.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "sov_rifleman",
+      "anim": "reload"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_rifleman_death.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "sov_rifleman",
+      "anim": "death"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_smg_idle.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 6,
+      "unit": "sov_smg",
+      "anim": "idle"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_smg_walk.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 14,
+      "unit": "sov_smg",
+      "anim": "walk"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_smg_fire.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 16,
+      "unit": "sov_smg",
+      "anim": "fire"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_smg_reload.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "sov_smg",
+      "anim": "reload"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_sov_smg_death.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "sov_smg",
+      "anim": "death"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_us_rifleman_idle.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 6,
+      "unit": "us_rifleman",
+      "anim": "idle"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_us_rifleman_walk.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 14,
+      "unit": "us_rifleman",
+      "anim": "walk"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_us_rifleman_fire.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 16,
+      "unit": "us_rifleman",
+      "anim": "fire"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_us_rifleman_reload.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "us_rifleman",
+      "anim": "reload"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_us_rifleman_death.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "us_rifleman",
+      "anim": "death"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_rifleman_idle.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 6,
+      "unit": "ger_rifleman",
+      "anim": "idle"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_rifleman_walk.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 14,
+      "unit": "ger_rifleman",
+      "anim": "walk"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_rifleman_fire.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 16,
+      "unit": "ger_rifleman",
+      "anim": "fire"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_rifleman_reload.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "ger_rifleman",
+      "anim": "reload"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_rifleman_death.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "ger_rifleman",
+      "anim": "death"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_mg42_team_idle.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 6,
+      "unit": "ger_mg42_team",
+      "anim": "idle"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_mg42_team_walk.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 1024,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 14,
+      "unit": "ger_mg42_team",
+      "anim": "walk"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_mg42_team_fire.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 16,
+      "unit": "ger_mg42_team",
+      "anim": "fire"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_mg42_team_reload.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "ger_mg42_team",
+      "anim": "reload"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_ger_mg42_team_death.png",
+      "role": "sprite_sheet",
+      "width": 512,
+      "height": 768,
+      "srgb": true,
+      "compression": "TC_Default",
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "layout": "direction_column_frame_row",
+      "animated": true,
+      "placeholder": true,
+      "fps": 10,
+      "unit": "ger_mg42_team",
+      "anim": "death"
+    },
+    {
+      "path": "RedFront/Art2D/Characters/SPR_UnitShadow.png",
+      "role": "shadow",
+      "width": 256,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_Default",
+      "animated": false
+    },
+    {
+      "path": "RedFront/Art2D/Parallax/BG_city_ruins.png",
+      "role": "background",
+      "width": 2048,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "parallax_layer": 1,
+      "desc": "城市废墟天际线（柏林/斯大林格勒）"
+    },
+    {
+      "path": "RedFront/Art2D/Parallax/BG_forest_line.png",
+      "role": "background",
+      "width": 2048,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "parallax_layer": 1,
+      "desc": "森林树线（白俄罗斯/许特根）"
+    },
+    {
+      "path": "RedFront/Art2D/Parallax/BG_factory.png",
+      "role": "background",
+      "width": 2048,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "parallax_layer": 1,
+      "desc": "工厂烟囱群（工业区）"
+    },
+    {
+      "path": "RedFront/Art2D/Parallax/BG_snow_plain.png",
+      "role": "background",
+      "width": 2048,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "parallax_layer": 1,
+      "desc": "雪原与孤树（莫斯科反攻）"
+    },
+    {
+      "path": "RedFront/Art2D/Parallax/BG_steppe.png",
+      "role": "background",
+      "width": 2048,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": true,
+      "parallax_layer": 1,
+      "desc": "旷野丘陵（库尔斯克）"
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_PanelFrame.png",
+      "role": "ui",
+      "width": 256,
+      "height": 256,
+      "srgb": true,
+      "compression": "TC_EditorIcon",
+      "tiling": false,
+      "nine_slice": [
+        40,
+        40,
+        40,
+        40
+      ]
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_Vignette.png",
+      "role": "ui",
+      "width": 1920,
+      "height": 1080,
+      "srgb": true,
+      "compression": "TC_Default",
+      "tiling": false
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_Grain.png",
+      "role": "ui",
+      "width": 512,
+      "height": 512,
+      "srgb": true,
+      "compression": "TC_Grayscale",
+      "tiling": true
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_Crosshair_1.png",
+      "role": "ui",
+      "width": 64,
+      "height": 64,
+      "srgb": true,
+      "compression": "TC_EditorIcon",
+      "tiling": false,
+      "state": "tight"
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_Crosshair_2.png",
+      "role": "ui",
+      "width": 64,
+      "height": 64,
+      "srgb": true,
+      "compression": "TC_EditorIcon",
+      "tiling": false,
+      "state": "open"
+    },
+    {
+      "path": "RedFront/Art2D/UI/UI_Crosshair_3.png",
+      "role": "ui",
+      "width": 64,
+      "height": 64,
+      "srgb": true,
+      "compression": "TC_EditorIcon",
+      "tiling": false,
+      "state": "reloading"
+    }
+  ],
+  "materials": [
+    {
+      "name": "M_Terrain_2D",
+      "type": "master",
+      "domain": "surface",
+      "blend": "opaque",
+      "usage": "地形地面（9 种地形 + 8 种天气覆盖由材质实例切换）",
+      "texture_params": [
+        {
+          "name": "BaseColorTex",
+          "role": "basecolor",
+          "default": "T_field_BaseColor"
+        },
+        {
+          "name": "NormalTex",
+          "role": "normal",
+          "default": "T_field_Normal"
+        },
+        {
+          "name": "RoughnessTex",
+          "role": "roughness",
+          "default": "T_field_Roughness"
+        },
+        {
+          "name": "OverlayTex",
+          "role": "overlay",
+          "default": "T_snow_fresh"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "OverlayAmount",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "天气覆盖强度（雪/泥/灰烬）"
+        },
+        {
+          "name": "Wetness",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "湿润度：降低粗糙度、加深底色"
+        },
+        {
+          "name": "UVScale",
+          "default": 4.0,
+          "range": [
+            0.5,
+            32
+          ],
+          "desc": "世界单位→贴图 UV 缩放（可无缝平铺）"
+        },
+        {
+          "name": "DamageBlend",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "战损叠加（裂缝/烟熏 Decal 由该参数驱动）"
+        },
+        {
+          "name": "Tint",
+          "default": [
+            1,
+            1,
+            1
+          ],
+          "desc": "关卡色彩脚本统一色调"
+        }
+      ]
+    },
+    {
+      "name": "M_Sprite_Lit",
+      "type": "master",
+      "domain": "surface",
+      "blend": "masked",
+      "usage": "受光 2D 精灵（角色、载具、掩体），Paper2D 默认材质的本作替代",
+      "texture_params": [
+        {
+          "name": "SpriteTex",
+          "role": "basecolor",
+          "default": "SPR_sov_rifleman_idle"
+        },
+        {
+          "name": "NormalTex",
+          "role": "normal",
+          "default": "T_field_Normal"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "RimPower",
+          "default": 3.0,
+          "range": [
+            0.5,
+            8
+          ],
+          "desc": "轮廓光强度（2D 立体感）"
+        },
+        {
+          "name": "DamageFlash",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "受击白闪"
+        },
+        {
+          "name": "SnowDust",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "雪地行军挂雪"
+        },
+        {
+          "name": "Phase",
+          "default": 0.0,
+          "desc": "动画相位（供材质内摆动使用）"
+        }
+      ]
+    },
+    {
+      "name": "M_Decal_2D",
+      "type": "master",
+      "domain": "deferred_decal",
+      "blend": "translucent",
+      "usage": "贴花：弹坑、血迹、履带印、燃烧痕、水洼",
+      "texture_params": [
+        {
+          "name": "DecalTex",
+          "role": "decal",
+          "default": "D_crater_medium"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "Opacity",
+          "default": 1.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "整体不透明度（血迹可随关卡减弱）"
+        },
+        {
+          "name": "FadeRadius",
+          "default": 0.35,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "边缘淡出，避免硬边"
+        },
+        {
+          "name": "WetShine",
+          "default": 0.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "水洼/血迹的湿亮反射"
+        }
+      ]
+    },
+    {
+      "name": "M_VFX_Additive",
+      "type": "master",
+      "domain": "surface",
+      "blend": "additive",
+      "usage": "枪口焰、爆炸、火焰、弹道拖尾",
+      "texture_params": [
+        {
+          "name": "VFXTex",
+          "role": "vfx",
+          "default": "VFX_Explosion"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "EmissiveBoost",
+          "default": 6.0,
+          "range": [
+            0,
+            40
+          ],
+          "desc": "自发光强度（HDR，配合 Bloom）"
+        },
+        {
+          "name": "FrameIndex",
+          "default": 0.0,
+          "desc": "序列帧索引（由动画蓝图驱动）"
+        },
+        {
+          "name": "Fade",
+          "default": 1.0,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "生命周期淡出"
+        }
+      ]
+    },
+    {
+      "name": "M_Smoke_Translucent",
+      "type": "master",
+      "domain": "surface",
+      "blend": "translucent",
+      "usage": "烟幕、尘土、烟柱（遮蔽判定与视觉烟幕共用）",
+      "texture_params": [
+        {
+          "name": "SmokeTex",
+          "role": "vfx",
+          "default": "VFX_Smoke"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "Density",
+          "default": 0.55,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "烟幕浓度（同时驱动视觉与遮蔽查询）"
+        },
+        {
+          "name": "FrameIndex",
+          "default": 0.0,
+          "desc": "序列帧索引"
+        },
+        {
+          "name": "Tint",
+          "default": [
+            0.82,
+            0.8,
+            0.76
+          ],
+          "desc": "烟色（雪地偏冷、燃烧偏暖）"
+        }
+      ]
+    },
+    {
+      "name": "M_Parallax_Layer",
+      "type": "master",
+      "domain": "surface",
+      "blend": "translucent",
+      "usage": "视差背景层（远景/中景），滚动由视差系数驱动",
+      "texture_params": [
+        {
+          "name": "LayerTex",
+          "role": "background",
+          "default": "BG_city_ruins"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "ParallaxFactor",
+          "default": 0.4,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "视差系数（0 = 不动，1 = 与战场同速）"
+        },
+        {
+          "name": "FogDensity",
+          "default": 0.35,
+          "range": [
+            0,
+            1
+          ],
+          "desc": "大气透视强度（能见度越低越强）"
+        }
+      ]
+    },
+    {
+      "name": "M_UI_Panel",
+      "type": "master",
+      "domain": "ui",
+      "blend": "translucent",
+      "usage": "HUD 面板（9 宫格）与暗角/颗粒",
+      "texture_params": [
+        {
+          "name": "PanelTex",
+          "role": "ui",
+          "default": "UI_PanelFrame"
+        }
+      ],
+      "scalar_params": [
+        {
+          "name": "Opacity",
+          "default": 1.0,
+          "range": [
+            0,
+            1
+          ]
+        },
+        {
+          "name": "Tint",
+          "default": [
+            0.1,
+            0.11,
+            0.08
+          ]
+        }
+      ]
+    },
+    {
+      "name": "MI_Terrain_field",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_field_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_field_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_field_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_field_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_city",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_city_BaseColor",
+        "NormalTex": "T_city_Normal",
+        "RoughnessTex": "T_city_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_city_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_city_BaseColor",
+        "NormalTex": "T_city_Normal",
+        "RoughnessTex": "T_city_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_city_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_city_BaseColor",
+        "NormalTex": "T_city_Normal",
+        "RoughnessTex": "T_city_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_city_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_city_BaseColor",
+        "NormalTex": "T_city_Normal",
+        "RoughnessTex": "T_city_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_city_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_city_BaseColor",
+        "NormalTex": "T_city_Normal",
+        "RoughnessTex": "T_city_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_forest",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_forest_BaseColor",
+        "NormalTex": "T_forest_Normal",
+        "RoughnessTex": "T_forest_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_forest_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_forest_BaseColor",
+        "NormalTex": "T_forest_Normal",
+        "RoughnessTex": "T_forest_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_forest_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_forest_BaseColor",
+        "NormalTex": "T_forest_Normal",
+        "RoughnessTex": "T_forest_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_forest_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_forest_BaseColor",
+        "NormalTex": "T_forest_Normal",
+        "RoughnessTex": "T_forest_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_forest_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_forest_BaseColor",
+        "NormalTex": "T_forest_Normal",
+        "RoughnessTex": "T_forest_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_village",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_village_BaseColor",
+        "NormalTex": "T_village_Normal",
+        "RoughnessTex": "T_village_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_village_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_village_BaseColor",
+        "NormalTex": "T_village_Normal",
+        "RoughnessTex": "T_village_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_village_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_village_BaseColor",
+        "NormalTex": "T_village_Normal",
+        "RoughnessTex": "T_village_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_village_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_village_BaseColor",
+        "NormalTex": "T_village_Normal",
+        "RoughnessTex": "T_village_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_village_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_village_BaseColor",
+        "NormalTex": "T_village_Normal",
+        "RoughnessTex": "T_village_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_river",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_river_BaseColor",
+        "NormalTex": "T_river_Normal",
+        "RoughnessTex": "T_river_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.35,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_river_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_river_BaseColor",
+        "NormalTex": "T_river_Normal",
+        "RoughnessTex": "T_river_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_river_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_river_BaseColor",
+        "NormalTex": "T_river_Normal",
+        "RoughnessTex": "T_river_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_river_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_river_BaseColor",
+        "NormalTex": "T_river_Normal",
+        "RoughnessTex": "T_river_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_river_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_river_BaseColor",
+        "NormalTex": "T_river_Normal",
+        "RoughnessTex": "T_river_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_rail",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_rail_BaseColor",
+        "NormalTex": "T_rail_Normal",
+        "RoughnessTex": "T_rail_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_rail_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_rail_BaseColor",
+        "NormalTex": "T_rail_Normal",
+        "RoughnessTex": "T_rail_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_rail_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_rail_BaseColor",
+        "NormalTex": "T_rail_Normal",
+        "RoughnessTex": "T_rail_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_rail_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_rail_BaseColor",
+        "NormalTex": "T_rail_Normal",
+        "RoughnessTex": "T_rail_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_rail_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_rail_BaseColor",
+        "NormalTex": "T_rail_Normal",
+        "RoughnessTex": "T_rail_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_industrial",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_industrial_BaseColor",
+        "NormalTex": "T_industrial_Normal",
+        "RoughnessTex": "T_industrial_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_industrial_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_industrial_BaseColor",
+        "NormalTex": "T_industrial_Normal",
+        "RoughnessTex": "T_industrial_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_industrial_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_industrial_BaseColor",
+        "NormalTex": "T_industrial_Normal",
+        "RoughnessTex": "T_industrial_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_industrial_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_industrial_BaseColor",
+        "NormalTex": "T_industrial_Normal",
+        "RoughnessTex": "T_industrial_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_industrial_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_industrial_BaseColor",
+        "NormalTex": "T_industrial_Normal",
+        "RoughnessTex": "T_industrial_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_fortress",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_fortress_BaseColor",
+        "NormalTex": "T_fortress_Normal",
+        "RoughnessTex": "T_fortress_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.05,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_fortress_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_fortress_BaseColor",
+        "NormalTex": "T_fortress_Normal",
+        "RoughnessTex": "T_fortress_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_fortress_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_fortress_BaseColor",
+        "NormalTex": "T_fortress_Normal",
+        "RoughnessTex": "T_fortress_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_fortress_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_fortress_BaseColor",
+        "NormalTex": "T_fortress_Normal",
+        "RoughnessTex": "T_fortress_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_fortress_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_fortress_BaseColor",
+        "NormalTex": "T_fortress_Normal",
+        "RoughnessTex": "T_fortress_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_trench",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_trench_BaseColor",
+        "NormalTex": "T_trench_Normal",
+        "RoughnessTex": "T_trench_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.0,
+        "Wetness": 0.35,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_trench_rain",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_trench_BaseColor",
+        "NormalTex": "T_trench_Normal",
+        "RoughnessTex": "T_trench_Roughness",
+        "OverlayTex": "T_rain_sheen"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_trench_snow",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_trench_BaseColor",
+        "NormalTex": "T_trench_Normal",
+        "RoughnessTex": "T_trench_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.25,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_trench_mud",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_trench_BaseColor",
+        "NormalTex": "T_trench_Normal",
+        "RoughnessTex": "T_trench_Roughness",
+        "OverlayTex": "T_mud_wet"
+      },
+      "scalars": {
+        "OverlayAmount": 0.6,
+        "Wetness": 0.7,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Terrain_trench_storm",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "BaseColorTex": "T_trench_BaseColor",
+        "NormalTex": "T_trench_Normal",
+        "RoughnessTex": "T_trench_Roughness",
+        "OverlayTex": "T_snow_fresh"
+      },
+      "scalars": {
+        "OverlayAmount": 0.85,
+        "Wetness": 0.1,
+        "UVScale": 4.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_crater_medium",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_crater_medium"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_crater_large",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_crater_large"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_rubble",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_rubble"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_blood_1",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_blood_1"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_blood_2",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_blood_2"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_blood_3",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_blood_3"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_tracks_straight",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_tracks_straight"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_tracks_turn",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_tracks_turn"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_burn_scorch",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_burn_scorch"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_bootprints",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_bootprints"
+      },
+      "scalars": {
+        "Opacity": 0.7,
+        "FadeRadius": 0.35,
+        "WetShine": 0.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Decal_puddle",
+      "parent": "M_Decal_2D",
+      "textures": {
+        "DecalTex": "D_puddle"
+      },
+      "scalars": {
+        "Opacity": 1.0,
+        "FadeRadius": 0.35,
+        "WetShine": 0.6
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_snow_fresh",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_snow_fresh",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_snow_trodden",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_snow_trodden",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_mud_wet",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_mud_wet",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_water_film",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_water_film",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_dust_dry",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_dust_dry",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_ash_scorch",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_ash_scorch",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_frost_crystal",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_frost_crystal",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_Overlay_rain_sheen",
+      "parent": "M_Terrain_2D",
+      "textures": {
+        "OverlayTex": "T_rain_sheen",
+        "BaseColorTex": "T_field_BaseColor",
+        "NormalTex": "T_field_Normal",
+        "RoughnessTex": "T_field_Roughness"
+      },
+      "scalars": {
+        "OverlayAmount": 1.0,
+        "Wetness": 0.2,
+        "UVScale": 2.0
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_BG_city_ruins",
+      "parent": "M_Parallax_Layer",
+      "textures": {
+        "LayerTex": "BG_city_ruins"
+      },
+      "scalars": {
+        "ParallaxFactor": 0.15,
+        "FogDensity": 0.4
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_BG_forest_line",
+      "parent": "M_Parallax_Layer",
+      "textures": {
+        "LayerTex": "BG_forest_line"
+      },
+      "scalars": {
+        "ParallaxFactor": 0.15,
+        "FogDensity": 0.4
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_BG_factory",
+      "parent": "M_Parallax_Layer",
+      "textures": {
+        "LayerTex": "BG_factory"
+      },
+      "scalars": {
+        "ParallaxFactor": 0.15,
+        "FogDensity": 0.4
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_BG_snow_plain",
+      "parent": "M_Parallax_Layer",
+      "textures": {
+        "LayerTex": "BG_snow_plain"
+      },
+      "scalars": {
+        "ParallaxFactor": 0.15,
+        "FogDensity": 0.4
+      },
+      "type": "instance"
+    },
+    {
+      "name": "MI_BG_steppe",
+      "parent": "M_Parallax_Layer",
+      "textures": {
+        "LayerTex": "BG_steppe"
+      },
+      "scalars": {
+        "ParallaxFactor": 0.15,
+        "FogDensity": 0.4
+      },
+      "type": "instance"
+    }
+  ],
+  "sprite_sheets": [
+    {
+      "unit": "sov_rifleman",
+      "anim": "idle",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_rifleman_idle.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 6,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军步兵（莫辛-纳甘）"
+    },
+    {
+      "unit": "sov_rifleman",
+      "anim": "walk",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_rifleman_walk.png",
+      "directions": 4,
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "fps": 14,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军步兵（莫辛-纳甘）"
+    },
+    {
+      "unit": "sov_rifleman",
+      "anim": "fire",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_rifleman_fire.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 16,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军步兵（莫辛-纳甘）"
+    },
+    {
+      "unit": "sov_rifleman",
+      "anim": "reload",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_rifleman_reload.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军步兵（莫辛-纳甘）"
+    },
+    {
+      "unit": "sov_rifleman",
+      "anim": "death",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_rifleman_death.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军步兵（莫辛-纳甘）"
+    },
+    {
+      "unit": "sov_smg",
+      "anim": "idle",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_smg_idle.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 6,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军突击兵（PPSh-41）"
+    },
+    {
+      "unit": "sov_smg",
+      "anim": "walk",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_smg_walk.png",
+      "directions": 4,
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "fps": 14,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军突击兵（PPSh-41）"
+    },
+    {
+      "unit": "sov_smg",
+      "anim": "fire",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_smg_fire.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 16,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军突击兵（PPSh-41）"
+    },
+    {
+      "unit": "sov_smg",
+      "anim": "reload",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_smg_reload.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军突击兵（PPSh-41）"
+    },
+    {
+      "unit": "sov_smg",
+      "anim": "death",
+      "sheet": "RedFront/Art2D/Characters/SPR_sov_smg_death.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "苏军突击兵（PPSh-41）"
+    },
+    {
+      "unit": "us_rifleman",
+      "anim": "idle",
+      "sheet": "RedFront/Art2D/Characters/SPR_us_rifleman_idle.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 6,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "美军步兵（M1 Garand）"
+    },
+    {
+      "unit": "us_rifleman",
+      "anim": "walk",
+      "sheet": "RedFront/Art2D/Characters/SPR_us_rifleman_walk.png",
+      "directions": 4,
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "fps": 14,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "美军步兵（M1 Garand）"
+    },
+    {
+      "unit": "us_rifleman",
+      "anim": "fire",
+      "sheet": "RedFront/Art2D/Characters/SPR_us_rifleman_fire.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 16,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "美军步兵（M1 Garand）"
+    },
+    {
+      "unit": "us_rifleman",
+      "anim": "reload",
+      "sheet": "RedFront/Art2D/Characters/SPR_us_rifleman_reload.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "美军步兵（M1 Garand）"
+    },
+    {
+      "unit": "us_rifleman",
+      "anim": "death",
+      "sheet": "RedFront/Art2D/Characters/SPR_us_rifleman_death.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "美军步兵（M1 Garand）"
+    },
+    {
+      "unit": "ger_rifleman",
+      "anim": "idle",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_rifleman_idle.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 6,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军步兵（Kar98k）"
+    },
+    {
+      "unit": "ger_rifleman",
+      "anim": "walk",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_rifleman_walk.png",
+      "directions": 4,
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "fps": 14,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军步兵（Kar98k）"
+    },
+    {
+      "unit": "ger_rifleman",
+      "anim": "fire",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_rifleman_fire.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 16,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军步兵（Kar98k）"
+    },
+    {
+      "unit": "ger_rifleman",
+      "anim": "reload",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_rifleman_reload.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军步兵（Kar98k）"
+    },
+    {
+      "unit": "ger_rifleman",
+      "anim": "death",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_rifleman_death.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军步兵（Kar98k）"
+    },
+    {
+      "unit": "ger_mg42_team",
+      "anim": "idle",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_mg42_team_idle.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 6,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军 MG42 机枪组"
+    },
+    {
+      "unit": "ger_mg42_team",
+      "anim": "walk",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_mg42_team_walk.png",
+      "directions": 4,
+      "frames": 8,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 8,
+      "fps": 14,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军 MG42 机枪组"
+    },
+    {
+      "unit": "ger_mg42_team",
+      "anim": "fire",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_mg42_team_fire.png",
+      "directions": 4,
+      "frames": 4,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 4,
+      "fps": 16,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军 MG42 机枪组"
+    },
+    {
+      "unit": "ger_mg42_team",
+      "anim": "reload",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_mg42_team_reload.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军 MG42 机枪组"
+    },
+    {
+      "unit": "ger_mg42_team",
+      "anim": "death",
+      "sheet": "RedFront/Art2D/Characters/SPR_ger_mg42_team_death.png",
+      "directions": 4,
+      "frames": 6,
+      "frame_w": 128,
+      "frame_h": 128,
+      "cols": 4,
+      "rows": 6,
+      "fps": 10,
+      "mirror_for_left": [
+        2
+      ],
+      "placeholder": true,
+      "desc": "德军 MG42 机枪组"
+    }
+  ],
+  "vfx_sheets": [
+    {
+      "name": "Muzzle_rifle",
+      "sheet": "RedFront/Art2D/VFX/VFX_Muzzle_rifle.png",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "Muzzle_smg",
+      "sheet": "RedFront/Art2D/VFX/VFX_Muzzle_smg.png",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "Muzzle_smg9",
+      "sheet": "RedFront/Art2D/VFX/VFX_Muzzle_smg9.png",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "Muzzle_us_rifle",
+      "sheet": "RedFront/Art2D/VFX/VFX_Muzzle_us_rifle.png",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "Muzzle_mg",
+      "sheet": "RedFront/Art2D/VFX/VFX_Muzzle_mg.png",
+      "frames": 4,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 1,
+      "fps": 32,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.2,
+        0.5
+      ]
+    },
+    {
+      "name": "Explosion",
+      "sheet": "RedFront/Art2D/VFX/VFX_Explosion.png",
+      "frames": 8,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 2,
+      "fps": 24,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "Smoke",
+      "sheet": "RedFront/Art2D/VFX/VFX_Smoke.png",
+      "frames": 12,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 3,
+      "fps": 14,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "Fire",
+      "sheet": "RedFront/Art2D/VFX/VFX_Fire.png",
+      "frames": 8,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 4,
+      "rows": 2,
+      "fps": 16,
+      "blend": "additive",
+      "loop": true,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    },
+    {
+      "name": "Impact_dirt",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_dirt.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Impact_metal",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_metal.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Impact_wood",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_wood.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Impact_brick",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_brick.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Impact_water",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_water.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Impact_flesh",
+      "sheet": "RedFront/Art2D/VFX/VFX_Impact_flesh.png",
+      "frames": 6,
+      "frame_w": 256,
+      "frame_h": 256,
+      "cols": 3,
+      "rows": 2,
+      "fps": 24,
+      "blend": "translucent",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.6
+      ]
+    },
+    {
+      "name": "Tracer",
+      "sheet": "RedFront/Art2D/VFX/VFX_Tracer.png",
+      "frames": 3,
+      "frame_w": 64,
+      "frame_h": 64,
+      "cols": 3,
+      "rows": 1,
+      "fps": 30,
+      "blend": "additive",
+      "loop": false,
+      "pivot": [
+        0.5,
+        0.5
+      ]
+    }
+  ],
+  "warnings": []
+}

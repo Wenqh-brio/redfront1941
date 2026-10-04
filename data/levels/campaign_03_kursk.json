@@ -1,0 +1,607 @@
+{
+  "$schema": "redfront.levels/1",
+  "campaign_id": "sov_kursk_1943",
+  "author_note": "第三部：库尔斯克与第聂伯河 1943 — 钢铁与泥泞。全球关卡 23-32，主题为反坦克支撑点、间接火力控制与强渡大河。",
+  "levels": [
+    {
+      "id": "sov_23_oboyan_minefield",
+      "index": 23,
+      "number_in_campaign": 1,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "奥博扬的钢铁雷场",
+      "name_en": "Steel Minefield at Oboyan",
+      "date": "1943-07-05",
+      "location_zh": "奥博扬—雅科夫列沃公路",
+      "location_en": "Oboyan–Yakovlevo Road",
+      "coordinates": "51.20N 36.28E",
+      "mission_type": "defense",
+      "faction": "soviet",
+      "player_role_zh": "你是第 6 近卫集团军反坦克支撑点的一名工兵军士，要在奥博扬公路两侧把雷场、反坦克枪和火炮摆成一张交叉火网。",
+      "player_class_recommended": ["anti_tank", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在雷场通道两侧构筑两个反坦克支撑点", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj2", "text_zh": "击退德军第 4 装甲集团军的第一次装甲冲击", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj3", "text_zh": "保持观察员视线并呼叫至少一次 122mm 火力急袭", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "撤出被击毁支撑点的伤员并保住 2 门反坦克炮", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 24,
+        "ger_ss_grenadier": 12,
+        "ger_mg42_team": 6,
+        "pzkpfw_iv_f2": 6,
+        "pzkpfw_vi_tiger": 3,
+        "stug_iii_g": 5,
+        "ger_pioneer": 4,
+        "pak40": 3
+      },
+      "enemy_tactics_zh": "德军以第 4 装甲集团军为先导，先用密集炮火与斯图卡压制前沿，再让虎式与四号坦克沿工兵开辟的雷场通道多点楔入。一旦被反坦克火力阻滞，他们立刻把 88mm 高射炮推上来平射，并以装甲掷弹兵从侧翼逐个包抄支撑点。",
+      "friendly_forces_zh": "沃罗涅日方面军第 6 近卫集团军第 22 近卫步兵军以第 90 近卫步兵师为骨干，加强独立反坦克歼击旅与工兵雷场作业组。第 1 坦克集团军主力隐蔽在第二道防线后的反斜面，准备对突入之敌实施反突击。",
+      "terrain": "trench",
+      "weather": "mud",
+      "time_of_day": "dawn",
+      "visibility_m": 400,
+      "difficulty": 7,
+      "par_time_s": 1500,
+      "weight_budget_kg": 24,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_mortar_82"],
+      "vehicle_available": [],
+      "historical_note_zh": "1943 年 7 月 5 日，德军『堡垒』行动在库尔斯克突出部南翼发起，第 4 装甲集团军沿奥博扬公路猛攻沃罗涅日方面军第 6 近卫集团军阵地。苏军在雅科夫列沃与奥博扬之间构筑纵深反坦克支撑点：反坦克炮、PTRD-41 反坦克枪与步兵在雷场后方形成交叉火力，独立反坦克歼击旅随时机动堵口。7 月 6 日德军一度突入第 22 近卫步兵军第 90 近卫步兵师阵地，瓦图京把方面军预备队与炮兵全线投入反击。第一周德军仅推进数十公里，损失数百辆坦克，7 月 12 日之后被迫转入防御。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943-07-05 德军第 4 装甲集团军在库尔斯克南翼沿奥博扬方向发起进攻",
+          "第 90 近卫步兵师隶属第 6 近卫集团军第 22 近卫步兵军，防守雅科夫列沃一带",
+          "苏军以纵深反坦克支撑点、雷场与机动反坦克歼击旅消耗德军装甲突击"
+        ],
+        "dramatized": [
+          "支撑点内玩家军士的具体行动与临时指挥为虚构",
+          "个别支撑点被反复争夺的时间顺序做了压缩处理"
+        ]
+      },
+      "design_note_zh": "本关是战役的反坦克机制入门：玩家要在公路两侧选定支撑点，用 PTRD-41 与反坦克炮交叉封锁雷场通道，并保持观察员视线以便呼叫 122mm 火力。教学重点是『把坦克放进侧面射界』与『雷场必须留出诱敌通道』；三个支撑点被同时摧毁即防线崩溃，任务失败。",
+      "music_mood": "低音弦乐持续脉动，远处履带声与炮击闷响逐渐逼近。",
+      "unlock_reward": { "xp": 1200, "weapon": "ptrds41", "class": "anti_tank" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_24_prokhorovka_clash",
+      "index": 24,
+      "number_in_campaign": 2,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "普罗霍罗夫卡钢铁碰撞",
+      "name_en": "Clash of Steel at Prokhorovka",
+      "date": "1943-07-12",
+      "location_zh": "普罗霍罗夫卡车站以西",
+      "location_en": "West of Prokhorovka Station",
+      "coordinates": "51.03N 36.73E",
+      "mission_type": "armored",
+      "faction": "soviet",
+      "player_role_zh": "你是第 5 近卫坦克集团军第 18 坦克军的一名反坦克枪手兼坦克搭载步兵，在草坡上与党卫军装甲军近距离互撞。",
+      "player_class_recommended": ["anti_tank", "mortarman"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "守住 252.2 高地反斜面，阻止德军装甲楔入", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "用侧射火力瘫痪至少 3 辆德军坦克", "type": "primary", "required": true, "time_limit_s": null, "condition": "eliminate_count", "target_count": 3, "target_enemy_ids": ["pzkpfw_iv_f2", "pzkpfw_v_panther", "pzkpfw_vi_tiger", "stug_iii_g"] },
+        { "id": "obj3", "text_zh": "以 82mm 迫击炮压制伴随德军步兵两分钟以上", "type": "secondary", "required": false, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用发烟弹幕掩护受损坦克撤离", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "pzkpfw_iv_f2": 8,
+        "pzkpfw_v_panther": 4,
+        "pzkpfw_vi_tiger": 3,
+        "stug_iii_g": 6,
+        "ger_ss_grenadier": 14,
+        "ger_mg42_team": 5,
+        "pak40": 4,
+        "flak36_88": 2
+      },
+      "enemy_tactics_zh": "党卫军第 2 装甲军让虎式与四号坦克在 1000 米外正面点名，另派分队沿铁路路基推进，步兵紧随清剿。德军惯于抢占高地与反斜面的射击阵地，用远距离精度压制苏军冲锋，并呼叫斯图卡与炮兵覆盖我军集结地。",
+      "friendly_forces_zh": "罗特米斯特罗夫第 5 近卫坦克集团军投入第 18、第 29 坦克军与第 5 近卫机械化军，T-34/76 必须冲进 500 米内才能击穿敌正面。草原方面军第 5 近卫集团军第 9 近卫空降师在左翼据守，炮兵以密集弹幕封锁德军步兵。",
+      "terrain": "field",
+      "weather": "mud",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 9,
+      "par_time_s": 1800,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_il2_strafe"],
+      "vehicle_available": [],
+      "historical_note_zh": "1943 年 7 月 12 日，罗特米斯特罗夫的第 5 近卫坦克集团军在普罗霍罗夫卡车站以西的草坡上，以第 18、第 29 坦克军的 T-34 冲击党卫军第 2 装甲军。双方数百辆坦克在狭窄地带近距离交火，德军虎式与四号的 88mm、75mm 炮在远距离占尽优势，苏军只能靠高速接近打侧面。草原方面军第 5 近卫集团军第 9 近卫空降师同时顶住『阿道夫·希特勒警卫旗队』的步兵推进。此战之后德军南翼进攻势头被彻底耗尽，成为库尔斯克会战的转折点。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943-07-12 第 5 近卫坦克集团军在普罗霍罗夫卡地域与党卫军第 2 装甲军激战",
+          "罗特米斯特罗夫指挥的第 18、第 29 坦克军是当日主要突击力量",
+          "第 9 近卫空降师在普罗霍罗夫卡以南据守，掩护坦克集团军侧翼"
+        ],
+        "dramatized": [
+          "牌面坦克数量与逐辆交战过程为便于玩法做了简化",
+          "玩家以步兵身份参与坦克会战的视角为虚构"
+        ]
+      },
+      "design_note_zh": "教学重点是装甲遭遇战的距离管理与侧射：T-34 正面打不穿虎式，玩家必须依托草坡反斜面与烟幕，把敌装甲引进 300 米内的侧面射界，同时用 82mm 迫击炮压制伴随步兵。失败条件是坦克排被逐辆点名，或在开阔地与德军原地对射。",
+      "music_mood": "打击乐急促推进，铜管在履带轰鸣与金属撞击声中嘶吼。",
+      "unlock_reward": { "xp": 1600, "weapon": "rpg43", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_25_belgorod_breakthrough",
+      "index": 25,
+      "number_in_campaign": 3,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "别尔哥罗德的突破口",
+      "name_en": "Breakthrough at Belgorod",
+      "date": "1943-08-03",
+      "location_zh": "别尔哥罗德北郊",
+      "location_en": "Northern Outskirts of Belgorod",
+      "coordinates": "50.60N 36.60E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你是草原方面军第 53 集团军的一名迫击炮手，在炮火准备后随第一梯队强渡北顿涅茨河，为坦克集群撕开缺口。",
+      "player_class_recommended": ["mortarman", "anti_tank", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在炮火准备后 90 秒内发起冲击并突破前沿堑壕", "type": "primary", "required": true, "time_limit_s": 600 },
+        { "id": "obj2", "text_zh": "清除雷场与铁丝网，为 T-34 排打开通道", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "呼叫 T-34 排搭载步兵突入别尔哥罗德北郊", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用喀秋莎齐射覆盖德军村落支撑点", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 28,
+        "ger_ss_grenadier": 16,
+        "ger_mg42_team": 8,
+        "pzkpfw_iv_f2": 5,
+        "stug_iii_g": 6,
+        "pak40": 6,
+        "ger_pioneer": 6,
+        "flak36_88": 3
+      },
+      "enemy_tactics_zh": "德军依托北顿涅茨河与别尔哥罗德外围丘陵、村落构筑支撑点，把 88mm 炮和 Pak 40 藏在果树与房舍后面实施远距伏击，并以装甲掷弹兵在坦克支援下反击。退却时破坏桥梁、埋设地雷，企图用逐村抵抗拖慢苏军。",
+      "friendly_forces_zh": "草原方面军第 53 集团军第 89 近卫步兵师与第 7 近卫集团军并肩突击，方面军集中上千门火炮与两百余辆坦克支援。第 5 近卫坦克集团军和第 1 坦克集团军组成快速集群，突破后立即向哈尔科夫方向纵深发展。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "dawn",
+      "visibility_m": 700,
+      "difficulty": 7,
+      "par_time_s": 1500,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_guards_rifle_reinforcement"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1943 年 8 月 3 日，草原方面军与沃罗涅日方面军发起别尔哥罗德—哈尔科夫进攻战役。科涅夫以第 53 集团军、第 7 近卫集团军并排突击，第 89 近卫步兵师在炮火准备后强渡北顿涅茨河，8 月 5 日解放别尔哥罗德；同日西线苏军收复奥廖尔，莫斯科首次以礼炮庆祝胜利。随后第 5 近卫坦克集团军与第 1 坦克集团军从两翼投入，8 月 23 日哈尔科夫解放。此役苏军第一次在夏季以坦克重兵集团实施连续突破，把德军南方集团军群逐出乌克兰东部。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943-08-03 草原方面军发起别尔哥罗德—哈尔科夫进攻战役",
+          "第 53 集团军第 89 近卫步兵师参与解放别尔哥罗德",
+          "1943-08-05 莫斯科为奥廖尔与别尔哥罗德解放鸣放礼炮"
+        ],
+        "dramatized": [
+          "玩家在炮火准备后带领迫击炮组冲击的具体过程为虚构",
+          "德军在城北各支撑点的兵力配置做了适度压缩"
+        ]
+      },
+      "design_note_zh": "本关教授合成突破节奏：炮火准备—工兵破障—坦克搭载步兵冲击。玩家必须先用 122mm 与喀秋莎压制村落支撑点，再呼叫 T-34 排搭载步兵沿雷场通道突入。若在炮击结束 90 秒内没有发起冲击，德军会重组防线并呼叫装甲反击，突破难度将成倍上升。",
+      "music_mood": "军鼓由缓到急，铜管齐奏伴随喀秋莎火箭的呼啸升空。",
+      "unlock_reward": { "xp": 1500, "weapon": null, "class": "mortarman" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_26_dnieper_bridgehead",
+      "index": 26,
+      "number_in_campaign": 4,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "第聂伯河上的桥头堡",
+      "name_en": "Bridgehead on the Dnieper",
+      "date": "1943-09-22",
+      "location_zh": "布克林与柳捷日渡口",
+      "location_en": "Bukrin and Lyutezh Crossings",
+      "coordinates": "49.95N 31.05E",
+      "mission_type": "river_crossing",
+      "faction": "soviet",
+      "player_role_zh": "你是沃罗涅日方面军工兵营的一名爆破手，要在烟幕掩护下架起浮桥，并守住桥头堡的狭窄正面。",
+      "player_class_recommended": ["engineer", "mortarman", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "夜间用渔船与木筏运送先遣队过河", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "在发烟弹幕掩护下完成浮桥架设", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "击退德军突击炮对登陆场的反冲击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保住浮桥不被炮火摧毁超过一次", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 30,
+        "ger_mg42_team": 9,
+        "ger_ss_grenadier": 10,
+        "pak40": 5,
+        "stug_iii_g": 4,
+        "ger_pioneer": 5,
+        "flak36_88": 2,
+        "pzkpfw_iv_f2": 3
+      },
+      "enemy_tactics_zh": "德军退守第聂伯河右岸高地，把坦克与突击炮隐蔽在河谷反斜面，用迫击炮和机枪封锁水面与渡口，并集中装甲部队反击任何桥头堡。夜间他们用探照灯与照明弹压制渡河工兵，白天则以斯图卡攻击浮桥。",
+      "friendly_forces_zh": "沃罗涅日方面军第 27、第 40 集团军的先遣支队利用渔船、木筏与防水布浮筒夜渡，工兵营抢架 30 吨浮桥。第 3 近卫坦克集团军在布克林桥头堡集结，第 38 集团军则秘密北调至柳捷日，负责真正的决定性一击。",
+      "terrain": "river",
+      "weather": "clear",
+      "time_of_day": "night",
+      "visibility_m": 350,
+      "difficulty": 8,
+      "par_time_s": 1800,
+      "weight_budget_kg": 24,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_mortar_82"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1943 年 9 月，瓦图京的沃罗涅日方面军追至第聂伯河。9 月 22 日夜，第 27、第 40 集团军的先遣队在布克林、大布克林一带用木筏、渔船和简易浮筒强渡，抢占布克林桥头堡，希特勒此前下令必须守住这条『东墙』。德军以装甲军反复反扑，桥头堡受河谷地形限制无法展开坦克。10 月底，瓦图京秘密把第 38 集团军与第 3 近卫坦克集团军北调至柳捷日小桥头堡，11 月 3 日从那里发起真正的突击，布克林遂成诱饵。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943-09-22 前后苏军先遣队在布克林、大布克林地域强渡第聂伯河",
+          "第 27、第 40 集团军与第 3 近卫坦克集团军先后投入布克林桥头堡",
+          "1943 年 10 月底苏军主力秘密转移至柳捷日桥头堡"
+        ],
+        "dramatized": [
+          "玩家工兵组架桥的具体时间与次数为虚构",
+          "德军反冲击的规模与波次为便于玩法做了压缩"
+        ]
+      },
+      "design_note_zh": "本关首次教授烟幕与渡河工程的配合：发烟弹幕必须覆盖对岸机枪巢与观察哨，工兵在遮蔽期内架桥。玩家还要守住桥头堡的狭窄正面，用迫击炮与反坦克枪打倒试图冲进登陆场的突击炮；浮桥被摧毁两次以上即任务失败。",
+      "music_mood": "低沉弦乐与水面声交织，火箭弹升空时骤然爆发。",
+      "unlock_reward": { "xp": 1800, "weapon": "ppsh41", "class": "engineer" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.05 }
+    },
+    {
+      "id": "sov_27_kiev_liberation",
+      "index": 27,
+      "number_in_campaign": 5,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "基辅城下的红旗",
+      "name_en": "The Red Flag over Kiev",
+      "date": "1943-11-06",
+      "location_zh": "基辅日托米尔公路与城郊",
+      "location_en": "Kiev, Zhytomyr Highway and Outskirts",
+      "coordinates": "50.45N 30.52E",
+      "mission_type": "urban_clearing",
+      "faction": "soviet",
+      "player_role_zh": "你是第 38 集团军的一名突击工兵，随第一梯队从柳捷日桥头堡冲进基辅城郊，逐街肃清德军的阻击点。",
+      "player_class_recommended": ["assault", "engineer", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "沿柳捷日—基辅公路突入城郊并夺取火车站", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "用 152mm 重炮摧毁十字路口的街垒与碉堡", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "在日托米尔公路上守住反坦克阻击线", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保护独立捷克旅的迂回路线不被切断", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 26,
+        "ger_ss_grenadier": 12,
+        "ger_mg42_team": 7,
+        "ger_pioneer": 6,
+        "stug_iii_g": 4,
+        "pak40": 4,
+        "ger_sniper": 4,
+        "pzkpfw_iv_f2": 3
+      },
+      "enemy_tactics_zh": "德军以第 4 装甲集团军残部据守基辅城郊的砖石建筑与铁路枢纽，把突击炮和 Pak 40 架设在十字路口，并从法斯托夫方向组织装甲反击。城内布设大量地雷与路障，企图把巷战变成逐屋消耗，同时用狙击手压制街面。",
+      "friendly_forces_zh": "第 1 乌克兰方面军以第 38 集团军为第一梯队、第 3 近卫坦克集团军为快速集群，沿柳捷日—基辅公路突击。第 1 近卫骑兵军与独立捷克旅负责迂回切断德军的日托米尔退路，第 27 集团军则自布克林方向配合牵制。",
+      "terrain": "city",
+      "weather": "snow",
+      "time_of_day": "dawn",
+      "visibility_m": 300,
+      "difficulty": 7,
+      "par_time_s": 1600,
+      "weight_budget_kg": 23,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_howitzer_152"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1943 年 11 月 3 日，第 1 乌克兰方面军从柳捷日桥头堡发起基辅进攻战役。第 38 集团军与第 3 近卫坦克集团军沿日托米尔公路突破，11 月 5 日逼近城郊，德军第 4 装甲集团军仓皇撤出。11 月 6 日凌晨，第 1 近卫骑兵军与独立捷克旅进入基辅市区，基辅宣告解放。为阻止德军从法斯托夫方向反击，苏军在日托米尔—法斯托夫一线连续顶住数个装甲师，11 月 17 日收复日托米尔，随后在 12 月的日托米尔—别尔季切夫战役中稳住第聂伯河右岸。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1943-11-03 第 1 乌克兰方面军自柳捷日桥头堡发起基辅进攻战役",
+          "1943-11-06 苏军解放基辅，独立捷克旅与第 1 近卫骑兵军进入市区",
+          "德军在法斯托夫、日托米尔方向实施装甲反击"
+        ],
+        "dramatized": [
+          "玩家逐街清理的街区编号与具体建筑为虚构",
+          "城内德军兵力与逐屋战斗时长做了压缩"
+        ]
+      },
+      "design_note_zh": "城市攻坚教学：让玩家熟悉 152mm 重炮对砖石建筑的定点破坏与逐楼清理节奏。玩家须按街区推进，避免正面撞击十字路口的 Pak 40；捷克旅与骑兵军的迂回由脚本推进，玩家的主要压力是在日托米尔公路上守住反坦克阻击线。",
+      "music_mood": "庄严的合唱主题在废墟回响中逐渐升调，终以短促铜管收束。",
+      "unlock_reward": { "xp": 1700, "weapon": "svt40", "class": "scout" },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_28_korsun_pocket",
+      "index": 28,
+      "number_in_campaign": 6,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "科尔松—切尔卡瑟口袋",
+      "name_en": "The Korsun Pocket",
+      "date": "1944-01-24",
+      "location_zh": "科尔松—切尔卡瑟突出部",
+      "location_en": "Korsun–Cherkassy Salient",
+      "coordinates": "49.42N 31.25E",
+      "mission_type": "siege",
+      "faction": "soviet",
+      "player_role_zh": "你是乌克兰第 2 方面军的一名反坦克炮长，任务是一面收紧包围圈，一面顶住德军第 3 装甲军从外线的解围突击。",
+      "player_class_recommended": ["anti_tank", "mortarman", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "守住兹韦尼戈罗德卡会合点，完成包围圈闭合", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "在雷相卡方向建立反坦克地域，阻止被围德军突围", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "击退德军解围部队的装甲突击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用喀秋莎覆盖被围集团的集结地", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_ss_grenadier": 22,
+        "ger_landser_rifleman": 18,
+        "ger_mg42_team": 8,
+        "pzkpfw_v_panther": 4,
+        "pzkpfw_vi_tiger": 4,
+        "stug_iii_g": 6,
+        "pak40": 6,
+        "ger_panzerfaust": 8
+      },
+      "enemy_tactics_zh": "被围德军在科尔松—切尔卡瑟筑起环形防线，以突击炮、Pak 40 与虎式封锁所有接近路，并不断向雷相卡方向试探突围。外围德军第 3 装甲军以『大德意志』师与党卫军『维京』师在泥泞中强攻，试图打通一条走廊。",
+      "friendly_forces_zh": "乌克兰第 1、第 2 方面军以第 5 近卫坦克集团军、第 6 坦克集团军在兹韦尼戈罗德卡会合闭合包围圈，第 52、第 4 近卫集团军负责分割被围集团。外围由第 27、第 40 集团军组织反坦克地域，抵挡德军解围突击。",
+      "terrain": "village",
+      "weather": "snow",
+      "time_of_day": "night",
+      "visibility_m": 250,
+      "difficulty": 9,
+      "par_time_s": 2000,
+      "weight_budget_kg": 26,
+      "resupply_points": 1,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_il2_strafe"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1944 年 1 月 24 日，乌克兰第 1、第 2 方面军对科尔松—切尔卡瑟突出部的德军发起合围。1 月 28 日，第 5 近卫坦克集团军与第 6 坦克集团军在兹韦尼戈罗德卡会师，把德军第 11 军与第 42 军约六万人关进『口袋』。科涅夫拒绝给被围部队留出突围通道，2 月中旬德军第 3 装甲军以『大德意志』师、党卫军『维京』师拼命解围，在雷相卡、申杰罗夫卡的泥泞中步履维艰。2 月 17 日夜被围部队冒雪强突，损失惨重，约五万人阵亡或被俘。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944-01-28 苏军第 5 近卫坦克集团军与第 6 坦克集团军在兹韦尼戈罗德卡会师闭合包围圈",
+          "德军第 3 装甲军（含『大德意志』师、党卫军『维京』师）实施解围突击",
+          "1944-02-17 夜被围德军在雷相卡方向突围，损失惨重"
+        ],
+        "dramatized": [
+          "玩家炮组在包围圈内外的具体阵地与射界为虚构",
+          "包围圈规模与逐日战斗进程做了压缩"
+        ]
+      },
+      "design_note_zh": "包围与反解围的双向教学：玩家要在内线守住分割阵地、阻止被围德军向雷相卡突围，同时在外线用反坦克支撑点抵挡德军装甲军的解围突击。泥泞会显著降低车辆机动，反坦克枪、集束手雷与雷场成为关键，两处阵地同时失守即任务失败。",
+      "music_mood": "阴冷的弦乐在风雪中反复盘旋，迫击炮落点声像心跳。",
+      "unlock_reward": { "xp": 2200, "weapon": "soviet_sapper_kit", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_29_novgorod_relief",
+      "index": 29,
+      "number_in_campaign": 7,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "列宁格勒的破冰之路",
+      "name_en": "Breaking the Ice at Novgorod",
+      "date": "1944-01-27",
+      "location_zh": "诺夫哥罗德以北的沃尔霍夫河",
+      "location_en": "Volkhov River North of Novgorod",
+      "coordinates": "58.52N 31.27E",
+      "mission_type": "relief",
+      "faction": "soviet",
+      "player_role_zh": "你是沃尔霍夫方面军第 59 集团军的一名迫击炮手，踏着冻硬的沼泽夜路渗透，为解除列宁格勒封锁打通诺夫哥罗德。",
+      "player_class_recommended": ["mortarman", "engineer", "anti_tank"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "夜渡冰冻的沃尔霍夫河并夺取北岸高地", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "用迫击炮与 122mm 炮击清除冻土高地上的机枪巢", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "沿林间通道推进至诺夫哥罗德城郊", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "保护滑雪侦察分队不被德军巡逻队截断", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 24,
+        "ger_mg42_team": 8,
+        "ger_ss_grenadier": 10,
+        "ger_pioneer": 5,
+        "pak40": 4,
+        "stug_iii_g": 4,
+        "flak36_88": 3,
+        "ger_sniper": 4
+      },
+      "enemy_tactics_zh": "德军第 18 集团军沿沃尔霍夫河与伊尔门湖沼泽构筑了两年之久的阵地，把机枪巢与 88mm 炮布置在冻土高地上，以地雷、铁丝网和冰雪障碍封锁林间通道。夜间他们用探照灯与巡逻队阻止苏军渗透，白天则以炮兵覆盖冰面。",
+      "friendly_forces_zh": "沃尔霍夫方面军第 59 集团军在诺夫哥罗德以北强渡冰冻的沃尔霍夫河，近卫步兵与滑雪侦察分队沿林间夜路渗透。列宁格勒方面军第 2 突击集团军自奥拉宁鲍姆桥头堡出击，炮兵与工兵保障冰雪地形下的持续进攻。",
+      "terrain": "forest",
+      "weather": "snow",
+      "time_of_day": "dawn",
+      "visibility_m": 200,
+      "difficulty": 7,
+      "par_time_s": 1500,
+      "weight_budget_kg": 23,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_mortar_82"],
+      "vehicle_available": ["sov_tank_t34_76"],
+      "historical_note_zh": "1944 年 1 月 14 日，列宁格勒方面军与沃尔霍夫方面军对德军第 18 集团军发起诺夫哥罗德—卢加进攻战役。沃尔霍夫方面军第 59 集团军从诺夫哥罗德以北强渡冰冻的沃尔霍夫河，1 月 20 日解放诺夫哥罗德；列宁格勒方面军第 2 突击集团军则从奥拉宁鲍姆桥头堡向西突击。1 月 27 日，列宁格勒与莫斯科同时鸣放礼炮，宣告自 1941 年 9 月以来的列宁格勒封锁被彻底解除。此役苏军在严寒的森林沼泽中推进百余公里，粉碎了德军长达两年多的围困。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944-01-14 列宁格勒方面军与沃尔霍夫方面军发起诺夫哥罗德—卢加进攻战役",
+          "1944-01-20 苏军解放诺夫哥罗德",
+          "1944-01-27 列宁格勒封锁被完全解除，莫斯科鸣放礼炮"
+        ],
+        "dramatized": [
+          "玩家迫击炮组在沼泽夜路渗透的路线为虚构",
+          "德军冻土高地阵地的具体火力点数量做了简化"
+        ]
+      },
+      "design_note_zh": "冬季森林渗透与间接火力教学：低能见度限制直射火力，玩家必须用迫击炮和 122mm 炮击清理冻土高地上的机枪巢，并沿滑雪道迂回。严寒加快体力和食物消耗，长时间暴露在开阔冰面上会招来 88mm 平射，因此烟幕与掩体路线必须交替使用。",
+      "music_mood": "稀疏的钟琴与低音提琴，寒风音效中夹杂远处礼炮。",
+      "unlock_reward": { "xp": 1700, "weapon": "dp28", "class": null },
+      "endless_seed_modifier": { "era": 1943, "weight_mult": 1.0 }
+    },
+    {
+      "id": "sov_30_vitebsk_encirclement",
+      "index": 30,
+      "number_in_campaign": 8,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "维捷布斯克的合围",
+      "name_en": "Encirclement at Vitebsk",
+      "date": "1944-06-23",
+      "location_zh": "维捷布斯克以东森林与公路",
+      "location_en": "Forests and Roads East of Vitebsk",
+      "coordinates": "55.19N 30.20E",
+      "mission_type": "breakthrough",
+      "faction": "soviet",
+      "player_role_zh": "你是波罗的海沿岸第 1 方面军的一名突击工兵，要在沼泽林间为合围维捷布斯克的两把钳子打开通道。",
+      "player_class_recommended": ["engineer", "anti_tank", "assault"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "在沼泽林间开辟两条进攻通道", "type": "primary", "required": true, "time_limit_s": 1200 },
+        { "id": "obj2", "text_zh": "封锁维捷布斯克—奥尔沙公路，切断德军退路", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "配合友军完成对城东德军的合围", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用 152mm 重炮摧毁德军公路交叉点碉堡", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 30,
+        "ger_ss_grenadier": 14,
+        "ger_mg42_team": 9,
+        "pak40": 7,
+        "stug_iii_g": 5,
+        "flak36_88": 3,
+        "ger_pioneer": 4,
+        "pzkpfw_iv_f2": 3
+      },
+      "enemy_tactics_zh": "德军第 3 装甲集团军把维捷布斯克当作『堡垒』，在城东森林与沼泽间构筑多道堑壕、雷场和反坦克炮阵地，以装甲掷弹兵守住公路交叉点，并沿唯一通道实施反击突围。由于缺乏机动预备队，其两翼极易被苏军钳形突击撕裂。",
+      "friendly_forces_zh": "波罗的海沿岸第 1 方面军巴格拉米扬以第 43、第 39 集团军分别从西北与东南对进，第 6 近卫集团军与第 5 近卫坦克军扩大突破口，配属 152mm 榴弹炮与 IL-2 强击机，共同歼灭被围的德军第 53 军。",
+      "terrain": "forest",
+      "weather": "clear",
+      "time_of_day": "dawn",
+      "visibility_m": 600,
+      "difficulty": 8,
+      "par_time_s": 1800,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_howitzer_152"],
+      "vehicle_available": ["sov_tank_t34_76", "sov_tank_isu152"],
+      "historical_note_zh": "1944 年 6 月 23 日，巴格拉季昂行动开始，波罗的海沿岸第 1 方面军巴格拉米扬以第 43、第 39 集团军和第 6 近卫集团军对维捷布斯克两翼同时突击。6 月 24 日，苏军在维捷布斯克西北与东南会合，把德军第 3 装甲集团军约五个师合围于城东。6 月 26 日维捷布斯克解放，德军第 53 军试图突围，被炮火与 IL-2 强击机碾碎，约两万人阵亡、上万人被俘。这是巴格拉季昂行动的首批『口袋』，打开了通往明斯克与波罗的海的大门。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944-06-23 巴格拉季昂行动开始，波罗的海沿岸第 1 方面军突击维捷布斯克两翼",
+          "1944-06-24 苏军在维捷布斯克西北与东南会合完成合围",
+          "1944-06-26 维捷布斯克解放，德军第 53 军被歼"
+        ],
+        "dramatized": [
+          "玩家工兵在沼泽林间开辟通道的细节为虚构",
+          "被围德军突围与清剿的时长为便于玩法做了压缩"
+        ]
+      },
+      "design_note_zh": "教授合围的钳形协同：玩家要以工兵在沼泽林间开辟通道，用反坦克炮封锁维捷布斯克—奥尔沙公路，阻止德军突围。若让被围集团沿公路连续冲出五分钟以上，合围即告失败，玩家必须重新封闭缺口并承担额外损失。",
+      "music_mood": "沉稳的进行曲主题，林间鸟鸣被引擎声与炮击吞没。",
+      "unlock_reward": { "xp": 2400, "weapon": null, "class": "engineer" },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.1 }
+    },
+    {
+      "id": "sov_31_minsk_cauldron",
+      "index": 31,
+      "number_in_campaign": 9,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "明斯克城外的大包围",
+      "name_en": "The Minsk Cauldron",
+      "date": "1944-07-03",
+      "location_zh": "明斯克以东森林公路",
+      "location_en": "Forest Roads East of Minsk",
+      "coordinates": "53.90N 27.57E",
+      "mission_type": "assault",
+      "faction": "soviet",
+      "player_role_zh": "你是白俄罗斯第 3 方面军的一名反坦克炮长，要守住明斯克以东的公路交叉口，把德军第 4 集团军堵死在森林里。",
+      "player_class_recommended": ["assault", "anti_tank", "engineer"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "夺取并守住明斯克以东的公路交叉口", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "封锁林间小道，阻止被围德军向东突围", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "配合第 33、第 49 集团军分割清剿被围集团", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用喀秋莎齐射覆盖投降前的德军集结地", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 34,
+        "ger_ss_grenadier": 12,
+        "ger_mg42_team": 8,
+        "pak40": 5,
+        "stug_iii_g": 4,
+        "pzkpfw_iv_f2": 4,
+        "ger_panzerfaust": 6,
+        "ger_sniper": 4
+      },
+      "enemy_tactics_zh": "德军第 4 集团军残部沿明斯克以东的森林与沼泽退却，在白俄罗斯游击队的袭扰下丢弃重装备，试图以骡马和小股战斗群夜间向东突围。城内守军则用突击炮、Pak 40 与路障固守火车站和桥梁，并以铁拳小组伏击接近的坦克。",
+      "friendly_forces_zh": "白俄罗斯第 3 方面军第 5 近卫坦克集团军与第 31、第 11 近卫集团军由北面楔入明斯克，白俄罗斯第 1 方面军从南面收拢包围。第 33、第 49 集团军负责分割清剿被围集团，白俄罗斯游击队配合封锁林间小道与渡口。",
+      "terrain": "forest",
+      "weather": "clear",
+      "time_of_day": "day",
+      "visibility_m": 500,
+      "difficulty": 8,
+      "par_time_s": 1700,
+      "weight_budget_kg": 26,
+      "resupply_points": 3,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_howitzer_152"],
+      "vehicle_available": ["sov_tank_t34_76", "sov_tank_isu152"],
+      "historical_note_zh": "1944 年 7 月 3 日，白俄罗斯第 3 方面军切尔尼亚霍夫斯基的部队与第 5 近卫坦克集团军突入明斯克，同日白俄罗斯第 1 方面军从南面合拢，德军第 4 集团军主力约十万人被围于明斯克以东的森林中。7 月 5 日至 11 日，苏军第 33、第 49 集团军对被围集团实施分割清剿，德军丢弃全部重装备突围，约七万人被俘。明斯克解放成为巴格拉季昂行动的高潮，也是苏军歼灭德军最大重兵集团之一，白俄罗斯几乎全境获得解放。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944-07-03 苏军解放明斯克，德军第 4 集团军主力被围于城东",
+          "第 33、第 49 集团军对明斯克以东被围集团实施分割清剿",
+          "白俄罗斯游击队在德军退却路线上广泛袭扰"
+        ],
+        "dramatized": [
+          "玩家炮组在公路交叉口的阵地位置为虚构",
+          "被俘与阵亡人数的具体分布做了概括处理"
+        ]
+      },
+      "design_note_zh": "本关重心是『守路口、堵突围』：玩家要在明斯克以东的森林公路交叉口构筑反坦克支撑点，配合游击队封锁小道。教学点是弹药与补给管理，长时间封锁会耗尽反坦克枪弹药，必须依靠中途补给点与坦克排支援才能撑住德军夜间的集团突围。",
+      "music_mood": "低沉的男声合唱与远处引擎声，终章时转为明亮的胜利号角。",
+      "unlock_reward": { "xp": 2600, "weapon": "captured_stg44", "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.15 }
+    },
+    {
+      "id": "sov_32_vistula_bridgehead",
+      "index": 32,
+      "number_in_campaign": 10,
+      "campaign_id": "sov_kursk_1943",
+      "name_zh": "维斯瓦河的桥头堡",
+      "name_en": "Bridgeheads on the Vistula",
+      "date": "1944-08-01",
+      "location_zh": "马格努谢夫与普瓦维渡口",
+      "location_en": "Magnuszew and Pulawy Crossings",
+      "coordinates": "51.76N 21.38E",
+      "mission_type": "river_crossing",
+      "faction": "soviet",
+      "player_role_zh": "你是白俄罗斯第 1 方面军第 8 近卫集团军的一名反坦克炮长，要在维斯瓦河西岸的登陆场里架起环形火网，挡住德军装甲反击。",
+      "player_class_recommended": ["engineer", "anti_tank", "mortarman"],
+      "objectives": [
+        { "id": "obj1", "text_zh": "夜间强渡维斯瓦河并抢占西岸登陆场", "type": "primary", "required": true, "time_limit_s": 900 },
+        { "id": "obj2", "text_zh": "在桥头堡内建成环形反坦克火网", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj3", "text_zh": "击退德军装甲师对马格努谢夫的连续反击", "type": "primary", "required": true, "time_limit_s": null },
+        { "id": "obj4", "text_zh": "用烟幕掩护浮桥与后续坦克渡河", "type": "secondary", "required": false, "time_limit_s": null }
+      ],
+      "enemy_composition": {
+        "ger_landser_rifleman": 26,
+        "ger_ss_grenadier": 16,
+        "ger_mg42_team": 9,
+        "pzkpfw_v_panther": 5,
+        "pzkpfw_vi_tiger": 3,
+        "stug_iii_g": 6,
+        "pak40": 6,
+        "ger_panzerfaust": 7
+      },
+      "enemy_tactics_zh": "德军在马格努谢夫与普瓦维附近集中『赫尔曼·戈林』装甲师与第 19 装甲师实施反击，用豹式、虎式与 Pak 40 沿雷杜林、瓦卡一线封锁桥头堡，并以夜间炮击破坏浮桥和渡口，白天用侦察机校射压制登陆场。",
+      "friendly_forces_zh": "白俄罗斯第 1 方面军第 8 近卫集团军与第 69 集团军分别强渡，工兵架设浮桥输送第 2 坦克集团军。桥头堡内各步兵师编成反坦克支撑点，以 PTRD-41、45mm 与 76mm 炮构成环形火网，顶住德军装甲反击。",
+      "terrain": "field",
+      "weather": "clear",
+      "time_of_day": "night",
+      "visibility_m": 700,
+      "difficulty": 9,
+      "par_time_s": 1900,
+      "weight_budget_kg": 25,
+      "resupply_points": 2,
+      "available_support": ["sov_howitzer_122", "sov_katyusha", "sov_smoke_screen", "sov_il2_strafe"],
+      "vehicle_available": ["sov_tank_t34_76", "sov_tank_isu152"],
+      "historical_note_zh": "1944 年 8 月 1 日，白俄罗斯第 1 方面军在罗科索夫斯基指挥下推进到维斯瓦河中游，第 8 近卫集团军在马格努谢夫、第 69 集团军在普瓦维实施强渡，工兵趁夜架设浮桥，坦克与反坦克炮随即渡河。德军以『赫尔曼·戈林』装甲师和第 19 装甲师连续反击，桥头堡一度只剩数公里纵深。苏军在登陆场内挖壕、布设反坦克炮与雷场，终于守住马格努谢夫与普瓦维两块登陆场，为 1945 年 1 月的维斯瓦—奥得河进攻准备好跳板。",
+      "historical_accuracy": {
+        "verified_events": [
+          "1944 年 8 月初苏军在马格努谢夫、普瓦维地域强渡维斯瓦河建立桥头堡",
+          "第 8 近卫集团军与第 69 集团军是主要渡河部队，白俄罗斯第 1 方面军由罗科索夫斯基指挥",
+          "德军以『赫尔曼·戈林』装甲师与第 19 装甲师等部实施反击"
+        ],
+        "dramatized": [
+          "玩家反坦克炮组在桥头堡内的具体阵地为虚构",
+          "双方反击与反反击的波次做了压缩与强化"
+        ]
+      },
+      "design_note_zh": "维斯瓦河桥头堡的反坦克防御教学：玩家要在浮桥附近布置环形反坦克火网，用烟幕掩护架桥，并把虎式、豹式放进雷场通道后侧射。教学重点是弹药分配与阵地轮换；浮桥被炮火摧毁两次即任务失败。",
+      "music_mood": "夜色中的低音鼓点与沉重的弦乐，渡河号令传来时陡然明亮。",
+      "unlock_reward": { "xp": 3000, "weapon": null, "class": null },
+      "endless_seed_modifier": { "era": 1945, "weight_mult": 1.2 }
+    }
+  ]
+}
