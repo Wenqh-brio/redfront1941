@@ -107,7 +107,10 @@ def validate_maps():
             if not world:
                 raise RuntimeError("Could not load campaign map: " + package)
 
-            actors = unreal.EditorLevelLibrary.get_all_level_actors()
+            actor_subsystem = unreal.get_editor_subsystem(unreal.EditorActorSubsystem)
+            if not actor_subsystem:
+                raise RuntimeError("Could not access the UE editor actor subsystem")
+            actors = actor_subsystem.get_all_level_actors()
             labels = {actor.get_actor_label() for actor in actors}
             if "RF_Ground" not in labels or "RF_PlayerStart" not in labels:
                 raise RuntimeError("Missing ground or player start in " + package)

@@ -270,7 +270,7 @@ node tools/build-data.mjs; node tools/validate-data.mjs; node tools/build-docs.m
 | 点击"无限模式"后立刻切到不存在的屏幕 | 无限模式按钮无反应 | 修正 `data-go` 分发逻辑 |
 | 部署按钮硬编码 `campaign` 模式 | 无限模式部署时崩溃 | 改用 `state.mode` |
 | UE DataTable CSV + 生成式关卡文档 | ✅ | `tools/build-data.mjs` / `build-docs.mjs` |
-| UE 自动化测试 | ✅ 7 项 | 到达、摧毁目标、击毁、守点、救援、弹药容量 |
+| UE 自动化测试 | ✅ 8 项 | 无限编组选择/兵力上限、到达、摧毁目标、击毁、守点、救援、弹药容量 |
 | 56 个 UE 关卡 blockout | ✅ | `rf_generate_campaign_maps.py`，每关源数据来自 `data/levels/*.json` |
 | 最终美术、音频与关卡打磨 | ⏳ 待做 | 见 `docs/07` 首期美术清单与 `docs/09` 里程碑 |
 
